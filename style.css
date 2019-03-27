@@ -1,6 +1,6 @@
 body{
   background: #ffffff;
-  line-height: 150%;
+  line-height: 130%;
   font-size: small;
 }
 
@@ -14,6 +14,7 @@ body{
   font-family: Meiryo;
   color: #555555;
   width: 720px;
+  height: auto;
   padding: 30px;
   border: 1px solid #00bfff;
   margin: 30px auto;
@@ -29,7 +30,7 @@ body{
 }
 
 li {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 a:link { color: #00bfff; }
