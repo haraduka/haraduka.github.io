@@ -1,18 +1,19 @@
 body{
   background: #ffffff;
-  line-height: 150%
+  line-height: 150%;
+  font-size: 15px;
 }
 
 .image{
   float: left;
-  padding-right: 100px
+  padding-right: 50px;
 }
 
 .palette{
   background: #eeeeee;
   font-family: Meiryo;
   color: #555555;
-  width: 1000px;
+  width: 720px;
   padding: 30px;
   border: 1px solid #00bfff;
   margin: 30px auto;
