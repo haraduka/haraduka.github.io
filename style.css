@@ -1,0 +1,28 @@
+body{
+  background: #ffffff;
+  line-height: 150%
+}
+
+.image{
+  float: left;
+  padding-right: 100px
+}
+
+.palette{
+  background: #eeeeee;
+  font-family: Meiryo;
+  color: #555555;
+  width: 1000px;
+  padding: 30px;
+  border: 1px solid #cccccc;
+  margin: 30px auto;
+}
+
+.title{
+  background: #ffffff;
+  font-size: 1.6rem;
+  border: 1px solid #cccccc;
+  text-align: text-left;
+  margin: 20px auto;
+  padding: 10px;
+}
