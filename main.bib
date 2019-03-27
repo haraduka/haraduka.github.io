@@ -1,3 +1,4 @@
+@string{SI17J = "第18回SICEシステムインテグレーション部門講演会講演概要集"}
 @string{SI15J = "第16回SICEシステムインテグレーション部門講演会講演概要集"}
 @string{SI09J = "第10回SICEシステムインテグレーション部門講演会講演概要集"}
 @string{SI09E = "Proceedings of the 10th SICE System Integration Division Annual Conference"}
@@ -66,6 +67,7 @@
 @string{IROS2000 = "Proceedings of the 2000 IEEE/RSJ International Conference on Intelligent Robots and Systems"}
 @string{IROS1996 = "Proceedings of the 1996 IEEE/RSJ International Conference on Intelligent Robots and Systems"}
 
+@string{ICRA2019 = "Proceedings of the 2019 IEEE International Conference on Robotics and Automation"}
 @string{ICRA2018 = "Proceedings of the 2018 IEEE International Conference on Robotics and Automation"}
 @string{ICRA2014 = "Proceedings of the 2014 IEEE International Conference on Robotics and Automation"}
 @string{ICRA2011 = "Proceedings of the 2011 IEEE International Conference on Robotics and Automation"}
@@ -91,6 +93,8 @@
 @string{HUMANOIDS2006 = "Proceedings of the 2006 IEEE-RAS International Conference on Humanoid Robots"}
 
 @string{ROBIO2011 = "Proceedings of the 2011 IEEE International Conference on Robotics and Biomimetics"}
+
+@string{BIOROB2018 = "Proceedings of The 2018 IEEE RAS/EMBS International Conference on Biomedical Robotics and Biomechatronics"}
 
 @string{AMAM2013 = "Proceedings of 6th International Symposium on Adaptive Motion of Animals and Machines"}
 
@@ -119,6 +123,7 @@
   number={4},
   pages={2119--2126},
   year=2018,
+  note={presented at ICRA2018}
 }
 @article{kawaharazuka2017antagonist,
   author={K. Kawaharazuka and M. Kawamura and S. Makino and Y. Asano and K. Okada and M. Inaba},
@@ -128,9 +133,17 @@
   number={4},
   pages={2119--2126},
   year=2017,
+  note={presented at IROS2017}
 }
 
 % reviewed_iconference
+@inproceedings{kawaharazuka2019dynamic,
+  author={Kento Kawaharazuka and Toru Ogawa and Juntaro Tamura and Cota Nabeshima},
+  title={{Dynamic Manipulation of Flexible Objects with Torque Sequence Using a Deep Neural Network}},
+  booktitle=ICRA2019,
+  year=2019,
+  note={in press}
+}
 @inproceedings{kawaharazuka2018twimp,
   author={K. Kawaharazuka and T. Makabe and S. Makino and K. Tsuzuki and Y. Nagamatsu and Y. Asano and T. Shirai and F. Sugai and K. Okada and K. Kawasaki and M. Inaba},
   title={{TWIMP: Two-Wheel Inverted Musculoskeletal Pendulum as a Learning Control Platform in the Real World with Environmental Physical Contact}},
@@ -165,6 +178,15 @@
   booktitle=IROS2018,
   pages={4562--4567},
   year=2018,
+  award="IEEE RAS Japan Joint Chapter Young Award (2018)"
+  award="IROS ICROS Best Application Paper Award 2018 Finalists"
+}
+@inproceedings{fujii2018membrane,
+  author={Ayaka Fujii and Shinsuke Nakashima and Masaya Kawamura and Kento Kawaharazuka and Shogo Makino and Yuki Asano and Kei Okada and Masayuki Inaba},
+  title={{Development and Functional Evaluation of a Deformable Membrane Capsule for an Open Ball Glenohumeral Joint}},
+  booktitle=BIOROB2018,
+  pages={853--858},
+  year=2018,
 }
 @inproceedings{kawaharazuka2017forearm,
   author={K. Kawaharazuka and S. Makino and M. Kawamura and Y. Asano and Y. Kakiuchi and K. Okada and M. Inaba},
@@ -172,6 +194,7 @@
   booktitle=IROS2017,
   pages={4956--4962},
   year=2017,
+  award="IEEE RAS Japan Joint Chapter Young Award (2017)"
 }
 @inproceedings{makino2017hand,
   author={S. Makino and K. Kawaharazuka and M. Kawamura and Y. Asano and K. Okada and M. Inaba},
@@ -186,6 +209,7 @@
   booktitle=Humanoids2016,
   pages={876--883},
   year=2016,
+  award={Best Interactive Paper Award Finalist}
 }
 
 % reviewed_dconference
@@ -198,6 +222,20 @@
 }
 
 % non_dconference
+@inproceedings{kawaharazuka2018longtime-ja,
+  author={河原塚 健人 and 都築 敬 and 牧野 将吾 and 鬼塚 盛宇 and 浅野 悠紀 and 岡田 慧 and 稲葉 雅幸},
+  title={{筋骨格構造における長期的自己身体像獲得と可変剛性制御の実現}},
+  booktitle=RSJ18J,
+  pages={1J2-02},
+  year=2018,
+}
+@inproceedings{kawaharazuka2018twimp-ja,
+  author={河原塚 健人 and 真壁 佑 and 牧野 将吾 and 都築 敬 and 永松 祐弥 and 浅野 悠紀 and 白井 拓磨 and 菅井 文仁 and 岡田 慧 and 稲葉 雅幸},
+  title={環境接触を伴う学習型制御研究のための筋骨格型倒立二輪ロボットの開発},
+  booktitle=RSJ18J,
+  pages={1P2-02},
+  year=2018,
+}
 @inproceedings{tsuzuki2018pedal-ja,
   author={都築 敬 and 河原塚 健人 and 鬼塚 盛宇 and 真壁 佑 and 牧野 将吾 and 浅野 悠紀 and 岡田 慧 and 稲葉 雅幸},
   title={{筋骨格ヒューマノイドによる自動車運転動作の実現に向けたペダル操作戦略}},
@@ -205,11 +243,11 @@
   pages={2P1-05},
   year=2018,
 }
-@inproceedings{kawaharazuka2018longtime-ja,
-  author={河原塚 健人 and 都築 敬 and 牧野 将吾 and 鬼塚 盛宇 and 浅野 悠紀 and 岡田 慧 and 稲葉 雅幸},
-  title={{筋骨格構造における長期的自己身体像獲得と可変剛性制御の実現}},
+@inproceedings{onitsuka2018balance-ja,
+  author={鬼塚 盛宇 and 真壁 佑 and 河原塚 健人 and 牧野 将吾 and 浅野 悠紀 and 岡田 慧 and 稲葉 雅幸},
+  title={筋骨格ヒューマノイドにおける脚全体の筋に基づく筋張力 ZMP を用いた平衡動作},
   booktitle=RSJ18J,
-  pages={1J2-02},
+  pages={1J2-05},
   year=2018,
 }
 @inproceedings{kawaharazuka2018twimp-ja,
@@ -226,12 +264,33 @@
   pages={2A2-G09},
   year=2018,
 }
+@inproceedings{makino2018hand-ja,
+  author={牧野 将吾 and 河原塚 健人 and 藤井 綺香 and 川村 将矢 and 真壁 佑 and 鬼塚 盛宇 and 浅野 悠紀 and 岡田 慧 and 川崎 宏治 and 稲葉 雅幸},
+  title={組み合わせ切削ばねによる広可動域関節母指関節と可変剛性指関節をもつ人体模倣型五指ハンドの開発},
+  booktitle=ROBOMECH18J,
+  pages={1P1-H16},
+  year=2018,
+}
+@inproceedings{makabe2018eyeunit-ja,
+  author={真壁 佑 and 河原塚 健人 and 牧野 将吾 and 川村 将矢 and 藤井 綺香 and 鬼塚 盛宇 and 浅野 悠紀 and 岡田 慧 and 川崎 宏治 and 稲葉 雅幸},
+  title={筋骨格ヒューマノイドにおける可動眼球の開発と車両見回し発進動作の実現},
+  booktitle=ROBOMECH18J,
+  pages={2A2-G11},
+  year=2018,
+}
 @inproceedings{asano2018pedal-ja,
   author={浅野 悠紀 and 川村 将矢 and 河原塚 健人 and 牧野 将吾 and 藤井 綺香 and 真壁 佑 and 鬼塚 盛宇 and 岡田 慧 and 川崎 宏治 and 稲葉 雅幸},
   title={{人体模倣筋骨格ヒューマノイドにおける筋張力を用いた関節空間コントローラによる車両ペダル操作の実現}},
   booktitle=ROBOMECH18J,
   pages={2A2-G07},
   year=2018,
+}
+@inproceedings{fujii2017membrane-ja,
+  author={藤井綺香 and 中島慎介 and 川村将矢 and 河原塚健人 and 牧野将吾 and 浅野悠紀 and 岡田慧 and 稲葉雅幸},
+  title={人体の関節包構造に示唆を得た柔軟で伸縮変形可能な膜構造を備えた開放型球関節の開発},
+  booktitle=SI17J,
+  pages={2442--2445},
+  year=2017,
 }
 @inproceedings{kawaharazuka2017online-ja,
   author={河原塚 健人 and 牧野 将吾 and 川村 将矢 and 浅野 悠紀 and 岡田 慧 and 稲葉 雅幸},
@@ -246,4 +305,12 @@
   booktitle=ROBOMECH17J,
   pages={1A1-O11},
   year=2017,
+}
+@inproceedings{makino2017hand-ja,
+  author={牧野 将吾 and 河原塚 健人 and 川村 将矢 and 浅野 悠紀 and 岡田 慧 and 稲葉 雅幸},
+  title={筋骨格ヒューマノイドのための切削ばねによる柔軟関節を備えた五指ハンドの開発と自己身体負荷保持動作の実現},
+  booktitle=ROBOMECH17J,
+  pages={2P1-B08},
+  year=2017,
+  award={JSME Fellow Award for Outstanding Young Engineers}
 }

@@ -50,11 +50,8 @@ class MakeHTML:
                 if ("title" in name) and (not ("booktitle" in name)):
                     self.current["title"] = content
                     continue
-                if "booktitle" in name:
-                    self.current["booktitle"] = self.conference_name[content.upper()]
-                    continue
-                if "journal" in name:
-                    self.current["booktitle"] = self.conference_name[content.upper()]
+                if ("journal" in name) or ("booktitle" in name):
+                    self.current["booktitle"] = self.conference_name[content.upper()] + " (" + content.upper() + ")"
                     continue
                 if "volume" in name:
                     self.current["volume"] = content
@@ -68,9 +65,20 @@ class MakeHTML:
                 if "year" in name:
                     self.current["year"] = content
                     continue
+                if "award" in name:
+                    if "award" not in self.current:
+                        self.current["award"] = []
+                    self.current["award"].append(content)
+                    continue
+                if "note" in name:
+                    self.current["note"] = content
+                    continue
 
     def make_pub(self):
         out = open("publication.html", "w")
+
+        aout = open("award.html", "w")
+        aout.write('<ol>')
 
         papers = self.papers["journal_papers"]
         out.write('<h3> Journal Papers </h3>')
@@ -84,15 +92,22 @@ class MakeHTML:
             author_joined = ", ".join(author)
             line = author_joined
             line += ', "' + paper["title"] + '"'
-            line += ', ' + paper["booktitle"]
-            if paper["volume"]:
+            line += ', <i>' + paper["booktitle"] + '</i>'
+            if "volume" in paper:
                 line += ", vol. " + paper["volume"]
-            if paper["number"]:
+            if "number" in paper:
                 line += ", no. " + paper["number"]
-            if paper["pages"]:
+            if "pages" in paper:
                 line += ", pp. " + paper["pages"]
-            if paper["year"]:
+            if "year" in paper:
                 line += ", " + paper["year"]
+            if "award" in paper:
+                for award in paper["award"]:
+                    line += ", <b>"+award+"</b>"
+                    aout.write("<li>" + author_joined + ", <b>" + award +
+                               "</b>, <i>" + paper["booktitle"] + '</i> </li>')
+            if "note" in paper:
+                line += ", (" + paper["note"] + ")"
 
             out.write("<li>"+line+"</li>")
         out.write('</ol>')
@@ -109,11 +124,18 @@ class MakeHTML:
             author_joined = ", ".join(author)
             line = author_joined
             line += ', "' + paper["title"] + '"'
-            line += ', in ' + paper["booktitle"]
-            if paper["pages"]:
+            line += ', in <i>' + paper["booktitle"] + '</i>'
+            if "pages" in paper:
                 line += ", pp. " + paper["pages"]
-            if paper["year"]:
+            if "year" in paper:
                 line += ", " + paper["year"]
+            if "award" in paper:
+                for award in paper["award"]:
+                    line += ", <b>"+award+"</b>"
+                    aout.write("<li>" + author_joined + ", <b>" + award +
+                               "</b>, <i>" + paper["booktitle"] + '</i> </li>')
+            if "note" in paper:
+                line += ", (" + paper["note"] + ")"
 
             out.write("<li>"+line+"</li>")
         out.write('</ol>')
@@ -130,11 +152,18 @@ class MakeHTML:
             author_joined = ", ".join(author)
             line = author_joined
             line += ', "' + paper["title"] + '"'
-            line += ', in ' + paper["booktitle"]
-            if paper["pages"]:
+            line += ', in <i>' + paper["booktitle"] + '</i>'
+            if "pages" in paper:
                 line += ", pp. " + paper["pages"]
-            if paper["year"]:
+            if "year" in paper:
                 line += ", " + paper["year"]
+            if "award" in paper:
+                for award in paper["award"]:
+                    line += ", <b>"+award+"</b>"
+                    aout.write("<li>" + author_joined + ", <b>" + award +
+                               "</b>, <i>" + paper["booktitle"] + '</i> </li>')
+            if "note" in paper:
+                line += ", (" + paper["note"] + ")"
 
             out.write("<li>"+line+"</li>")
         out.write('</ol>')
@@ -151,24 +180,37 @@ class MakeHTML:
             author_joined = ", ".join(author)
             line = author_joined
             line += ', "' + paper["title"] + '"'
-            line += ', in ' + paper["booktitle"]
-            if paper["pages"]:
+            line += ', in <i>' + paper["booktitle"] + '</i>'
+            if "pages" in paper:
                 line += ", " + paper["pages"]
-            if paper["year"]:
+            if "year" in paper:
                 line += ", " + paper["year"]
+            if "award" in paper:
+                for award in paper["award"]:
+                    line += ", <b>"+award+"</b>"
+                    aout.write("<li>" + author_joined + ", <b>" + award +
+                               "</b>, <i>" + paper["booktitle"] + '</i> </li>')
+            if "note" in paper:
+                line += ", (" + paper["note"] + ")"
 
             out.write("<li>"+line+"</li>")
         out.write('</ol>')
 
+        aout.write('</ol>')
+
     def integrate_html(self, base_filename, out_filename):
         base = open(base_filename, "r")
         pub = open("publication.html", "r")
+        award = open("award.html", "r")
         out = open(out_filename, "w")
         lines = []
         for line in base:
             if "publication_replace_by_python" in line:
                 for publine in pub:
                     lines.append(publine)
+            if "award_replace_by_python" in line:
+                for awardline in award:
+                    lines.append(awardline)
             lines.append(line)
         out.writelines(lines)
 

@@ -14,15 +14,24 @@ body{
   color: #555555;
   width: 1000px;
   padding: 30px;
-  border: 1px solid #cccccc;
+  border: 1px solid #00bfff;
   margin: 30px auto;
 }
 
 .title{
   background: #ffffff;
   font-size: 1.6rem;
-  border: 1px solid #cccccc;
+  border: 1px solid #00bfff;
   text-align: text-left;
   margin: 20px auto;
   padding: 10px;
 }
+
+li {
+  margin-bottom: 5px;
+}
+
+a:link { color: #00bfff; }
+a:visited { color: #00bfff; }
+a:hover { color: #00bfff; }
+a:active { color: #00bfff; }
