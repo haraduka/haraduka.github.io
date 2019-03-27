@@ -3,11 +3,12 @@
 
 import argparse
 
+
 class MakeHTML:
     def __init__(self, bibtex_filename):
         self.bib = open(bibtex_filename, "r")
-        self.ja_name = "河原塚" # no space
-        self.en_name = "Kawaharazuka" # no space
+        self.ja_name = "河原塚"  # no space
+        self.en_name = "Kawaharazuka"  # no space
 
         self.conference_name = {}
         self.state = None
@@ -68,8 +69,8 @@ class MakeHTML:
                     self.current["year"] = content
                     continue
 
-    def make_html(self, out_filename):
-        out = open(out_filename, "w")
+    def make_pub(self):
+        out = open("publication.html", "w")
 
         papers = self.papers["journal_papers"]
         out.write('<h3> Journal Papers </h3>')
@@ -159,6 +160,19 @@ class MakeHTML:
             out.write("<li>"+line+"</li>")
         out.write('</ol>')
 
+    def integrate_html(self, base_filename, out_filename):
+        base = open(base_filename, "r")
+        pub = open("publication.html", "r")
+        out = open(out_filename, "w")
+        lines = []
+        for line in base:
+            if "publication_replace_by_python" in line:
+                for publine in pub:
+                    lines.append(publine)
+            lines.append(line)
+        out.writelines(lines)
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="make_html_from_bib")
@@ -171,7 +185,9 @@ def main():
     args = parser.parse_args()
     makeHTML = MakeHTML(args.file)
     makeHTML.parse_bib()
-    makeHTML.make_html(args.out)
+    makeHTML.make_pub()
+    makeHTML.integrate_html(args.base, args.out)
+
 
 if __name__ == '__main__':
     main()
