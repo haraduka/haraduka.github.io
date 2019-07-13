@@ -51,7 +51,7 @@ class MakeHTML:
                     self.current["title"] = content
                     continue
                 if ("journal" in name) or ("booktitle" in name):
-                    self.current["booktitle"] = self.conference_name[content.upper()] + " (" + content.upper() + ")"
+                    self.current["booktitle"] = self.conference_name[content.upper()] + " (<b>" + content.upper() + "</b>)"
                     continue
                 if "volume" in name:
                     self.current["volume"] = content
@@ -103,11 +103,11 @@ class MakeHTML:
                 line += ", " + paper["year"]
             if "award" in paper:
                 for award in paper["award"]:
-                    line += ", <b>"+award+"</b>"
+                    line += ", <b><font color='red'>"+award+"</font></b>"
                     aout.write("<li>" + author_joined + ", <b>" + award +
                                "</b>, <i>" + paper["booktitle"] + '</i> </li>')
             if "note" in paper:
-                line += ", (" + paper["note"] + ")"
+                line += ", (<b>" + paper["note"] + "</b>)"
 
             out.write("<li>"+line+"</li>")
         out.write('</ol>')
@@ -131,11 +131,11 @@ class MakeHTML:
                 line += ", " + paper["year"]
             if "award" in paper:
                 for award in paper["award"]:
-                    line += ", <b>"+award+"</b>"
+                    line += ", <b><font color='red'>"+award+"</font></b>"
                     aout.write("<li>" + author_joined + ", <b>" + award +
                                "</b>, <i>" + paper["booktitle"] + '</i> </li>')
             if "note" in paper:
-                line += ", (" + paper["note"] + ")"
+                line += ", (<b>" + paper["note"] + "</b>)"
 
             out.write("<li>"+line+"</li>")
         out.write('</ol>')
@@ -159,11 +159,11 @@ class MakeHTML:
                 line += ", " + paper["year"]
             if "award" in paper:
                 for award in paper["award"]:
-                    line += ", <b>"+award+"</b>"
+                    line += ", <b><font color='red'>"+award+"</font></b>"
                     aout.write("<li>" + author_joined + ", <b>" + award +
                                "</b>, <i>" + paper["booktitle"] + '</i> </li>')
             if "note" in paper:
-                line += ", (" + paper["note"] + ")"
+                line += ", (<b>" + paper["note"] + "</b>)"
 
             out.write("<li>"+line+"</li>")
         out.write('</ol>')
@@ -187,11 +187,11 @@ class MakeHTML:
                 line += ", " + paper["year"]
             if "award" in paper:
                 for award in paper["award"]:
-                    line += ", <b>"+award+"</b>"
+                    line += ", <b><font color='red'>"+award+"</font></b>"
                     aout.write("<li>" + author_joined + ", <b>" + award +
                                "</b>, <i>" + paper["booktitle"] + '</i> </li>')
             if "note" in paper:
-                line += ", (" + paper["note"] + ")"
+                line += ", (<b>" + paper["note"] + "</b>)"
 
             out.write("<li>"+line+"</li>")
         out.write('</ol>')
