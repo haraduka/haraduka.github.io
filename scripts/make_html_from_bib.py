@@ -90,8 +90,9 @@ class MakeHTML:
                     author[i] = "<b><u>"+a+"</u></b>"
                     break
             author_joined = ", ".join(author)
+            author_joined = "<font color='808080'>"+author_joined+"</font>"
             line = author_joined
-            line += ', "' + paper["title"] + '"'
+            line += '<br><b>' + paper["title"] + '</b>'
             line += ', <i>' + paper["booktitle"] + '</i>'
             if "volume" in paper:
                 line += ", vol. " + paper["volume"]
@@ -104,7 +105,7 @@ class MakeHTML:
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
-                    aout.write("<li>" + author_joined + ", <b>" + award +
+                    aout.write("<li>" + author_joined + "<br><b>" + award +
                                "</b>, <i>" + paper["booktitle"] + '</i> </li>')
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
@@ -122,8 +123,9 @@ class MakeHTML:
                     author[i] = "<b><u>"+a+"</u></b>"
                     break
             author_joined = ", ".join(author)
+            author_joined = "<font color='808080'>"+author_joined+"</font>"
             line = author_joined
-            line += ', "' + paper["title"] + '"'
+            line += '<br><b>' + paper["title"] + '</b>'
             line += ', in <i>' + paper["booktitle"] + '</i>'
             if "pages" in paper:
                 line += ", pp. " + paper["pages"]
@@ -132,7 +134,7 @@ class MakeHTML:
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
-                    aout.write("<li>" + author_joined + ", <b>" + award +
+                    aout.write("<li>" + author_joined + "<br><b>" + award +
                                "</b>, <i>" + paper["booktitle"] + '</i> </li>')
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
@@ -150,8 +152,9 @@ class MakeHTML:
                     author[i] = "<b><u>"+a+"</u></b>"
                     break
             author_joined = ", ".join(author)
+            author_joined = "<font color='808080'>"+author_joined+"</font>"
             line = author_joined
-            line += ', "' + paper["title"] + '"'
+            line += '<br><b>' + paper["title"] + '</b>'
             line += ', in <i>' + paper["booktitle"] + '</i>'
             if "pages" in paper:
                 line += ", pp. " + paper["pages"]
@@ -160,7 +163,7 @@ class MakeHTML:
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
-                    aout.write("<li>" + author_joined + ", <b>" + award +
+                    aout.write("<li>" + author_joined + "<br><b>" + award +
                                "</b>, <i>" + paper["booktitle"] + '</i> </li>')
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
@@ -178,8 +181,9 @@ class MakeHTML:
                     author[i] = "<b><u>"+a+"</u></b>"
                     break
             author_joined = ", ".join(author)
+            author_joined = "<font color='808080'>"+author_joined+"</font>"
             line = author_joined
-            line += ', "' + paper["title"] + '"'
+            line += '<br><b>' + paper["title"] + '</b>'
             line += ', in <i>' + paper["booktitle"] + '</i>'
             if "pages" in paper:
                 line += ", " + paper["pages"]
@@ -188,7 +192,7 @@ class MakeHTML:
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
-                    aout.write("<li>" + author_joined + ", <b>" + award +
+                    aout.write("<li>" + author_joined + "<br><b>" + award +
                                "</b>, <i>" + paper["booktitle"] + '</i> </li>')
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
