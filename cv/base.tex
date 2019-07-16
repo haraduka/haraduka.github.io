@@ -1,0 +1,132 @@
+\documentclass[letterpaper]{article}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+
+\def\name{Kento Kawaharazuka}
+
+\def\footerlink{https://haraduka.github.io}
+
+\hypersetup{
+  colorlinks = true,
+  urlcolor = blue,
+  pdfauthor = {\name},
+  pdfkeywords = {humanoid, biomimetics, machine learning},
+  pdftitle = {\name: Curriculum Vitae},
+  pdfsubject = {Curriculum Vitae},
+  pdfpagemode = UseNone
+}
+
+\geometry{
+  body={6.5in, 8.5in},
+  left=1.0in,
+  top=1.25in
+}
+
+\pagestyle{myheadings}
+\markright{\name}
+\thispagestyle{empty}
+
+\usepackage{sectsty}
+\sectionfont{\rmfamily\mdseries\Large}
+\subsectionfont{\rmfamily\mdseries\itshape\large}
+
+% Other possible font commands include:
+% \ttfamily for teletype,
+% \sffamily for sans serif,
+% \bfseries for bold,
+% \scshape for small caps,
+% \normalsize, \large, \Large, \LARGE sizes.
+
+% Don't indent paragraphs.
+\setlength\parindent{0em}
+
+% Make lists without bullets
+\renewenvironment{itemize}{
+  \begin{list}{}{
+    \setlength{\leftmargin}{1.5em}
+  }
+}{
+  \end{list}
+}
+
+\begin{document}
+
+% Place name at left
+{\huge \name}
+
+\vspace{0.25in}
+
+\begin{minipage}{0.45\linewidth}
+  {The University of Tokyo} \\
+  Department of Mechano-Informatics \\
+  Engineering Building No. 2 \\
+  7-3-1, Hongo, Bunkyo-ku, Tokyo, Japan
+\end{minipage}
+\begin{minipage}{0.45\linewidth}
+  \begin{tabular}{ll}
+    Phone: & +81-3-5841-7416 \\
+    Fax: &  +81-3-5841-6285 \\
+    Email: & \href{mailto:kawaharazuka@jsk.imi.i.u-tokyo.ac.jp}{\tt kawaharazuka@jsk.imi.i.u-tokyo.ac.jp} \\
+    Homepage: & \href{https://haraduka.github.io}{\tt https://haraduka.github.io} \\
+  \end{tabular}
+\end{minipage}
+
+
+\section*{Personal}
+
+\begin{itemize}
+    \item Date of Birth: 18/07/1994
+    \item Research Interests: Humanoid, Biomimetics, Machine Learning
+\end{itemize}
+
+
+\section*{Education}
+
+\begin{itemize}
+  \item Ph.D. Candidate in Dept. of Mechano-Informatics, The University of University, Japan, with Prof. Masayuki Inaba, 2019-current
+  \item M.S. in Dept. of Mechano-Informatics, Graduate School of Information Science and Technology, The University of Tokyo, Japan, 2017-2019
+  \item B.S. in Dept. of Mechano-Informatics, Faculty of Engineering, The University of Tokyo, Japan, 2013-2017
+\end{itemize}
+
+
+\section*{Experience}
+
+\begin{itemize}
+  \item Internship at Preferred Networks, Robotics Engineer, Japan, 2018-current
+  \item Internship at Works Applications Co. Ltd., Software Engineer, Japan, 2016
+  \item Internship at Future Standard, Software Engineer, Japan, 2016
+  \item Internship at HIOKI, E.E. CORPORATION, Software Engineer, Japan, 2015
+\end{itemize}
+
+\section*{Skills}
+
+\subsection*{Software Skills}
+
+\subsection*{Hardware Skills}
+
+\section*{Publications}
+
+\subsection*{Journal Articles (Peer Reviewed)}
+
+% journal_replace_by_python
+
+\subsection*{International Conference Proceedings (Peer Reviewed)}
+
+% proceedings_replace_by_python
+
+
+\bigskip
+
+% Footer
+\begin{center}
+  \begin{footnotesize}
+    Last updated: \today \\
+    \href{\footerlink}{\texttt{\footerlink}}
+  \end{footnotesize}
+\end{center}
+
+\end{document}
