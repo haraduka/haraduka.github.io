@@ -110,18 +110,24 @@ class MakeHTML:
             line2 += ", \\textit{" + paper["booktitle2"] + "}"
             if "volume" in paper:
                 line += ", vol. " + paper["volume"]
+                line2 += ", vol. " + paper["volume"]
             if "number" in paper:
                 line += ", no. " + paper["number"]
+                line2 += ", no. " + paper["number"]
             if "pages" in paper:
                 line += ", pp. " + paper["pages"]
+                line2 += ", pp. " + paper["pages"]
             if "year" in paper:
                 line += ", " + paper["year"]
+                line2 += ", " + paper["year"]
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
+                    line2 += ", \\textbf{\\textcolor{red}{"+award+"}}"
                     self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i> </li>')
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
+                line2 += ", (\\textbf{" + paper["note"] + "})"
 
             self.html_pub += ("<li>"+line+"</li>")
             self.tex_journal += ("\\item "+line2+"\n")
@@ -153,14 +159,18 @@ class MakeHTML:
             line2 += ", \\textit{" + paper["booktitle2"] + "}"
             if "pages" in paper:
                 line += ", pp. " + paper["pages"]
+                line2 += ", pp. " + paper["pages"]
             if "year" in paper:
                 line += ", " + paper["year"]
+                line2 += ", " + paper["year"]
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
+                    line2 += ", \\textbf{\\textcolor{red}{"+award+"}}"
                     self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i> </li>')
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
+                line2 += ", (\\textbf{" + paper["note"] + "})"
 
             self.html_pub += ("<li>"+line+"</li>")
             self.tex_proceedings += ("\\item "+line2+"\n")
