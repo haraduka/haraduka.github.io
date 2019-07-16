@@ -75,14 +75,14 @@ class MakeHTML:
                     continue
 
     def make_pub(self):
-        out = open("publication.html", "w")
+        self.html_pub = ""
 
-        aout = open("award.html", "w")
-        aout.write('<ol>')
+        self.html_award = ""
+        self.html_award += ('<ol>')
 
         papers = self.papers["journal_papers"]
-        out.write('<h3> Journal Papers </h3>')
-        out.write('<ol>')
+        self.html_pub += ('<h3> Journal Papers </h3>')
+        self.html_pub += ('<ol>')
         for paper in papers:
             author = paper["author"].split(", ")
             for i, a in enumerate(author):
@@ -104,17 +104,16 @@ class MakeHTML:
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
-                    aout.write("<li>" + author_joined + "<br>" + award +
-                               ", <i>" + paper["booktitle"] + '</i> </li>')
+                    self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i> </li>')
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
 
-            out.write("<li>"+line+"</li>")
-        out.write('</ol>')
+            self.html_pub += ("<li>"+line+"</li>")
+        self.html_pub += ('</ol>')
 
         papers = self.papers["reviewed_iconference"]
-        out.write('<h3> International Conference Proceedings (Peer Reviewed) </h3>')
-        out.write('<ol>')
+        self.html_pub += ('<h3> International Conference Proceedings (Peer Reviewed) </h3>')
+        self.html_pub += ('<ol>')
         for paper in papers:
             author = paper["author"].split(", ")
             for i, a in enumerate(author):
@@ -132,17 +131,16 @@ class MakeHTML:
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
-                    aout.write("<li>" + author_joined + "<br>" + award +
-                               ", <i>" + paper["booktitle"] + '</i> </li>')
+                    self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i> </li>')
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
 
-            out.write("<li>"+line+"</li>")
-        out.write('</ol>')
+            self.html_pub += ("<li>"+line+"</li>")
+        self.html_pub += ('</ol>')
 
         papers = self.papers["reviewed_dconference"]
-        out.write('<h3> Domestic Conference Proceedings (Peer Reviewed) </h3>')
-        out.write('<ol>')
+        self.html_pub += ('<h3> Domestic Conference Proceedings (Peer Reviewed) </h3>')
+        self.html_pub += ('<ol>')
         for paper in papers:
             author = paper["author"].split(", ")
             for i, a in enumerate(author):
@@ -160,17 +158,16 @@ class MakeHTML:
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
-                    aout.write("<li>" + author_joined + "<br>" + award +
-                               ", <i>" + paper["booktitle"] + '</i> </li>')
+                    self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i> </li>')
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
 
-            out.write("<li>"+line+"</li>")
-        out.write('</ol>')
+            self.html_pub += ("<li>"+line+"</li>")
+        self.html_pub += ('</ol>')
 
         papers = self.papers["non_dconference"]
-        out.write('<h3> Domestic Conference Proceedings (No Reviewed) </h3>')
-        out.write('<ol>')
+        self.html_pub += ('<h3> Domestic Conference Proceedings (No Reviewed) </h3>')
+        self.html_pub += ('<ol>')
         for paper in papers:
             author = paper["author"].split(", ")
             for i, a in enumerate(author):
@@ -188,30 +185,25 @@ class MakeHTML:
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
-                    aout.write("<li>" + author_joined + "<br>" + award +
-                               ", <i>" + paper["booktitle"] + '</i> </li>')
+                    self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i> </li>')
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
 
-            out.write("<li>"+line+"</li>")
-        out.write('</ol>')
+            self.html_pub += ("<li>"+line+"</li>")
+        self.html_pub += ('</ol>')
 
-        aout.write('</ol>')
+        self.html_award += ('</ol>')
 
     def integrate_html(self, base_filename, out_filename):
         base = open(base_filename, "r")
-        pub = open("publication.html", "r")
-        award = open("award.html", "r")
         out = open(out_filename, "w")
         lines = []
         lines.append("<!-- This file is automatically generated. Do not modify -->\n")
         for line in base:
             if "publication_replace_by_python" in line:
-                for publine in pub:
-                    lines.append(publine)
+                lines.append(self.html_pub)
             if "award_replace_by_python" in line:
-                for awardline in award:
-                    lines.append(awardline)
+                lines.append(self.html_award)
             lines.append(line)
         out.writelines(lines)
 
@@ -223,13 +215,18 @@ def main():
                         help='bibtex file')
     parser.add_argument('--base', '-b', type=str, default="base.html",
                         help='base html file')
-    parser.add_argument('--out', '-o', type=str, default="publication.html",
+    parser.add_argument('--cvbase', '-cb', type=str, default="cv/base.tex",
+                        help='base cv tex file')
+    parser.add_argument('--out', '-o', type=str, default="index.html",
                         help='output html file')
+    parser.add_argument('--cvout', '-co', type=str, default="cv/main.tex",
+                        help='output cv tex file')
     args = parser.parse_args()
     makeHTML = MakeHTML(args.file)
     makeHTML.parse_bib()
     makeHTML.make_pub()
     makeHTML.integrate_html(args.base, args.out)
+    # makeHTML.integrate_tex(args.cvbase, args.cvout)
 
 
 if __name__ == '__main__':
