@@ -45,7 +45,6 @@ class MakeHTML:
                 name = line.split("=")[0]
                 content = line.split("=")[1].replace("{", "").replace("}", "").replace("\n", "")
                 content = content[:-1] if content[-1] == ',' else content
-                print(content)
                 if "author" in name:
                     self.current["author"] = content.replace(" and", ",")
                     continue
