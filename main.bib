@@ -30,7 +30,7 @@
 @string{RSJ08E = "The 26th Annual Conference on Robotics Society of Japan"}
 @string{RSJ07E = "The 25th Annual Conference on Robotics Society of Japan"}
 
-
+@string{ROBOMECH21J = "日本機械学会ロボティクス・メカトロニクス講演会'21 講演論文集"}
 @string{ROBOMECH20J = "日本機械学会ロボティクス・メカトロニクス講演会'20 講演論文集"}
 @string{ROBOMECH19J = "日本機械学会ロボティクス・メカトロニクス講演会'19 講演論文集"}
 @string{ROBOMECH18J = "日本機械学会ロボティクス・メカトロニクス講演会'18 講演論文集"}
@@ -46,7 +46,6 @@
 @string{ROBOMECH18E = "2018 JSME Conference on Robotics and Mechatronics"}
 @string{ROBOMECH18E = "2017 JSME Conference on Robotics and Mechatronics"}
 @string{ROBOMECH07E = "2007 JSME Conference on Robotics and Mechatronics"}
-
 
 @string{ROBOSYM18J = "第23回ロボティクスシンポジア予稿集"}
 @string{ROBOSYM18E = "Proceedings of The 23rd Robotics Symposia"}
@@ -89,6 +88,7 @@
 @string{ICRA2001 = "Proceedings of the 2001 IEEE International Conference on Robotics and Automation"}
 @string{ICRA1998 = "Proceedings of the 1998 IEEE International Conference on Robotics and Automation"}
 
+@string{HUMANOIDS2021 = "Proceedings of the 2021 IEEE-RAS International Conference on Humanoid Robots"}
 @string{HUMANOIDS2019 = "Proceedings of the 2019 IEEE-RAS International Conference on Humanoid Robots"}
 @string{HUMANOIDS2018 = "Proceedings of the 2018 IEEE-RAS International Conference on Humanoid Robots"}
 @string{HUMANOIDS2017 = "Proceedings of the 2017 IEEE-RAS International Conference on Humanoid Robots"}
@@ -130,6 +130,12 @@
 
 
 % journal_papers
+@article{kawaharazuka2021imitation,
+  author={K. Kawaharazuka and Y. Kawamura and K. Okada and M. Inaba},
+  title={{Imitation Learning with Additional Constraints on Motion Style using Parametric Bias (to appear)}},
+  journal=RAL,
+  year=2021,
+}
 @article{kawaharazuka2021grouping,
   author={K. Kawaharazuka and M. Nishiura and Y. Koga and Y. Omura and Y. Toshimitsu and Y. Asano and K. Okada and K. Kawasaki and M. Inaba},
   title={{Automatic Grouping of Redundant Sensors and Actuators Using Functional and Spatial Connections: Application to Muscle Grouping for Musculoskeletal Humanoids}},
@@ -222,6 +228,24 @@
 }
 
 % reviewed_iconference
+@inproceedings{kawaharazuka2021danger,
+  author={K. Kawaharazuka and N. Hiraoka and Y. Koga and M. Nishiura and Y. Omura and Y. Asano and K. Okada and K. Kawasaki and M. Inaba},
+  title={{Online Learning of Danger Avoidance for Complex Structures of Musculoskeletal Humanoids and Its Applications (to appear)}},
+  booktitle=HUMANOIDS2021,
+  year=2021,
+}
+@inproceedings{kawaharazuka2021demonstration,
+  author={K. Kawaharazuka and Y. Koga and M. Nishiura and Y. Omura and Y. Asano and K. Okada and K. Kawasaki and M. Inaba},
+  title={{Motion Modification Method of Musculoskeletal Humanoids by Human Teaching Using Muscle-Based Compensation Control (to appear)}},
+  booktitle=HUMANOIDS2021,
+  year=2021,
+}
+@inproceedings{onitsuka2021musashiolegs,
+  author={M. Onitsuka and M. Nishiura and K. Kawaharazuka and K. Tsuzuki and Y. Toshimitsu and Y. Omura and Y. Asano and K. Okada and K. Kawasaki and M. Inaba},
+  title={{Development of Musculoskeletal Legs with Planar Interskeletal Structures to Realize Human Comparable Moving Function (to appear)}},
+  booktitle=HUMANOIDS2021,
+  year=2021,
+}
 @inproceedings{toshimitsu2021operational,
   author={Y. Toshimitsu and K. Kawaharazuka and M. Nishiura and Y. Koga and Y. Omura and Y. Asano and K. Okada and K. Kawasaki and M. Inaba},
   title={{Biomimetic Operational Space Control for Musculoskeletal Humanoid Optimizing across Muscle Activation and Joint Nullspace}},
@@ -440,6 +464,55 @@
 }
 
 % non_dconference
+@inproceedings{kawaharazuka2021grouping-ja,
+  author={河原塚 健人 and 西浦 学 and 大村 柚介 and 古賀 悠矢 and 利光 泰徳 and 浅野 悠紀 and 岡田 慧 and 川崎 宏治 and 稲葉 雅幸},
+  title={{機能的・空間的接続を利用した冗長なセンサ・アクチュエータの自動分割: 筋骨格ヒューマノイドの筋分割への適用}},
+  booktitle=ROBOMECH21J,
+  pages={1A1-D06},
+  year=2021,
+}
+@inproceedings{kawaharazuka2021redundancy-ja,
+  author={河原塚 健人 and 利光 泰徳 and 西浦 学 and 古賀 悠矢 and 大村 柚介 and 浅野 悠紀 and 岡田 慧 and 川崎 宏治 and 稲葉 雅幸},
+  title={{筋破断を補償する冗長性を最大限活用した筋骨格ヒューマノイドの設計最適化}},
+  booktitle=ROBOMECH21J,
+  pages={2P3-H04},
+  year=2021,
+}
+@inproceedings{koga2021scapula-ja,
+  author={古賀 悠矢 and 河原塚 健人 and 利光 泰徳 and 西浦 学 and 大村 柚介 and 浅野 悠紀 and 岡田 慧 and 川崎 宏治 and 稲葉 雅幸},
+  title={{筋骨格ヒューマノイドの肩複合体における冗長性を活かした姿勢生成と物体操作を目的とした自己身体像の実機学習}},
+  booktitle=ROBOMECH21J,
+  pages={1A1-D07},
+  year=2021,
+}
+@inproceedings{wakabayashi2021grasping-ja,
+  author={若林 隼平 and 北川 晋吾 and 河原塚 健人 and 室岡 貴之 and 岡田 慧 and 稲葉 雅幸},
+  title={{視覚情報に基づく食器類の把持の冗長性を考慮した自己教師あり把持学習}},
+  booktitle=ROBOMECH21J,
+  pages={1A1-F09},
+  year=2021,
+}
+@inproceedings{omura2021ear-ja,
+  author={大村 柚介 and 河原塚 健人 and 永松 悠矢 and 古賀 悠矢 and 西浦 学 and 利光 泰徳 and 浅野 悠紀 and 岡田 慧 and 川崎 宏治 and 稲葉 雅幸},
+  title={{筋骨格ヒューマノイドによる人体模倣両耳聴を用いた視野外環境認識行動}},
+  booktitle=ROBOMECH21J,
+  pages={2A1-I15},
+  year=2021,
+}
+@inproceedings{nishiura2021reinforcement-ja,
+  author={西浦 学 and 河原塚 健人 and 利光 泰徳 and 浅野 悠紀 and 岡田 慧 and 川崎 宏治 and 稲葉 雅幸},
+  title={{接触状態を含む身体モデルと強化学習を用いた筋骨格ヒューマノイドによる環境接触行動}},
+  booktitle=ROBOMECH21J,
+  pages={2A1-I16},
+  year=2021,
+}
+@inproceedings{toshimitsu2021operational-ja,
+  author={利光 泰徳 and 河原塚 健人 and 西浦 学 and 古賀 悠矢 and 大村 柚介 and 浅野 悠紀 and 岡田 慧 and 川崎 宏治 and 稲葉 雅幸},
+  title={{筋骨格ヒューマノイド腕部の筋・関節冗長性を活用したタスク空間における制御}},
+  booktitle=ROBOMECH21J,
+  pages={2P2-G15},
+  year=2021,
+}
 @inproceedings{kawaharazuka2020tool-ja,
   author={河原塚 健人 and 小川 徹 and 鍋嶌 厚太},
   title={{ニューラルネットワークの誤差逆伝播による道具形状最適化}},
@@ -462,7 +535,7 @@
   pages={2D2-08},
   year=2020,
 }
-@inproceedings{oomura2020ear-ja,
+@inproceedings{omura2020ear-ja,
   author={大村 柚介 and 河原塚 健人 and 永松 祐弥 and 古賀 悠矢 and 西浦 学 and 浅野 悠紀 and 岡田 慧 and 川崎 宏治 and 稲葉 雅幸},
   title={{人体外耳機構を模したヒューマノイドの両耳間スペクトル差学習に基づく空間音源方向推定システム}},
   booktitle=SI20J,
@@ -490,7 +563,7 @@
   pages={1P1-G05},
   year=2020,
 }
-@inproceedings{oomura2020ear-ja,
+@inproceedings{omura2020ear-ja,
   author={大村 柚介 and 河原塚 健人 and 永松 祐弥 and 都築 敬 and 鬼塚 盛宇 and 古賀 悠矢 and 西浦 学 and 浅野 悠紀 and 岡田 慧 and 川崎 宏治 and 稲葉 雅幸},
   title={{外耳構造を有し音響処理を行う人体模倣ヒューマノイドの耳機構の設計開発}},
   booktitle=ROBOMECH20J,
@@ -562,7 +635,7 @@
   pages={1A1-M10},
   year=2019,
 }
-@inproceedings{oomura2019drum-ja,
+@inproceedings{omura2019drum-ja,
   author={大村 柚介 and 河原塚 健人 and 牧野 将吾 and 鬼塚 盛宇 and 新城 光樹 and 都築 敬 and 古賀 悠矢 and 浅野 悠紀 and 岡田 慧 and 稲葉 雅幸},
   title={{筋骨格ヒューマノイドにおける時系列聴覚情報を用いた打音認識に基づく動作獲得}},
   booktitle=ROBOMECH19J,
