@@ -17,7 +17,8 @@ class MakeHTML:
         self.papers = {"journal_papers": [],
                        "reviewed_iconference": [],
                        "reviewed_dconference": [],
-                       "non_dconference": []}
+                       "non_dconference": [],
+                       "invited": []}
 
     def parse_bib(self):
         for line in self.bib:
@@ -74,6 +75,9 @@ class MakeHTML:
                     continue
                 if "note" in name:
                     self.current["note"] = content
+                    continue
+                if "date" in name:
+                    self.current["date"] = content
                     continue
 
     def make_pub(self):
@@ -228,6 +232,27 @@ class MakeHTML:
                     self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i> </li>')
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
+
+            self.html_pub += ("<li>"+line+"</li>")
+        self.html_pub += ('</ol>')
+
+        papers = self.papers["invited"]
+        self.html_pub += ('<h3> Invited Lecture </h3>')
+        self.html_pub += ('<ol>')
+        for paper in papers:
+            author = paper["author"].split(", ")
+            for i, a in enumerate(author):
+                if self.ja_name in a:
+                    author[i] = "<b><u>"+a+"</u></b>"
+                    break
+            author_joined = ", ".join(author)
+            line = author_joined
+            line += '<br>' + paper["title"]
+            if "note" in paper:
+                line += ', ' + paper["note"]
+            line += ', in <i>' + paper["booktitle"] + '</i>'
+            if "date" in paper:
+                line += ", " + paper["date"]
 
             self.html_pub += ("<li>"+line+"</li>")
         self.html_pub += ('</ol>')
