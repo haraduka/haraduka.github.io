@@ -79,6 +79,9 @@ class MakeHTML:
                 if "date" in name:
                     self.current["date"] = content
                     continue
+                if "doi" in name:
+                    self.current["doi"] = content
+                    continue
 
     def make_pub(self):
         self.html_pub = ""
@@ -133,6 +136,8 @@ class MakeHTML:
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
                 line2 += ", (\\textbf{" + paper["note"] + "})"
+            if "doi" in paper:
+                line += ", <a href=https://doi.org/" + paper["doi"] + " target='_blank'>Paper Link</a>"
 
             self.html_pub += ("<li>"+line+"</li>")
             self.tex_journal += ("\\item "+line2+"\n")
@@ -176,6 +181,8 @@ class MakeHTML:
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
                 line2 += ", (\\textbf{" + paper["note"] + "})"
+            if "doi" in paper:
+                line += ", <a href=https://doi.org/" + paper["doi"] + " target='_blank'>Paper Link</a>"
 
             self.html_pub += ("<li>"+line+"</li>")
             self.tex_proceedings += ("\\item "+line2+"\n")
@@ -232,6 +239,8 @@ class MakeHTML:
                     self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i> </li>')
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
+            if "doi" in paper:
+                line += ", <a href=https://doi.org/" + paper["doi"] + " target='_blank'>Paper Link</a>"
 
             self.html_pub += ("<li>"+line+"</li>")
         self.html_pub += ('</ol>')
