@@ -132,7 +132,10 @@ class MakeHTML:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
                     line2 += ", \\textbf{\\textcolor{red}{"+award+"}}"
-                    self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i> </li>')
+                    self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                    if "date" in paper:
+                        self.html_award += (", " + paper["date"])
+                    self.html_award += '</li>'
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
                 line2 += ", (\\textbf{" + paper["note"] + "})"
@@ -177,7 +180,10 @@ class MakeHTML:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
                     line2 += ", \\textbf{\\textcolor{red}{"+award+"}}"
-                    self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i> </li>')
+                    self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                    if "date" in paper:
+                        self.html_award += (", " + paper["date"])
+                    self.html_award += '</li>'
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
                 line2 += ", (\\textbf{" + paper["note"] + "})"
@@ -209,7 +215,10 @@ class MakeHTML:
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
-                    self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i> </li>')
+                    self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                    if "date" in paper:
+                        self.html_award += (", " + paper["date"])
+                    self.html_award += '</li>'
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
 
@@ -236,7 +245,10 @@ class MakeHTML:
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
-                    self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i> </li>')
+                    self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                    if "date" in paper:
+                        self.html_award += (", " + paper["date"])
+                    self.html_award += '</li>'
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
             if "doi" in paper:
