@@ -90,6 +90,7 @@ class MakeHTML:
     def make_pub(self):
         self.html_pub = ""
 
+        self.html_award_list = []
         self.html_award = ""
         self.html_award += ('<ol>')
 
@@ -136,10 +137,11 @@ class MakeHTML:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
                     line2 += ", \\textbf{\\textcolor{red}{"+award+"}}"
-                    self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                    html_award_tmp = ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
                     if "date" in paper:
-                        self.html_award += (", " + paper["date"])
-                    self.html_award += '</li>'
+                        html_award_tmp += (", " + paper["date"])
+                    html_award_tmp += '</li>'
+                    self.html_award_list.append((paper["year"], html_award_tmp))
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
                 line2 += ", (\\textbf{" + paper["note"] + "})"
@@ -184,10 +186,11 @@ class MakeHTML:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
                     line2 += ", \\textbf{\\textcolor{red}{"+award+"}}"
-                    self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                    html_award_tmp = ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
                     if "date" in paper:
-                        self.html_award += (", " + paper["date"])
-                    self.html_award += '</li>'
+                        html_award_tmp += (", " + paper["date"])
+                    html_award_tmp += '</li>'
+                    self.html_award_list.append((paper["year"], html_award_tmp))
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
                 line2 += ", (\\textbf{" + paper["note"] + "})"
@@ -219,10 +222,11 @@ class MakeHTML:
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
-                    self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                    html_award_tmp = ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
                     if "date" in paper:
-                        self.html_award += (", " + paper["date"])
-                    self.html_award += '</li>'
+                        html_award_tmp += (", " + paper["date"])
+                    html_award_tmp += '</li>'
+                    self.html_award_list.append((paper["year"], html_award_tmp))
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
 
@@ -249,10 +253,11 @@ class MakeHTML:
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
-                    self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                    html_award_tmp = ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
                     if "date" in paper:
-                        self.html_award += (", " + paper["date"])
-                    self.html_award += '</li>'
+                        html_award_tmp += (", " + paper["date"])
+                    html_award_tmp += '</li>'
+                    self.html_award_list.append((paper["year"], html_award_tmp))
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
             if "doi" in paper:
@@ -279,16 +284,20 @@ class MakeHTML:
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
-                    self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                    html_award_tmp = ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
                     if "date" in paper:
-                        self.html_award += (", " + paper["date"])
-                    self.html_award += '</li>'
+                        html_award_tmp += (", " + paper["date"])
+                    html_award_tmp += '</li>'
+                    self.html_award_list.append((paper["year"], html_award_tmp))
             if "date" in paper:
                 line += ", " + paper["date"]
 
             self.html_pub += ("<li>"+line+"</li>")
         self.html_pub += ('</ol>')
 
+        self.html_award_list.sort(reverse=True)
+        for html_award_tmp in self.html_award_list:
+            self.html_award += html_award_tmp[1]
         self.html_award += ('</ol>')
 
     def integrate_html(self, base_filename, out_filename):
