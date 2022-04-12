@@ -53,8 +53,12 @@ class MakeHTML:
                     self.current["title"] = content
                     continue
                 if ("journal" in name) or ("booktitle" in name):
-                    self.current["booktitle"] = self.conference_name[content.upper()] + " (<b>" + content.upper() + "</b>)"
-                    self.current["booktitle2"] = self.conference_name[content.upper()] + " (\\textit{\\textbf{" + content.upper() + "}})"
+                    if content.upper() in self.conference_name:
+                        self.current["booktitle"] = self.conference_name[content.upper()] + " (<b>" + content.upper() + "</b>)"
+                        self.current["booktitle2"] = self.conference_name[content.upper()] + " (\\textit{\\textbf{" + content.upper() + "}})"
+                    else:
+                        self.current["booktitle"] = content
+                        self.current["booktitle2"] = content
                     continue
                 if "volume" in name:
                     self.current["volume"] = content
@@ -258,7 +262,7 @@ class MakeHTML:
         self.html_pub += ('</ol>')
 
         papers = self.papers["invited"]
-        self.html_pub += ('<h3> Invited Lecture </h3>')
+        self.html_pub += ('<h3> Invited Lecture, Commentary Articles, etc.</h3>')
         self.html_pub += ('<ol>')
         for paper in papers:
             author = paper["author"].split(", ")
@@ -272,6 +276,13 @@ class MakeHTML:
             if "note" in paper:
                 line += ', ' + paper["note"]
             line += ', in <i>' + paper["booktitle"] + '</i>'
+            if "award" in paper:
+                for award in paper["award"]:
+                    line += ", <b><font color='red'>"+award+"</font></b>"
+                    self.html_award += ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                    if "date" in paper:
+                        self.html_award += (", " + paper["date"])
+                    self.html_award += '</li>'
             if "date" in paper:
                 line += ", " + paper["date"]
 
