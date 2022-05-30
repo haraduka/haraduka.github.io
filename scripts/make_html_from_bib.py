@@ -14,7 +14,8 @@ class MakeHTML:
         self.state = None
         self.current = {}
         # keyはuniqであり, かつ包含関係があってはならない. aとabとかはダメ
-        self.papers = {"journal_papers": [],
+        self.papers = {"ijournal_papers": [],
+                       "djournal_papers": [],
                        "reviewed_iconference": [],
                        "reviewed_dconference": [],
                        "non_dconference": [],
@@ -98,8 +99,8 @@ class MakeHTML:
 
         self.tex_proceedings = ""
 
-        papers = self.papers["journal_papers"]
-        self.html_pub += ('<h3> Journal Papers </h3>')
+        papers = self.papers["ijournal_papers"]
+        self.html_pub += ('<h3> International Journal Papers </h3>')
         self.html_pub += ('<ol>')
         self.tex_journal += '\\begin{enumerate}\n'
         for paper in papers:
@@ -152,6 +153,43 @@ class MakeHTML:
             self.tex_journal += ("\\item "+line2+"\n")
         self.html_pub += ('</ol>')
         self.tex_journal += '\\end{enumerate}\n'
+
+        papers = self.papers["djournal_papers"]
+        self.html_pub += ('<h3> Domestic Journal Papers </h3>')
+        self.html_pub += ('<ol>')
+        for paper in papers:
+            author = paper["author"].split(", ")
+            for i, a in enumerate(author):
+                if self.ja_name in a:
+                    author[i] = "<b><u>"+a+"</u></b>"
+                    break
+            author_joined = ", ".join(author)
+            line = author_joined
+            line += '<br>' + paper["title"]
+            line += ', <i>' + paper["booktitle"] + '</i>'
+            if "volume" in paper:
+                line += ", vol. " + paper["volume"]
+            if "number" in paper:
+                line += ", no. " + paper["number"]
+            if "pages" in paper:
+                line += ", pp. " + paper["pages"]
+            if "year" in paper:
+                line += ", " + paper["year"]
+            if "award" in paper:
+                for award in paper["award"]:
+                    line += ", <b><font color='red'>"+award+"</font></b>"
+                    html_award_tmp = ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                    if "date" in paper:
+                        html_award_tmp += (", " + paper["date"])
+                    html_award_tmp += '</li>'
+                    self.html_award_list.append((paper["year"], html_award_tmp))
+            if "note" in paper:
+                line += ", (<b>" + paper["note"] + "</b>)"
+            if "doi" in paper:
+                line += ", <a href=https://doi.org/" + paper["doi"] + " target='_blank'>Paper Link</a>"
+
+            self.html_pub += ("<li>"+line+"</li>")
+        self.html_pub += ('</ol>')
 
         papers = self.papers["reviewed_iconference"]
         self.html_pub += ('<h3> International Conference Proceedings (Peer Reviewed) </h3>')
