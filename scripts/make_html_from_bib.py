@@ -160,7 +160,7 @@ class MakeHTML:
         for paper in papers:
             author = paper["author"].split(", ")
             for i, a in enumerate(author):
-                if self.ja_name in a:
+                if (self.ja_name in a) or (self.en_name in a):
                     author[i] = "<b><u>"+a+"</u></b>"
                     break
             author_joined = ", ".join(author)
@@ -246,7 +246,7 @@ class MakeHTML:
         for paper in papers:
             author = paper["author"].split(", ")
             for i, a in enumerate(author):
-                if self.ja_name in a:
+                if (self.ja_name in a) or (self.en_name in a):
                     author[i] = "<b><u>"+a+"</u></b>"
                     break
             author_joined = ", ".join(author)
@@ -277,7 +277,7 @@ class MakeHTML:
         for paper in papers:
             author = paper["author"].split(", ")
             for i, a in enumerate(author):
-                if self.ja_name in a:
+                if (self.ja_name in a) or (self.en_name in a):
                     author[i] = "<b><u>"+a+"</u></b>"
                     break
             author_joined = ", ".join(author)
@@ -310,7 +310,7 @@ class MakeHTML:
         for paper in papers:
             author = paper["author"].split(", ")
             for i, a in enumerate(author):
-                if self.ja_name in a:
+                if (self.ja_name in a) or (self.en_name in a):
                     author[i] = "<b><u>"+a+"</u></b>"
                     break
             author_joined = ", ".join(author)
