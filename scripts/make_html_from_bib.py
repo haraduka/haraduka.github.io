@@ -279,6 +279,8 @@ class MakeHTML:
                         self.html_award_list.append((paper["year"], html_award_tmp))
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
+            if "doi" in paper:
+                line += ", <a href=https://doi.org/" + paper["doi"] + " target='_blank'>Paper Link</a>"
 
             self.html_pub += ("<li>"+line+"</li>")
         self.html_pub += ('</ol>')

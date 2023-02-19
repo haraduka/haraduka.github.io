@@ -82,6 +82,7 @@
 @string{IROS2000 = "Proceedings of the 2000 IEEE/RSJ International Conference on Intelligent Robots and Systems"}
 @string{IROS1996 = "Proceedings of the 1996 IEEE/RSJ International Conference on Intelligent Robots and Systems"}
 
+@string{ICRA2023 = "Proceedings of the 2023 IEEE International Conference on Robotics and Automation"}
 @string{ICRA2022 = "Proceedings of the 2022 IEEE International Conference on Robotics and Automation"}
 @string{ICRA2021 = "Proceedings of the 2021 IEEE International Conference on Robotics and Automation"}
 @string{ICRA2020 = "Proceedings of the 2020 IEEE International Conference on Robotics and Automation"}
@@ -113,6 +114,8 @@
 @string{HUMANOIDS2007 = "Proceedings of the 2007 IEEE-RAS International Conference on Humanoid Robots"}
 @string{HUMANOIDS2006 = "Proceedings of the 2006 IEEE-RAS International Conference on Humanoid Robots"}
 
+@string{SII2023 = "Proceedings of the 2023 IEEE/SICE International Symposium on System Integration"}
+
 @string{ROBOSOFT2021 = "Proceedings of the 2021 IEEE International Conference on Soft Robotics"}
 
 @string{ROBIO2011 = "Proceedings of the 2011 IEEE International Conference on Robotics and Biomimetics"}
@@ -142,6 +145,13 @@
 
 
 % ijournal_papers
+@article{kawaharazuka2023dpmpb,
+  author={K. Kawaharazuka and K. Okada and M. Inaba},
+  title={{Deep Predictive Model Learning with Parametric Bias: Handling Modeling Difficulties and Temporal Model Changes (in press)}},
+  journal=RAM,
+  year=2023,
+  note={presented at ICRA2023},
+}
 @article{kawaharazuka2022vservoing,
   author={K. Kawaharazuka and N. Kanazawa and K. Okada and M. Inaba},
   title={{Self-Supervised Learning of Visual Servoing for Low-Rigidity Robots Considering Temporal Body Changes}},
@@ -328,6 +338,17 @@
 }
 
 % djournal_papers
+@article{commentary2022dpmpb-ja,
+  author={河原塚 健人},
+  title={パラメトリックバイアスを含む深層予測モデル学習},
+  note={解説記事},
+  journal=JRSJ,
+  volume={40},
+  number={9},
+  pages={784--789},
+  year=2022,
+  doi={10.7210/jrsj.40.784},
+}
 @article{asano2022driving-ja,
   author={浅野 悠紀 and 河原塚 健人 and 永松 祐弥 and 古賀 悠矢 and 大村 柚介 and 真壁 佑 and 藤井 綺香 and 中島 慎介 and 新城 光樹 and 西浦 学 and 利光 泰徳 and 冨田 幹 and 岡田 慧 and 清水 智哉 and 近藤 淳 and 川崎 宏治 and 豊島 浩二 and 稲葉 雅幸},
   title={{ロボット技術の社会実装に向けた腱駆動ヒューマノイドによる自動車運転の実証実験と義足開発への展開 --腱駆動ヒューマノイドによる自動車運転を通じた産官学の社会連携活動--}},
@@ -340,6 +361,19 @@
 }
 
 % reviewed_iconference
+@inproceedings{kawaharazuka2023ofaga,
+  author={K. Kawaharazuka and Y. Obinata and N. Kanazawa and K. Okada and M. Inaba},
+  title={{VQA-based Robotic State Recognition Optimized with Genetic Algorithm (in press)}},
+  booktitle=ICRA2023,
+  year=2023,
+}
+@inproceedings{sato2023deflection,
+  author={H. Sato and K. Kawaharazuka and T. Makabe and K. Okada and M. Inaba},
+  title={{Online Estimation of Self-Body Deflection with Various Sensor Data Based on Directional Statistics (in press)}},
+  booktitle=SII2023,
+  year=2023,
+  doi={10.1109/SII55687.2023.10039450},
+}
 @inproceedings{kawaharazuka2022musashiw,
   author={K. Kawaharazuka and A. Miki and M. Bando and T. Suzuki and Y. Ribayashi and Y. Toshimitsu and Y. Nagamatsu and K. Okada and M. Inaba},
   title={{Hardware Design and Learning-Based Software Architecture of Musculoskeletal Wheeled Robot Musashi-W for Real-World Applications}},
@@ -347,7 +381,8 @@
   pages={413--419},
   year=2022,
   award={Best Interactive Paper Award Finalist},
-  date={2022.11.30}
+  date={2022.11.30},
+  doi={10.1109/Humanoids53995.2022.10000123},
 }
 @inproceedings{kawaharazuka2022ramielrl,
   author={K. Kawaharazuka and T. Suzuki and K. Okada and M. Inaba},
@@ -355,6 +390,7 @@
   booktitle=HUMANOIDS2022,
   pages={759--764},
   year=2022,
+  doi={10.1109/Humanoids53995.2022.10000182},
 }
 @inproceedings{kawaharazuka2022wiping,
   author={K. Kawaharazuka and N. Kanazawa and K. Okada and M. Inaba},
@@ -362,6 +398,7 @@
   booktitle=HUMANOIDS2022,
   pages={919--924},
   year=2022,
+  doi={10.1109/Humanoids53995.2022.10000172},
 }
 @inproceedings{ribayashi2022edge,
   author={Y. Ribayashi and K. Kawaharazuka and Y. Toshimitsu and D. Kusuyama and A. Miki and K. Shinjo and M. Bando and T. Suzuki and Y. Kojio and K. Okada and M. Inaba},
@@ -370,6 +407,7 @@
   pages={314--321},
   year=2022,
   note={Top 7 Best Oral Paper Presentation},
+  doi={10.1109/Humanoids53995.2022.10000127},
 }
 @inproceedings{miyama2022hand,
   author={K. Miyama and S. Hasegawa and K. Kawaharazuka and N. Yamaguchi and K. Okada and M. Inaba},
@@ -377,6 +415,7 @@
   booktitle=HUMANOIDS2022,
   pages={780--785},
   year=2022,
+  doi={10.1109/Humanoids53995.2022.10000181},
 }
 @inproceedings{kawaharazuka2022sitting,
   author={K. Kawaharazuka and K. Okada and M. Inaba},
@@ -384,6 +423,7 @@
   booktitle=IROS2022,
   pages={5774--5780},
   year=2022,
+  doi={10.1109/IROS47612.2022.9982103},
 }
 @inproceedings{kawaharazuka2022feedback,
   author={K. Kawaharazuka and K. Okada and M. Inaba},
@@ -391,6 +431,7 @@
   booktitle=IROS2022,
   pages={5767--5773},
   year=2022,
+  doi={10.1109/IROS47612.2022.9981052},
 }
 @inproceedings{kawaharazuka2022balance,
   author={K. Kawaharazuka and Y. Ribayashi and A. Miki and Y. Toshimitsu and T. Suzuki and K. Okada and M. Inaba},
@@ -398,6 +439,7 @@
   booktitle=IROS2022,
   pages={5809--5816},
   year=2022,
+  doi={10.1109/IROS47612.2022.9981051},
 }
 @inproceedings{toshimitsu2022jacobian,
   author={Y. Toshimitsu and K. Kawaharazuka and A. Miki and K. Okada and M. Inaba},
@@ -405,6 +447,7 @@
   booktitle=IROS2022,
   pages={2219--2226},
   year=2022,
+  doi={10.1109/IROS47612.2022.9981868},
 }
 @inproceedings{ribayashi2022imitation,
   author={Y. Ribayashi and K. Kawaharazuka and Y. Toshimitsu and D. Kusuyama and A. Miki and K. Shinjo and M. Bando and T. Suzuki and Y. Kojio and K. Okada and M. Inaba},
@@ -412,6 +455,7 @@
   booktitle=IROS2022,
   pages={4243--4249},
   year=2022,
+  doi={10.1109/IROS47612.2022.9981673},
 }
 @inproceedings{temma2022ramiel,
   author={T. Suzuki and Y. Toshimitsu and Y. Nagamatsu and K. Kawaharazuka and A. Miki and Y. Ribayashi and M. Bando and K. Kojima and Y. Kakiuchi and K. Okada and M. Inaba},
@@ -421,6 +465,7 @@
   year=2022,
   award={SICE International Young Authors Award (SIYA-IROS2022)},
   date={2022.10.26},
+  doi={10.1109/IROS47612.2022.9981963},
 }
 @inproceedings{kawaharazuka2021fetch,
   author={K. Kawaharazuka and K. Shinjo and Y. Kawamura and K. Okada and M. Inaba},
@@ -1262,17 +1307,6 @@
 }
 
 % invited
-@article{commentary2022dpmpb-ja,
-  author={河原塚 健人},
-  title={パラメトリックバイアスを含む深層予測モデル学習},
-  note={解説記事},
-  journal=JRSJ,
-  volume={40},
-  number={9},
-  pages={784--789},
-  year=2022,
-  doi={10.7210/jrsj.40.784},
-}
 @inproceedings{invited2022moonshot-ja,
   author={河原塚 健人},
   title={{身体図式の自律獲得機能を有する知能ロボットシステムとサイエンス開拓}},
