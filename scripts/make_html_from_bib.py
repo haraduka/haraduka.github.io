@@ -57,9 +57,11 @@ class MakeHTML:
                     if content.upper() in self.conference_name:
                         self.current["booktitle"] = self.conference_name[content.upper()] + " (<b>" + content.upper() + "</b>)"
                         self.current["booktitle2"] = self.conference_name[content.upper()] + " (\\textit{\\textbf{" + content.upper() + "}})"
+                        self.current["booktitle3"] = self.conference_name[content.upper()]
                     else:
                         self.current["booktitle"] = content
                         self.current["booktitle2"] = content
+                        self.current["booktitle3"] = content
                     continue
                 if "volume" in name:
                     self.current["volume"] = content
@@ -98,6 +100,8 @@ class MakeHTML:
         self.tex_journal = ""
 
         self.tex_proceedings = ""
+
+        self.csv_text = ""
 
         papers = self.papers["ijournal_papers"]
         self.html_pub += ('<h3> International Journal Papers </h3>')
@@ -154,6 +158,19 @@ class MakeHTML:
 
             self.html_pub += ("<li>"+line+"</li>")
             self.tex_journal += ("\\item "+line2+"\n")
+
+            csv_one_data = [
+                    paper["doi"] if "doi" in paper else "-",
+                    paper["author"],
+                    paper["title"],
+                    paper["booktitle3"],
+                    paper["volume"] if "volume" in paper else "-",
+                    paper["year"] if "year" in paper else "-",
+                    paper["pages"] if "pages" in paper else "-",
+                    "1", "0", "0"
+            ]
+            csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
+            self.csv_text += ",".join(csv_one_data) + "\n"
         self.html_pub += ('</ol>')
         self.tex_journal += '\\end{enumerate}\n'
 
@@ -195,6 +212,19 @@ class MakeHTML:
                 line += ", <a href=https://doi.org/" + paper["doi"] + " target='_blank'>Paper Link</a>"
 
             self.html_pub += ("<li>"+line+"</li>")
+
+            csv_one_data = [
+                    paper["doi"] if "doi" in paper else "-",
+                    paper["author"],
+                    paper["title"],
+                    paper["booktitle3"],
+                    paper["volume"] if "volume" in paper else "-",
+                    paper["year"] if "year" in paper else "-",
+                    paper["pages"] if "pages" in paper else "-",
+                    "1", "0", "0"
+            ]
+            csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
+            self.csv_text += ",".join(csv_one_data) + "\n"
         self.html_pub += ('</ol>')
 
         papers = self.papers["reviewed_iconference"]
@@ -246,6 +276,17 @@ class MakeHTML:
 
             self.html_pub += ("<li>"+line+"</li>")
             self.tex_proceedings += ("\\item "+line2+"\n")
+
+            csv_one_data = [
+                    paper["author"],
+                    paper["title"],
+                    paper["booktitle3"],
+                    paper["year"] if "year" in paper else "-",
+                    paper["year"] if "year" in paper else "-",
+                    "0", "1"
+            ]
+            csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
+            self.csv_text += ",".join(csv_one_data) + "\n"
         self.html_pub += ('</ol>')
         self.tex_proceedings += '\\end{enumerate}\n'
 
@@ -283,6 +324,17 @@ class MakeHTML:
                 line += ", <a href=https://doi.org/" + paper["doi"] + " target='_blank'>Paper Link</a>"
 
             self.html_pub += ("<li>"+line+"</li>")
+
+            csv_one_data = [
+                    paper["author"],
+                    paper["title"],
+                    paper["booktitle3"],
+                    paper["year"] if "year" in paper else "-",
+                    paper["year"] if "year" in paper else "-",
+                    "0", "0"
+            ]
+            csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
+            self.csv_text += ",".join(csv_one_data) + "\n"
         self.html_pub += ('</ol>')
 
         papers = self.papers["non_dconference"]
@@ -319,6 +371,17 @@ class MakeHTML:
                 line += ", <a href=https://doi.org/" + paper["doi"] + " target='_blank'>Paper Link</a>"
 
             self.html_pub += ("<li>"+line+"</li>")
+
+            csv_one_data = [
+                    paper["author"],
+                    paper["title"],
+                    paper["booktitle3"],
+                    paper["year"] if "year" in paper else "-",
+                    paper["year"] if "year" in paper else "-",
+                    "0", "0"
+            ]
+            csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
+            self.csv_text += ",".join(csv_one_data) + "\n"
         self.html_pub += ('</ol>')
 
         papers = self.papers["invited"]
@@ -348,6 +411,17 @@ class MakeHTML:
                 line += ", " + paper["date"]
 
             self.html_pub += ("<li>"+line+"</li>")
+
+            csv_one_data = [
+                    paper["author"],
+                    paper["title"],
+                    paper["booktitle3"],
+                    paper["year"] if "year" in paper else "-",
+                    paper["year"] if "year" in paper else "-",
+                    "1", "0"
+            ]
+            csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
+            self.csv_text += ",".join(csv_one_data) + "\n"
         self.html_pub += ('</ol>')
 
         self.html_award_list.sort(reverse=True)
@@ -381,6 +455,13 @@ class MakeHTML:
             lines.append(line)
         out.writelines(lines)
 
+    def integrate_csv(self, out_filename):
+        out = open(out_filename, "w", encoding="shift_jis")
+        lines = []
+        lines.append("%This file is automatically generated. Do not modify\n")
+        lines.append(self.csv_text)
+        out.writelines(lines)
+
 
 def main():
     parser = argparse.ArgumentParser(
@@ -395,12 +476,15 @@ def main():
                         help='output html file')
     parser.add_argument('--cvout', '-co', type=str, default="cv/main.tex",
                         help='output cv tex file')
+    parser.add_argument('--csvout', '-csvo', type=str, default="main.csv",
+                        help='output csv tex file')
     args = parser.parse_args()
     makeHTML = MakeHTML(args.file)
     makeHTML.parse_bib()
     makeHTML.make_pub()
     makeHTML.integrate_html(args.base, args.out)
     makeHTML.integrate_tex(args.cvbase, args.cvout)
+    makeHTML.integrate_csv(args.csvout)
 
 
 if __name__ == '__main__':
