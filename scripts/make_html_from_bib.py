@@ -42,7 +42,7 @@ class MakeHTML:
                 self.papers[self.state].append(self.current)
                 self.current = {}
             else:
-                if "@" in line:
+                if "@" in line[0]:
                     continue
                 name = line.split("=")[0]
                 content = line.split("=")[1].replace("{", "").replace("}", "").replace("\n", "")
