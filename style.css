@@ -11,7 +11,7 @@ body{
   width: 850px;
   height: auto;
   padding: 30px;
-  border: 1px solid #00bfff;
+  border: 1px solid #1693f3;
   margin: 30px auto;
 }
 
@@ -28,7 +28,7 @@ body{
   background: #ffffff;
   font-family: sans-serif;
   font-size: 1.6rem;
-  border: 1px solid #00bfff;
+  border: 1px solid #1693f3;
   text-align: text-left;
   margin: 20px auto;
   padding: 10px;
@@ -38,7 +38,7 @@ li {
   margin-bottom: 10px;
 }
 
-a:link { color: #00bfff; }
-a:visited { color: #00bfff; }
-a:hover { color: #00bfff; }
-a:active { color: #00bfff; }
+a:link { color: #1693f3; }
+a:visited { color: #1693f3; }
+a:hover { color: #1693f3; }
+a:active { color: #1693f3; }

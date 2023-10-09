@@ -14,9 +14,11 @@ class MakeHTML:
         self.state = None
         self.current = {}
         # keyはuniqであり, かつ包含関係があってはならない. aとabとかはダメ
-        self.papers = {"ijournal_papers": [],
+        self.papers = {"under_review": [],
+                       "ijournal_papers": [],
                        "djournal_papers": [],
                        "reviewed_iconference": [],
+                       "workshop_abstract": [],
                        "reviewed_dconference": [],
                        "non_dconference": [],
                        "invited": []}
@@ -89,6 +91,21 @@ class MakeHTML:
                 if "doi" in name:
                     self.current["doi"] = content
                     continue
+                if "arxiv" in name:
+                    self.current["arxiv"] = content
+                    continue
+                if "website" in name:
+                    self.current["website"] = content
+                    continue
+                if "slide" in name:
+                    self.current["slide"] = content
+                    continue
+                if "video" in name:
+                    self.current["video"] = content
+                    continue
+                if "howpublished" in name:
+                    self.current["howpublished"] = content
+                    continue
 
     def make_pub(self):
         self.html_pub = ""
@@ -102,6 +119,39 @@ class MakeHTML:
         self.tex_proceedings = ""
 
         self.csv_text = ""
+
+        papers = self.papers["under_review"]
+        self.html_pub += ('<h3> Under Review </h3>')
+        self.html_pub += ('<ol>')
+        for paper in papers:
+            author = paper["author"].split(", ")
+            for i, a in enumerate(author):
+                if self.en_name in a:
+                    author[i] = "<b><u>"+a+"</u></b>"
+                    break
+            author_joined = ", ".join(author)
+            line = author_joined
+            line += '<br>' + paper["title"]
+            if "howpublished" in paper:
+                line += ", " + paper["howpublished"]
+            if "year" in paper:
+                line += ", " + paper["year"]
+            if "note" in paper:
+                line += ", (<b>" + paper["note"] + "</b>)"
+            if ("arxiv" in paper) or ("website" in paper) or ("slide" in paper) or ("video" in paper):
+                line += "<br>"
+            if "arxiv" in paper:
+                line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
+            if "website" in paper:
+                line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+            if "slide" in paper:
+                line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
+            if "video" in paper:
+                line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
+
+            self.html_pub += ("<li>"+line+"</li>")
+
+        self.html_pub += ('</ol>')
 
         papers = self.papers["ijournal_papers"]
         self.html_pub += ('<h3> International Journal Papers </h3>')
@@ -153,8 +203,18 @@ class MakeHTML:
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
                 line2 += ", (\\textbf{" + paper["note"] + "})"
+            if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("slide" in paper) or ("video" in paper):
+                line += "<br>"
             if "doi" in paper:
-                line += ", <a href=https://doi.org/" + paper["doi"] + " target='_blank'>Paper Link</a>"
+                line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank'>[Paper Link]</a>"
+            if "arxiv" in paper:
+                line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
+            if "website" in paper:
+                line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+            if "slide" in paper:
+                line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
+            if "video" in paper:
+                line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
 
             self.html_pub += ("<li>"+line+"</li>")
             self.tex_journal += ("\\item "+line2+"\n")
@@ -208,8 +268,18 @@ class MakeHTML:
                         self.html_award_list.append((paper["year"], html_award_tmp))
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
+            if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("slide" in paper) or ("video" in paper):
+                line += "<br>"
             if "doi" in paper:
-                line += ", <a href=https://doi.org/" + paper["doi"] + " target='_blank'>Paper Link</a>"
+                line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank'>[Paper Link]</a>"
+            if "arxiv" in paper:
+                line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
+            if "website" in paper:
+                line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+            if "slide" in paper:
+                line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
+            if "video" in paper:
+                line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
 
             self.html_pub += ("<li>"+line+"</li>")
 
@@ -271,8 +341,18 @@ class MakeHTML:
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
                 line2 += ", (\\textbf{" + paper["note"] + "})"
+            if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("slide" in paper) or ("video" in paper):
+                line += "<br>"
             if "doi" in paper:
-                line += ", <a href=https://doi.org/" + paper["doi"] + " target='_blank'>Paper Link</a>"
+                line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank'>[Paper Link]</a>"
+            if "arxiv" in paper:
+                line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
+            if "website" in paper:
+                line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+            if "slide" in paper:
+                line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
+            if "video" in paper:
+                line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
 
             self.html_pub += ("<li>"+line+"</li>")
             self.tex_proceedings += ("\\item "+line2+"\n")
@@ -289,6 +369,69 @@ class MakeHTML:
             self.csv_text += ",".join(csv_one_data) + "\n"
         self.html_pub += ('</ol>')
         self.tex_proceedings += '\\end{enumerate}\n'
+
+        papers = self.papers["workshop_abstract"]
+        self.html_pub += ('<h3> International Workshop, Extended Abstract, etc. </h3>')
+        self.html_pub += ('<ol>')
+        for paper in papers:
+            author = paper["author"].split(", ")
+            for i, a in enumerate(author):
+                if self.en_name in a:
+                    author[i] = "<b><u>"+a+"</u></b>"
+                    break
+            author_joined = ", ".join(author)
+            line = author_joined
+            line += '<br>' + paper["title"]
+            line += ', <i>' + paper["booktitle"] + '</i>'
+            if "volume" in paper:
+                line += ", vol. " + paper["volume"]
+            if "number" in paper:
+                line += ", no. " + paper["number"]
+            if "pages" in paper:
+                line += ", pp. " + paper["pages"]
+            if "year" in paper:
+                line += ", " + paper["year"]
+            if "award" in paper:
+                for award in paper["award"]:
+                    line += ", <b><font color='red'>"+award+"</font></b>"
+                    html_award_tmp = ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                    if "date" in paper:
+                        html_award_tmp += (", " + paper["date"])
+                    html_award_tmp += '</li>'
+                    if "date" in paper:
+                        self.html_award_list.append((paper["date"], html_award_tmp))
+                    else:
+                        self.html_award_list.append((paper["year"], html_award_tmp))
+            if "note" in paper:
+                line += ", (<b>" + paper["note"] + "</b>)"
+            if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("slide" in paper) or ("video" in paper):
+                line += "<br>"
+            if "doi" in paper:
+                line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank'>[Paper Link]</a>"
+            if "arxiv" in paper:
+                line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
+            if "website" in paper:
+                line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+            if "slide" in paper:
+                line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
+            if "video" in paper:
+                line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
+
+            self.html_pub += ("<li>"+line+"</li>")
+
+            csv_one_data = [
+                    paper["doi"] if "doi" in paper else "-",
+                    paper["author"],
+                    paper["title"],
+                    paper["booktitle3"],
+                    paper["volume"] if "volume" in paper else "-",
+                    paper["year"] if "year" in paper else "-",
+                    paper["pages"] if "pages" in paper else "-",
+                    "1", "0", "0"
+            ]
+            csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
+            self.csv_text += ",".join(csv_one_data) + "\n"
+        self.html_pub += ('</ol>')
 
         papers = self.papers["reviewed_dconference"]
         self.html_pub += ('<h3> Domestic Conference Proceedings (Peer Reviewed) </h3>')
@@ -320,8 +463,18 @@ class MakeHTML:
                         self.html_award_list.append((paper["year"], html_award_tmp))
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
+            if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("slide" in paper) or ("video" in paper):
+                line += "<br>"
             if "doi" in paper:
-                line += ", <a href=https://doi.org/" + paper["doi"] + " target='_blank'>Paper Link</a>"
+                line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank'>[Paper Link]</a>"
+            if "arxiv" in paper:
+                line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
+            if "website" in paper:
+                line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+            if "slide" in paper:
+                line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
+            if "video" in paper:
+                line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
 
             self.html_pub += ("<li>"+line+"</li>")
 
@@ -367,8 +520,18 @@ class MakeHTML:
                         self.html_award_list.append((paper["year"], html_award_tmp))
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
+            if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("slide" in paper) or ("video" in paper):
+                line += "<br>"
             if "doi" in paper:
-                line += ", <a href=https://doi.org/" + paper["doi"] + " target='_blank'>Paper Link</a>"
+                line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank'>[Paper Link]</a>"
+            if "arxiv" in paper:
+                line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
+            if "website" in paper:
+                line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+            if "slide" in paper:
+                line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
+            if "video" in paper:
+                line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
 
             self.html_pub += ("<li>"+line+"</li>")
 
@@ -385,7 +548,7 @@ class MakeHTML:
         self.html_pub += ('</ol>')
 
         papers = self.papers["invited"]
-        self.html_pub += ('<h3> Invited Lecture, Commentary Articles, etc.</h3>')
+        self.html_pub += ('<h3> Invited Talks, etc.</h3>')
         self.html_pub += ('<ol>')
         for paper in papers:
             author = paper["author"].split(", ")
@@ -409,6 +572,14 @@ class MakeHTML:
                     self.html_award_list.append((paper["year"], html_award_tmp))
             if "date" in paper:
                 line += ", " + paper["date"]
+            if ("website" in paper) or ("slide" in paper) or ("video" in paper):
+                line += "<br>"
+            if "website" in paper:
+                line += " <a href=" + paper["website"] + " target='_blank'>[Website]</a>"
+            if "slide" in paper:
+                line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
+            if "video" in paper:
+                line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
 
             self.html_pub += ("<li>"+line+"</li>")
 

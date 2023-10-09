@@ -105,6 +105,7 @@
 @string{ICRA2001 = "Proceedings of the 2001 IEEE International Conference on Robotics and Automation"}
 @string{ICRA1998 = "Proceedings of the 1998 IEEE International Conference on Robotics and Automation"}
 
+@string{HUMANOIDS2023 = "Proceedings of the 2023 IEEE-RAS International Conference on Humanoid Robots"}
 @string{HUMANOIDS2022 = "Proceedings of the 2022 IEEE-RAS International Conference on Humanoid Robots"}
 @string{HUMANOIDS2020 = "Proceedings of the 2020 IEEE-RAS International Conference on Humanoid Robots"}
 @string{HUMANOIDS2019 = "Proceedings of the 2019 IEEE-RAS International Conference on Humanoid Robots"}
@@ -154,6 +155,30 @@
 @string{JRSJ = "日本ロボット学会誌"}
 
 
+% under_review
+@misc{xembodiment2023rtx,
+  author={Open X-Embodiment Collaboration},
+  title={{Open X-Embodiment: Robotic Learning Datasets and RT-X Models}},
+  year=2023,
+  arxiv={https://robotics-transformer-x.github.io/paper.pdf},
+  website={https://robotics-transformer-x.github.io/},
+}
+@misc{tang2023humanmimic,
+  author={A. Tang and T. Hiraoka and N. Hiraoka and F. Shi and K. Kawaharazuka and K. Kojima and K. Okada and M. Inaba},
+  title={{HumanMimic: Learning Natural Locomotion and Transitions for Humanoid Robot via Wasserstein Adversarial Imitation}},
+  howpublished={arXiv preprint arXiv:2309.14225},
+  year=2023,
+  arxiv={https://arxiv.org/abs/2309.14225},
+  video={https://www.youtube.com/watch?v=sdM11yHpzi8},
+}
+@misc{obinata2023gpsr,
+  author={Y. Obinata and N. Kanazawa and K. Kawaharazuka and I. Yanokura and S. Kim and K. Okada and M. Inaba},
+  title={{Foundation Model based Open Vocabulary Task Planning and Executive System for General Purpose Service Robots}},
+  howpublished={arXiv preprint arXiv:2308.03357},
+  year=2023,
+  arxiv={https://arxiv.org/abs/2308.03357},
+  video={https://www.youtube.com/watch?v=fiN4Zibk6Sg},
+}
 % ijournal_papers
 @article{kawaharazuka2023dpmpb,
   author={K. Kawaharazuka and K. Okada and M. Inaba},
@@ -161,6 +186,7 @@
   journal=RAM,
   year=2023,
   note={presented at ICRA2023},
+  doi={10.1109/MRA.2022.3217744},
 }
 @article{kawaharazuka2022vservoing,
   author={K. Kawaharazuka and N. Kanazawa and K. Okada and M. Inaba},
@@ -389,11 +415,85 @@
 }
 
 % reviewed_iconference
+@inproceedings{kawaharazuka2023ptvlm,
+  author={K. Kawaharazuka and Y. Obinata and N. Kanazawa and K. Okada and M. Inaba},
+  title={{Robotic Applications of Pre-Trained Vision-Language Models to Various Recognition Behaviors (in press)}},
+  booktitle=Humanoids2023,
+  year=2023,
+  arxiv={https://arxiv.org/abs/2303.05674},
+}
+@inproceedings{kawaharazuka2023clipview,
+  author={K. Kawaharazuka and N. Kanazawa and Y. Obinata and K. Okada and M. Inaba},
+  title={{Daily Assistive View Control Learning of Low-Cost Low-Rigidity Robot via Large-Scale Vision-Language Model (in press)}},
+  booktitle=Humanoids2023,
+  year=2023,
+}
+@inproceedings{yoshimura2023arrangement,
+  author={S. Yoshimura and S. Yuzaki and K. Kawaharazuka and K. Okada and M. Inaba},
+  title={{Optimization of Muscle Arrangement Extraction from Human Waist Structure for Biomimetic Humanoid Implementation (in press)}},
+  booktitle=Humanoids2023,
+  year=2023,
+}
+@inproceedings{ribayashi2023complex2,
+  author={Y. Ribayashi and K. Miyama and A. Miki and K. Kawaharazuka and K. Okada and M. Inaba},
+  title={{Development of a Wire-Wound Muscle-Tendon Complex Drive and Its Application to a Two-Dimensional Robot Configuration (in press)}},
+  booktitle=Humanoids2023,
+  year=2023,
+}
+@inproceedings{yuzaki2023extension,
+  author={S. Yuzaki and A. Miki and M. Bando and S. Yoshimura and T. Suzuki and K. Kawaharazuka and K. Okada and M. Inaba},
+  title={{Fusion of Body and Environment with Movable Carabiners for Wire-Driven Robots Toward Expansion of Physical Capabilities (in press)}},
+  booktitle=Humanoids2023,
+  year=2023,
+}
+@inproceedings{kawaharazuka2023autodesign,
+  author={K. Kawaharazuka and T. Makabe and K. Okada and M. Inaba},
+  title={{Daily Assistive Modular Robot Design Based on Multi-Objective Black-Box Optimization (in press)}},
+  booktitle=IROS2023,
+  year=2023,
+  arxiv={https://arxiv.org/abs/2309.14226},
+  website={https://haraduka.github.io/auto-modular-design/},
+  video={https://www.youtube.com/watch?v=ztcq0P92mJI},
+}
+@inproceedings{matsuura2023imitation,
+  author={Y. Matsuura and K. Kawaharazuka and N. Hiraoka and K. Kojima and K. Okada and M. Inaba},
+  title={{Development of a Whole-Body Work Imitation Learning System by a Biped and Bi-Armed Humanoid (in press)}},
+  booktitle=IROS2023,
+  year=2023,
+  arxiv={https://arxiv.org/abs/2309.15756},
+  website={https://haraduka.github.io/jaxon-tablis-imitation/},
+  video={https://www.youtube.com/watch?v=RsoI0W8SPPA},
+}
+@inproceedings{obinata2023semantic,
+  author={Y. Obinata and K. Kawaharazuka and N. Kanazawa and N. Yamaguchi and N. Tsukamoto and I. Yanokura and S. Kitagawa and K. Shinjo and K. Okada and M. Inaba},
+  title={{Semantic Scene Difference Detection in Daily Life Patroling by Mobile Robots Using Pre-Trained Large-Scale Vision-Language Model (in press)}},
+  booktitle=IROS2023,
+  year=2023,
+  arxiv={https://arxiv.org/abs/2309.16552},
+  award={IEEE RAS Japan Joint Chapter Young Award (2023)},
+  award={SICE International Young Authors Award (SIYA-IROS2023)},
+  date={2023.10.3},
+}
+@inproceedings{miyama2023softhand,
+  author={K. Miyama and K. Kawaharazuka and K. Okada and M. Inaba},
+  title={{Development of a Five-Fingerd Biomimetic Soft Robotic Hand by 3D Printing the Skin and Skeleton As One Unit (in press)}},
+  booktitle=IROS2023,
+  year=2023,
+  award={SICE International Young Authors Award (SIYA-IROS2023)},
+  date={2023.10.3},
+}
+@inproceedings{yoshimura2023kangroo,
+  author={S. Yoshimura and T. Suzuki and M. Bando and S. Yuzaki and K. Kawaharazuka and K. Okada and M. Inaba},
+  title={{Design Method of a Kangaroo Robot with High Power Legs and an Articulated Soft Tail (in press)}},
+  booktitle=IROS2023,
+  year=2023,
+}
 @inproceedings{ichikura2023selection,
   author={A. Ichikura and K. Kawaharazuka and Y. Obinata and K. Okada and M. Inaba},
   title={{A Method for Selecting Scenes and Emotion-Based Descriptions for a Robot's Diary (in press)}},
   booktitle=ROMAN2023,
   year=2023,
+  arxiv={https://arxiv.org/abs/2309.01951},
 }
 @inproceedings{miki2023musashiw,
   author={A. Miki and K. Kawaharazuka and M. Bando and K. Okada and K. Kawasaki and M. Inaba},
@@ -412,18 +512,14 @@
   title={{Recognition of Heat-Induced Food State Changes by Time-Series Use of Vision-Language Model for Cooking Robot (in press)}},
   booktitle=IAS2023,
   year=2023,
+  arxiv={https://arxiv.org/abs/2309.01528},
 }
 @inproceedings{ichikura2023diary,
   author={A. Ichikura and K. Kawaharazuka and Y. Obinata and and K. Shinjo and K. Okada and M. Inaba},
   title={{Automatic Diary Generation System Including Information on Joint Experiences between Humans and Robots (in press)}},
   booktitle=IAS2023,
   year=2023,
-}
-@inproceedings{ribayashi2023complex,
-  author={Y. Ribayashi and K. Miyama and A. Miki and K. Kawaharazuka and K. Okada and K. Kawasaki and M. Inaba},
-  title={{Muscle-Tendon Complex-Inspired Deformable Exteriors as a Wire-Drive Extension}},
-  booktitle=AMAM2023,
-  year=2023,
+  arxiv={https://arxiv.org/abs/2309.01948},
 }
 @inproceedings{kawaharazuka2023ofaga,
   author={K. Kawaharazuka and Y. Obinata and N. Kanazawa and K. Okada and M. Inaba},
@@ -431,6 +527,7 @@
   booktitle=ICRA2023,
   pages={8306--8311},
   year=2023,
+  arxiv={https://arxiv.org/abs/2303.05052},
 }
 @inproceedings{sato2023deflection,
   author={H. Sato and K. Kawaharazuka and T. Makabe and K. Okada and M. Inaba},
@@ -439,6 +536,7 @@
   pages={1--8},
   year=2023,
   doi={10.1109/SII55687.2023.10039450},
+  arxiv={https://arxiv.org/abs/2306.03616},
 }
 @inproceedings{kawaharazuka2022musashiw,
   author={K. Kawaharazuka and A. Miki and M. Bando and T. Suzuki and Y. Ribayashi and Y. Toshimitsu and Y. Nagamatsu and K. Okada and M. Inaba},
@@ -475,7 +573,7 @@
   note={Top 7 Best Oral Paper Presentation},
   doi={10.1109/Humanoids53995.2022.10000127},
 }
-@inproceedings{miyama2022hand,
+@inproceedings{miyama2022flexible,
   author={K. Miyama and S. Hasegawa and K. Kawaharazuka and N. Yamaguchi and K. Okada and M. Inaba},
   title={{Design of a Five-Fingered Hand with Full-Fingered Tactile Sensors Using Conductive Filaments and Its Application to Bending after Insertion Motion}},
   booktitle=HUMANOIDS2022,
@@ -722,14 +820,6 @@
   year=2019,
   doi={10.1109/Humanoids43949.2019.9035008},
 }
-@inproceedings{kawaharazuka2019network,
-  author={K. Kawaharazuka and K. Tsuzuki and S. Makino and Y. Asano and K. Okada and M. Inaba},
-  title={{Modeling and Online Learning of Musculoskeletal Intersensory Networks for Static Controls of Tendon-driven Humanoids}},
-  booktitle=AMAM2019,
-  year=2019,
-  award={Company of Biologists Early Career Researcher Grant (500 GBP)},
-  date={2019.8.20},
-}
 @inproceedings{kawaharazuka2019dynamic,
   author={K. Kawaharazuka and T. Ogawa and J. Tamura and C. Nabeshima},
   title={{Dynamic Manipulation of Flexible Objects with Torque Sequence Using a Deep Neural Network}},
@@ -737,6 +827,7 @@
   pages={2139--2145},
   year=2019,
   doi={10.1109/ICRA.2019.8793513},
+  arxiv={https://arxiv.org/abs/1901.10142},
 }
 @inproceedings{kawaharazuka2018twimp,
   author={K. Kawaharazuka and T. Makabe and S. Makino and K. Tsuzuki and Y. Nagamatsu and Y. Asano and T. Shirai and F. Sugai and K. Okada and K. Kawasaki and M. Inaba},
@@ -819,6 +910,22 @@
   doi={10.1109/HUMANOIDS.2016.7803376},
 }
 
+% workshop_abstract
+@inproceedings{ribayashi2023complex,
+  author={Y. Ribayashi and K. Miyama and A. Miki and K. Kawaharazuka and K. Okada and K. Kawasaki and M. Inaba},
+  title={{Muscle-Tendon Complex-Inspired Deformable Exteriors as a Wire-Drive Extension}},
+  booktitle=AMAM2023,
+  year=2023,
+}
+@inproceedings{kawaharazuka2019network,
+  author={K. Kawaharazuka and K. Tsuzuki and S. Makino and Y. Asano and K. Okada and M. Inaba},
+  title={{Modeling and Online Learning of Musculoskeletal Intersensory Networks for Static Controls of Tendon-driven Humanoids}},
+  booktitle=AMAM2019,
+  year=2019,
+  award={Company of Biologists Early Career Researcher Grant (500 GBP)},
+  date={2019.8.20},
+}
+
 % reviewed_dconference
 @inproceedings{kawaharazuka2023garecog-ja,
   author={河原塚 健人 and 大日方 慶樹 and 金沢 直晃 and 岡田 慧 and 稲葉 雅幸},
@@ -881,6 +988,7 @@
   booktitle=RSJ23J,
   pages={1K3-01},
   year=2023,
+  slide={https://speakerdeck.com/haraduka/rsj2023-ji-pan-moderunoshi-robotutoying-yong-tiyutoriaru1-ji-cun-noji-pan-moderuwoshi-robotutoniying-yong-surufang-fa},
 }
 @inproceedings{matsushima2023foundation-ja,
   author={松嶋 達也 and 河原塚 健人},
@@ -888,6 +996,7 @@
   booktitle=RSJ23J,
   pages={1K3-02},
   year=2023,
+  slide={https://speakerdeck.com/tmats/rsj2023-ji-pan-moderunoshi-robotutoying-yong-tiyutoriaru2-shi-robotutoyong-noji-pan-moderuwozuo-tutehuo-yong-surufang-fa},
 }
 @inproceedings{kanazawa2023egg-ja,
   author={金沢 直晃 and 河原塚 健人 and 大日方 慶樹 and 岡田 慧 and 稲葉 雅幸},
@@ -1621,6 +1730,7 @@
   booktitle={2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
   date={2023.10.5},
   year=2023,
+  website={https://sites.google.com/view/learning-meets-models-iros2023/speakers?authuser=0},
 }
 @inproceedings{invited2023llm-ja,
   author={河原塚 健人},
@@ -1629,6 +1739,7 @@
   booktitle={NLP若手の会 第18回シンポジウム (YANS2023)},
   date={2023.8.31},
   year=2023,
+  website={https://yans.anlp.jp/entry/yans2023invitesession},
 }
 @inproceedings{invited2023softrobot-ja,
   author={河原塚 健人},
@@ -1637,6 +1748,7 @@
   booktitle={日本機械学会ロボティクス・メカトロニクス講演会},
   date={2023.6.28},
   year=2023,
+  website={https://softrobot.jp/events/2023/06161205082540/},
 }
 @inproceedings{invited2022moonshot-ja,
   author={河原塚 健人},
@@ -1645,6 +1757,7 @@
   booktitle={第40回日本ロボット学会学術講演会},
   date={2022.9.9},
   year=2022,
+  website={https://ac.rsj-web.org/2022/openforum.html#OF5},
 }
 @inproceedings{kawaharazuka2022dthesis-ja,
   author={河原塚 健人},
