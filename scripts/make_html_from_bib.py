@@ -56,10 +56,10 @@ class MakeHTML:
                     self.current["title"] = content
                     continue
                 if ("journal" in name) or ("booktitle" in name):
-                    if content.upper() in self.conference_name:
-                        self.current["booktitle"] = self.conference_name[content.upper()] + " (<b>" + content.upper() + "</b>)"
-                        self.current["booktitle2"] = self.conference_name[content.upper()] + " (\\textit{\\textbf{" + content.upper() + "}})"
-                        self.current["booktitle3"] = self.conference_name[content.upper()]
+                    if content in self.conference_name:
+                        self.current["booktitle"] = self.conference_name[content] + " (<b>" + content + "</b>)"
+                        self.current["booktitle2"] = self.conference_name[content] + " (\\textit{\\textbf{" + content + "}})"
+                        self.current["booktitle3"] = self.conference_name[content]
                     else:
                         self.current["booktitle"] = content
                         self.current["booktitle2"] = content
