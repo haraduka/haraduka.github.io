@@ -1,37 +1,6 @@
 body{
-  background: #ffffff;
   line-height: 120%;
-  font-size: 0.8em;
-}
-
-.palette{
-  background: #eeeeee;
-  font-family: serif;
-  color: #333333;
-  width: 850px;
-  height: auto;
-  padding: 30px;
-  border: 1px solid #1693f3;
-  margin: 30px auto;
-}
-
-.intro{
-  font-family: sans-serif;
-}
-
-.image{
-  float: left;
-  padding-right: 50px;
-}
-
-.title{
-  background: #ffffff;
-  font-family: sans-serif;
-  font-size: 1.6rem;
-  border: 1px solid #1693f3;
-  text-align: text-left;
-  margin: 20px auto;
-  padding: 10px;
+  font-size: 0.9em;
 }
 
 li {

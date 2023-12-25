@@ -2,14 +2,12 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-    -->
-
     <title> Kento Kawaharazuka </title>
-    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="static/favicon.ico">
+    <link rel="canonical" href="https://haraduka.github.io">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1XJ0NHR591"></script>
@@ -17,184 +15,239 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-1XJ0NHR591');
     </script>
 
-    <meta property="og:url"           content="https://haraduka.github.io/auto-modular-design" />
-    <meta property="og:type"          content="website" />
+    <meta property="og:url" content="https://haraduka.github.io" />
+    <meta property="og:type" content="website" />
     <meta property="og:image" content="https://haraduka.github.io/static/kawaharazuka.jpg" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
-    <div class="palette">
-      <div class="image">
-        <img src="static/kawaharazuka.jpg" width="300px"/>
-      </div>
+    <div class="container py-3">
+      <header>
+        <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+          <a href="https://haraduka.github.io" class="d-flex align-items-center text-dark text-decoration-none">
+            <span class="fs-5 text-primary">Kento Kawaharazuka</span>
+          </a>
 
-      <div class="intro">
-        <h1> Kento Kawaharazuka </h1>
-        <h2> Project Assistant Professor </h2>
-        Department of Mechano-Informatics, <br>
-        Graduate School of Information Science and Technology, <br>
-        The University of Tokyo, Tokyo, Japan <br>
-        <p><a href="https://scholar.google.co.jp/citations?user=E75YHyUAAAAJ&hl=en" target='_blank'>Google Scholar</a></p>
-        <p><a href="https://github.com/haraduka" target='_blank'>GitHub</a></p>
-        <p><a href="https://twitter.com/KKawaharazuka" target='_blank'>Twitter</a></p>
-        <p><a href="https://www.youtube.com/channel/UC3iq44Y7vsriPyFiU02Bcyw">Youtube</a></p>
-        <p><a href="mailto:kawaharazuka@jsk.imi.i.u-tokyo.ac.jp">Gmail</a></p>
-      </div>
-      <p style="clear:both"></p>
-      <div class="title"> Biography </div>
-      Kento Kawaharazuka is a project assistant professor in JSK Robotics Laboratory at the University of Tokyo.
-      His research interests are mainly in humanoids, including biomimetics, tendon-driven robots, and machine learning.
-      He designs tendon-driven humanoids and develops learning control systems to move them.
-      <h3> Career </h3>
-      <ul>
-        <li> Project Assistant Professor in Mechano-Informatics, 2022- (Graduate School of Information Science and Technology, The University of Tokyo) </li>
-        <li> Ph.D. in Mechano-Informatics, 2019-2022 (Graduate School of Information Science and Technology, The University of Tokyo) </li>
-        <li> M.S. in Mechano-Informatics, 2017-2019 (Graduate School of Information Science and Technology, The University of Tokyo) </li>
-        <li> B.S. in Mechano-Informatics, 2013-2017 (Faculty of Engineering, The University of Tokyo) </li>
-      </ul>
-      <h3> Laboratory </h3>
-      <ul>
-        <li> JSK Robotics Laboratory (Prof. Masayuki Inaba and Kei Okada), The University of Tokyo </li>
-      </ul>
+          <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+            <a class="me-3 py-2 text-secondary text-decoration-none fs-5" href="#">Robots</a>
+            <a class="me-3 py-2 text-secondary text-decoration-none fs-5" href="#">Projects</a>
+          </nav>
+        </div>
+      </header>
 
-      <div class="title"> News </div>
-      <ul>
-        <li><b> 2023.10.29 - 第19回身体性認知科学と実世界応用に関する若手研究会(ECSRA)にて招待講演を行います.</b></li>
-        <li><b> 2023.10.24 - 日本ロボット学会誌Vol.41, No.8に"情報化身体の学習理論に基づく成長ロボットの革新と創成"に関する解説記事が掲載されました.</b></li>
-        <li><b> 2023.10.18 - 第5回LLM勉強会(LLM-jp)にて招待講演を行います.</b></li>
-        <li><b> 2023.10.05 - I gave an invited talk at IROS2023 workshop on <a href="https://sites.google.com/view/learning-meets-models-iros2023/speakers?authuser=0">Learning Meets Model-based Methods for Manipulation and Grasping"</a>.</b></li>
-        <li><b> 2022.09.30 - Five papers including two first-authored papers were accepted to Humanoids2023.</b></li>
-        <li><b> 2023.09.12 - 日本ロボット学会2023にて主著1件を含む12件の発表があります.</b></li>
-        <li><b> 2023.08.31 - NLP若手の会(YANS2023)の招待セッションで発表します.</b></li>
-        <li><b> 2023.06.29 - "動的柔軟布操作"の研究がロボティクス・メカトロニクス講演会2022にてベストデモンストレーション賞に選ばれました.</b></li>
-        <li><b> 2023.06.29 - ロボティクス・メカトロニクス講演会2023にて主著2件を含む13件の発表があります.</b></li>
-        <li><b> 2023.06.28 - ロボティクス・メカトロニクス講演会2023シンポジウム「"いいかげん"を科学して未来を創るソフトロボット学4」にて招待講演を行います.</b></li>
-        <li><b> 2022.06.22 - Five papers including one first-authored paper were accepted to IROS2023.</b></li>
-        <li><b> 2023.06.06 - 人工知能学会2023にて主著1件を含む2件の発表があります.</b></li>
-        <li><b> 2023.06.02 - One paper was accepted to ROMAN2023.</b></li>
-        <li><b> 2023.05.30 - Four papers were accepted to IAS18.</b></li>
-      </ul>
-      <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
-        <a style="cursor:pointer;">▼ click here to expand</a>
-      </div>
-      <div id="open" style="display:none;clear:both;">
+      <main>
+        <div class="row py-3">
+          <div class="col-md-4 text-center">
+            <div style="max-width: 400px">
+              <img src="static/kawaharazuka.jpg" class="img-fluid mx-auto d-block" alt="Image" style="max-width: 100%; height: auto;">
+            </div>
+          </div>
+
+          <div class="col-md-8 py-3">
+            <h2> Kento Kawaharazuka </h2>
+            <h3> Project Assistant Professor </h3>
+            Department of Mechano-Informatics, <br>
+            Graduate School of Information Science and Technology, <br>
+            The University of Tokyo, Tokyo, Japan <br>
+            <div class="d-inline-flex mt-4 ms-md-auto">
+              <a href="https://scholar.google.co.jp/citations?user=E75YHyUAAAAJ&hl=en" target='_blank' class="me-3">
+                <svg xmlns="http://www.w3.org/2000/svg" height="36" width="36"fill="currentColor" viewBox="0 0 512 512">
+                  <path d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/>
+                </svg>
+              </a>
+              <a href="https://twitter.com/KKawaharazuka" target='_blank' class="me-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+                </svg>
+              </a>
+              <a href="https://www.youtube.com/channel/UC3iq44Y7vsriPyFiU02Bcyw" target='_blank' class='me-3'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408z"/>
+                </svg>
+              </a>
+              <a href="https://github.com/haraduka" target='_blank' class="me-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                </svg>
+              </a>
+              <a href="mailto:kawaharazuka@jsk.imi.i.u-tokyo.ac.jp">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M20 18h-2V9.25L12 13L6 9.25V18H4V6h1.2l6.8 4.25L18.8 6H20m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"/></svg>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="text-white bg-primary border-primary mt-3 ps-3">
+          <h2> Biography </h2>
+        </div>
+        Kento Kawaharazuka is a project assistant professor in JSK Robotics Laboratory at the University of Tokyo.
+        His research interests are mainly in humanoids, including biomimetics, tendon-driven robots, and machine learning.
+        He designs tendon-driven humanoids and develops learning control systems to move them.
+        <h3> Career </h3>
         <ul>
-        <li><b> 2023.05.17 - 日本ロボット学会2023にてOS4「基盤モデルの実ロボット応用」を主催します.</b></li>
-        <li><b> 2023.04.10 - One paper was accepted to AMAM2023.</b></li>
-        <li><b> 2022.04.05 - 新学期から3人のB4が自分のグループに加わりました.</b></li>
-        <li><b> 2023.04.01 - JST ACT-X「AI活用で挑む学問の革新と創成」の加速フェーズに採択されました.</b></li>
-        <li><b> 2023.01.19 - Two first-authored papers (including one RAM paper) were accepted to ICRA2023.</b></li>
-        <li><b> 2022.12.16 - ロボティクスシンポジア2023に主著1件を含む6件の発表が採択されました.</b></li>
-        <li><b> 2022.12.14 - 計測自動制御学会2022にて主著1件を含む5件の発表があります.</b></li>
-        <li><b> 2022.11.30 - "Hardware and Software Design of Musashi-W" was selected as Best Interactive Paper Award Finalist at Humanoids2022.</b></li>
-        <li><b> 2022.11.21 - 日本ロボット学会誌Vol.40, No.9に"パラメトリックバイアスを含む深層予測モデル学習"に関する解説記事が掲載されました.</b></li>
-        <li><b> 2022.10.26 - "Self-Supervised Learning of Visual Servoing" was selected as SICE International Young Authors Award at IROS2022.</b></li>
-        <li><b> 2022.10.26 - "Parallel-Wire Driven Monopedal Robot RAMIEL" was selected as SICE International Young Authors Award at IROS2022.</b></li>
-        <li><b> 2022.09.09 - 日本ロボット学会2022 "若手研究者が描く2050年のAIロボットビジョン"OFにて招待講演を行います.</b></li>
-        <li><b> 2022.09.05 - 日本ロボット学会2022にて主著2件を含む14件の発表があります.</b></li>
-        <li><b> 2022.09.26 - Five papers including three first-authored papers were accepted to Humanoids2022.</b></li>
-        <li><b> 2022.06.30 - Seven papers including four first-authored papers (including one RA-L paper) were accepted to IROS2022.</b></li>
-        <li><b> 2022.06.17 - "Human-mimetic Binaural Ear Design" was accepted to Robomech Journal.</b></li>
-        <li><b> 2022.06.15 - 人工知能学会2022にて主著1件の発表があります.</b></li>
-        <li><b> 2022.06.03 - 日本機械学会2022にて主著2件を含む10件の発表があります.</b></li>
-        <li><b> 2022.06.01 - "Roboust Continous Motion Against Muscle Rupture" was accepted to Robotics and Autonomous Systems.</b></li>
-        <li><b> 2022.05.27 - We won the first prize of state-based category at DodgeDrone Challenge at ICRA2022.</b></li>
-        <li><b> 2022.05.23 - "Dynamic Cloth Manipulation" was accepted to Frontiers in Neurorobotics.</b></li>
-        <li><b> 2022.04.05 - 新学期から2人のB4と1人のM1が自分のグループに加わりました.</b></li>
-        <li><b> 2022.04.01 - I received Ph.D. and became a project assistant professor at JSK Roboics Laboratory.</b></li>
-        <li><b> 2022.03.24 - 博士論文が研究科長賞に選ばれました.</b></li>
-        <li><b> 2022.02.01 - Two papers including one first-authored paper (including one RA-L paper) were accepted to ICRA2022.</b></li>
-        <li><b> 2022.01.21 - "確率的深層予測モデル学習"に関する研究がSI2021において優秀講演賞に選ばれました.</b></li>
-        <li><b> 2021.12.15 - 計測自動制御学会2021にて主著2件を含む3件の発表があります.</b></li>
-        <li><b> 2021.09.09 - 日本ロボット学会2021にて"深層予測モデル学習"についてキーノート講演を行います.</b></li>
-        <li><b> 2021.09.06 - 日本ロボット学会2021にて主著1件の発表があります.</b></li>
-        <li><b> 2021.07.22 - "Design of MusashiOLegs" was selected as Best Oral Paper Award at Humanoids2020.</b></li>
-        <li><b> 2021.07.01 - Five papers including four first-authored papers (including three RA-L papers) were accepted to IROS2021.</b></li>
-        <li><b> 2021.06.06 - 日本機械学会2021にて主著2件を含む7件の発表があります.</b></li>
-        <li><b> 2021.05.01 - Three papers including two first-authored papers were accepted to Humanoids2020.</b></li>
-        <li><b> 2021.03.01 - Four papers including two first-authored papers (including one RA-L and one RAM papers) were accepted to ICRA2021.</b></li>
-        <li><b> 2021.02.10 - One first-authored paper was accepted to RoboSoft2021.</b></li>
-        <li><b> 2021.01.27 - "道具形状最適化"に関する研究が計測自動制御学会2020にて優秀講演賞に選ばれました.</b></li>
-        <li><b> 2020.12.16 - 計測自動制御学会2020にて主著3件を含む4件の発表があります.</b></li>
-        <li><b> 2020.11.24 - "成長ロボット"に関する課題がJST ACT-X「AI活用で挑む学問の革新と創成」領域に採択されました.</b></li>
-        <li><b> 2020.10.10 - 日本ロボット学会2020にて主著1件を含む2件の発表があります.</b></li>
-        <li><b> 2020.10.09 - "柔軟物体操作"と"Musculoskeletal AutoEncoder"に関する研究が日本ロボット学会2019にて研究奨励賞に選ばれました.</b></li>
-        <li><b> 2020.07.03 - Six papers including five first-authored papers (including two RA-L papers) were accepted to IROS2020.</b></li>
-        <li><b> 2020.05.27 - 日本機械学会2020にて2件の発表があります.</b></li>
-        <li><b> 2020.05.13 - "Autonomous Driving by Musculoskeletal Humanoids" was accepted to Robotics and Autonomous Magazine.</b></li>
-        <li><b> 2020.04.20 - "Human Mimetic Forearm and Hand Design" was accepted to Journal of Robotics and Mechatronics.</b></li>
-        <li><b> 2020.01.22 - Three papers including two first-authored papers (including one RA-L paper) were accepted to ICRA2020.</b></li>
-        <li><b> 2019.10.09 - 日本ロボット学会2019にて主著2件を含む5件の発表があります.</b></li>
-        <li><b> 2019.08.26 - Three papers including one first-authored paper were accepted to Humanoids2019.</b></li>
-        <li><b> 2019.06.21 - Seven papers including four first-authored paper (including one RA-L paper)were accepted to IROS2019.</b></li>
-        <li><b> 2019.06.05 - 日本機械学会2019にて主著2件を含む8件の発表があります.</b></li>
-        <li><b> 2019.04.13 - One first-authored paper was accepted to AMAM2019.</b></li>
-        <li><b> 2019.01.22 - One first-authored paper was accepted to ICRA2019.</b></li>
-        <li><b> 2018.10.02 - "Five-Fingered Hand Design" was selected as IROS ICROS Best Application Paper Award 2018 Finalists at IROS2018.</b></li>
-        <li><b> 2018.09.21 - Three papers including two first-authored papers were accepted to Humanoids2018.</b></li>
-        <li><b> 2018.09.05 - 日本ロボット学会2018にて主著2件を含む4件の発表があります.</b></li>
-        <li><b> 2018.06.29 - Two papers including one first-authored paper were accepted to IROS2018.</b></li>
-        <li><b> 2018.06.02 - 日本機械学会2018にて主著1件を含む4件の発表があります.</b></li>
-        <li><b> 2018.03.06 - One first-authored paper (RA-L paper) was accepted to IROS2018.</b></li>
-        <li><b> 2017.09.24 - "Human Mimetic Forearm Design" was selected as IEEE RAS Japan Joint Chapter Young Award at IROS2017.</b></li>
-        <li><b> 2017.09.11 - 日本ロボット学会2017にて主著1件の発表があります.</b></li>
-        <li><b> 2017.06.29 - Three papers including two first-authored paper (including one RA-L paper) were accepted to IROS2017.</b></li>
-        <li><b> 2017.05.10 - 日本機械学会2017にて主著1件を含む2件の発表があります.</b></li>
+          <li> Project Assistant Professor in Mechano-Informatics, 2022- (Graduate School of Information Science and Technology, The University of Tokyo) </li>
+          <li> Ph.D. in Mechano-Informatics, 2019-2022 (Graduate School of Information Science and Technology, The University of Tokyo) </li>
+          <li> M.S. in Mechano-Informatics, 2017-2019 (Graduate School of Information Science and Technology, The University of Tokyo) </li>
+          <li> B.S. in Mechano-Informatics, 2013-2017 (Faculty of Engineering, The University of Tokyo) </li>
         </ul>
-      </div>
 
-      <div class="title"> Publications </div>
-      <!-- publication_replace_by_python -->
+        <div class="text-white bg-primary border-primary mt-3 ps-3">
+          <h2> News </h2>
+        </div>
+        <ul>
+          <li><b> 2023.12.15 - We visited RoMeLa at UCLA and GITAI.</b></li>
+          <li><b> 2023.12.12 - We presented five papers at Humanoids2023.</b></li>
+          <li><b> 2023.10.29 - 第19回身体性認知科学と実世界応用に関する若手研究会(ECSRA)にて招待講演を行います.</b></li>
+          <li><b> 2023.10.24 - 日本ロボット学会誌Vol.41, No.8に"情報化身体の学習理論に基づく成長ロボットの革新と創成"に関する解説記事が掲載されました.</b></li>
+          <li><b> 2023.10.18 - 第5回LLM勉強会(LLM-jp)にて招待講演を行います.</b></li>
+          <li><b> 2023.10.06 - We visited Stanford University.</b></li>
+          <li><b> 2023.10.05 - I gave an invited talk at IROS2023 workshop on <a href="https://sites.google.com/view/learning-meets-models-iros2023/speakers?authuser=0">Learning Meets Model-based Methods for Manipulation and Grasping"</a>.</b></li>
+          <li><b> 2022.09.30 - Five papers including two first-authored papers were accepted to Humanoids2023.</b></li>
+          <li><b> 2023.09.12 - 日本ロボット学会2023にて主著1件を含む12件の発表があります.</b></li>
+          <li><b> 2023.08.31 - NLP若手の会(YANS2023)の招待セッションで発表します.</b></li>
+          <li><b> 2023.06.29 - "動的柔軟布操作"の研究がロボティクス・メカトロニクス講演会2022にてベストデモンストレーション賞に選ばれました.</b></li>
+          <li><b> 2023.06.29 - ロボティクス・メカトロニクス講演会2023にて主著2件を含む13件の発表があります.</b></li>
+          <li><b> 2023.06.28 - ロボティクス・メカトロニクス講演会2023シンポジウム「"いいかげん"を科学して未来を創るソフトロボット学4」にて招待講演を行います.</b></li>
+          <li><b> 2022.06.22 - Five papers including one first-authored paper were accepted to IROS2023.</b></li>
+          <li><b> 2023.06.06 - 人工知能学会2023にて主著1件を含む2件の発表があります.</b></li>
+          <li><b> 2023.06.02 - One paper was accepted to ROMAN2023.</b></li>
+          <li><b> 2023.05.30 - Four papers were accepted to IAS18.</b></li>
+        </ul>
+        <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+          <a style="cursor:pointer;">▼ click here to expand</a>
+        </div>
+        <div id="open" style="display:none;clear:both;">
+          <ul>
+          <li><b> 2023.05.17 - 日本ロボット学会2023にてOS4「基盤モデルの実ロボット応用」を主催します.</b></li>
+          <li><b> 2023.04.10 - One paper was accepted to AMAM2023.</b></li>
+          <li><b> 2022.04.05 - 新学期から3人のB4が自分のグループに加わりました.</b></li>
+          <li><b> 2023.04.01 - JST ACT-X「AI活用で挑む学問の革新と創成」の加速フェーズに採択されました.</b></li>
+          <li><b> 2023.01.19 - Two first-authored papers (including one RAM paper) were accepted to ICRA2023.</b></li>
+          <li><b> 2022.12.16 - ロボティクスシンポジア2023に主著1件を含む6件の発表が採択されました.</b></li>
+          <li><b> 2022.12.14 - 計測自動制御学会2022にて主著1件を含む5件の発表があります.</b></li>
+          <li><b> 2022.11.30 - "Hardware and Software Design of Musashi-W" was selected as Best Interactive Paper Award Finalist at Humanoids2022.</b></li>
+          <li><b> 2022.11.21 - 日本ロボット学会誌Vol.40, No.9に"パラメトリックバイアスを含む深層予測モデル学習"に関する解説記事が掲載されました.</b></li>
+          <li><b> 2022.10.26 - "Self-Supervised Learning of Visual Servoing" was selected as SICE International Young Authors Award at IROS2022.</b></li>
+          <li><b> 2022.10.26 - "Parallel-Wire Driven Monopedal Robot RAMIEL" was selected as SICE International Young Authors Award at IROS2022.</b></li>
+          <li><b> 2022.09.09 - 日本ロボット学会2022 "若手研究者が描く2050年のAIロボットビジョン"OFにて招待講演を行います.</b></li>
+          <li><b> 2022.09.05 - 日本ロボット学会2022にて主著2件を含む14件の発表があります.</b></li>
+          <li><b> 2022.09.26 - Five papers including three first-authored papers were accepted to Humanoids2022.</b></li>
+          <li><b> 2022.06.30 - Seven papers including four first-authored papers (including one RA-L paper) were accepted to IROS2022.</b></li>
+          <li><b> 2022.06.17 - "Human-mimetic Binaural Ear Design" was accepted to Robomech Journal.</b></li>
+          <li><b> 2022.06.15 - 人工知能学会2022にて主著1件の発表があります.</b></li>
+          <li><b> 2022.06.03 - 日本機械学会2022にて主著2件を含む10件の発表があります.</b></li>
+          <li><b> 2022.06.01 - "Roboust Continous Motion Against Muscle Rupture" was accepted to Robotics and Autonomous Systems.</b></li>
+          <li><b> 2022.05.27 - We won the first prize of state-based category at DodgeDrone Challenge at ICRA2022.</b></li>
+          <li><b> 2022.05.23 - "Dynamic Cloth Manipulation" was accepted to Frontiers in Neurorobotics.</b></li>
+          <li><b> 2022.04.05 - 新学期から2人のB4と1人のM1が自分のグループに加わりました.</b></li>
+          <li><b> 2022.04.01 - I received Ph.D. and became a project assistant professor at JSK Roboics Laboratory.</b></li>
+          <li><b> 2022.03.24 - 博士論文が研究科長賞に選ばれました.</b></li>
+          <li><b> 2022.02.01 - Two papers including one first-authored paper (including one RA-L paper) were accepted to ICRA2022.</b></li>
+          <li><b> 2022.01.21 - "確率的深層予測モデル学習"に関する研究がSI2021において優秀講演賞に選ばれました.</b></li>
+          <li><b> 2021.12.15 - 計測自動制御学会2021にて主著2件を含む3件の発表があります.</b></li>
+          <li><b> 2021.09.09 - 日本ロボット学会2021にて"深層予測モデル学習"についてキーノート講演を行います.</b></li>
+          <li><b> 2021.09.06 - 日本ロボット学会2021にて主著1件の発表があります.</b></li>
+          <li><b> 2021.07.22 - "Design of MusashiOLegs" was selected as Best Oral Paper Award at Humanoids2020.</b></li>
+          <li><b> 2021.07.01 - Five papers including four first-authored papers (including three RA-L papers) were accepted to IROS2021.</b></li>
+          <li><b> 2021.06.06 - 日本機械学会2021にて主著2件を含む7件の発表があります.</b></li>
+          <li><b> 2021.05.01 - Three papers including two first-authored papers were accepted to Humanoids2020.</b></li>
+          <li><b> 2021.03.01 - Four papers including two first-authored papers (including one RA-L and one RAM papers) were accepted to ICRA2021.</b></li>
+          <li><b> 2021.02.10 - One first-authored paper was accepted to RoboSoft2021.</b></li>
+          <li><b> 2021.01.27 - "道具形状最適化"に関する研究が計測自動制御学会2020にて優秀講演賞に選ばれました.</b></li>
+          <li><b> 2020.12.16 - 計測自動制御学会2020にて主著3件を含む4件の発表があります.</b></li>
+          <li><b> 2020.11.24 - "成長ロボット"に関する課題がJST ACT-X「AI活用で挑む学問の革新と創成」領域に採択されました.</b></li>
+          <li><b> 2020.10.10 - 日本ロボット学会2020にて主著1件を含む2件の発表があります.</b></li>
+          <li><b> 2020.10.09 - "柔軟物体操作"と"Musculoskeletal AutoEncoder"に関する研究が日本ロボット学会2019にて研究奨励賞に選ばれました.</b></li>
+          <li><b> 2020.07.03 - Six papers including five first-authored papers (including two RA-L papers) were accepted to IROS2020.</b></li>
+          <li><b> 2020.05.27 - 日本機械学会2020にて2件の発表があります.</b></li>
+          <li><b> 2020.05.13 - "Autonomous Driving by Musculoskeletal Humanoids" was accepted to Robotics and Autonomous Magazine.</b></li>
+          <li><b> 2020.04.20 - "Human Mimetic Forearm and Hand Design" was accepted to Journal of Robotics and Mechatronics.</b></li>
+          <li><b> 2020.01.22 - Three papers including two first-authored papers (including one RA-L paper) were accepted to ICRA2020.</b></li>
+          <li><b> 2019.10.09 - 日本ロボット学会2019にて主著2件を含む5件の発表があります.</b></li>
+          <li><b> 2019.08.26 - Three papers including one first-authored paper were accepted to Humanoids2019.</b></li>
+          <li><b> 2019.06.21 - Seven papers including four first-authored paper (including one RA-L paper)were accepted to IROS2019.</b></li>
+          <li><b> 2019.06.05 - 日本機械学会2019にて主著2件を含む8件の発表があります.</b></li>
+          <li><b> 2019.04.13 - One first-authored paper was accepted to AMAM2019.</b></li>
+          <li><b> 2019.01.22 - One first-authored paper was accepted to ICRA2019.</b></li>
+          <li><b> 2018.10.02 - "Five-Fingered Hand Design" was selected as IROS ICROS Best Application Paper Award 2018 Finalists at IROS2018.</b></li>
+          <li><b> 2018.09.21 - Three papers including two first-authored papers were accepted to Humanoids2018.</b></li>
+          <li><b> 2018.09.05 - 日本ロボット学会2018にて主著2件を含む4件の発表があります.</b></li>
+          <li><b> 2018.06.29 - Two papers including one first-authored paper were accepted to IROS2018.</b></li>
+          <li><b> 2018.06.02 - 日本機械学会2018にて主著1件を含む4件の発表があります.</b></li>
+          <li><b> 2018.03.06 - One first-authored paper (RA-L paper) was accepted to IROS2018.</b></li>
+          <li><b> 2017.09.24 - "Human Mimetic Forearm Design" was selected as IEEE RAS Japan Joint Chapter Young Award at IROS2017.</b></li>
+          <li><b> 2017.09.11 - 日本ロボット学会2017にて主著1件の発表があります.</b></li>
+          <li><b> 2017.06.29 - Three papers including two first-authored paper (including one RA-L paper) were accepted to IROS2017.</b></li>
+          <li><b> 2017.05.10 - 日本機械学会2017にて主著1件を含む2件の発表があります.</b></li>
+          </ul>
+        </div>
 
-      <div class="title"> Awards (Publication) </div>
-        <!-- award_replace_by_python -->
+        <div class="text-white bg-primary border-primary mt-3 ps-3">
+          <h2> Publications </h2>
+        </div>
+        <!-- publication_replace_by_python -->
 
-      <div class="title"> Awards and Experiences (Others) </div>
-      <ol>
-        <li>First Place (GPSR task in DSPL), RoboCup@Home JapanOpen2022, 6-9, March, 2023</li>
-        <li>First Prize (state-based category), <a href="https://uzh-rpg.github.io/icra2022-dodgedrone/">ICRA 2022 DodgeDrone Challenge</a>, 26, May, 2022</li>
-        <li>Part-time Enginner at <a href="https://www.preferred-networks.jp/en/">Preferred Networks</a>, October (2018) - March (2020)</li>
-        <li>Internship at <a href="https://www.preferred-networks.jp/en/">Preferred Networks</a>, August - September, 2018</li>
-        <li>Oral Presentation Award (Second Prize), <a href="http://deeplearning.jp/deeplearningday2018/">Deep Learning Day 2018</a>, 20, January, 2018</li>
-        <li>Code Thanks Festival 2017, 2, December, 2017</li>
-        <li>Jaxa Award (Second Prize), <a href="http://moonhack.jp.klab.com/">Moon Hack Hackathon 2017</a>, 11 - 12, November, 2017</li>
-        <li>Final Round of Code Festival 2016, 26 - 27, November, 2016</li>
-        <li>2nd RUNNER-UP and ABU ROBOCON AWARD, <a href="http://aburobocon.net/">ABU Robot Contest 2016</a>, Clean Energy Recharging the World, 21, August, 2016</li>
-        <li>First Prize <a href="http://www.official-robocon.com/gakusei/about/history/twentyfive/">NHK Student Robot Contest 2016</a>, Clean Energy Recharging the World, 10, July, 2016</li>
-        <li>Outstanding Performance Award, Internship at <a href="http://www.worksap.com/">Works Applications Co., Ltd.</a> 4 - 31, March, 2016</li>
-        <li>Internship at <a href="http://www.futurestandard.co.jp/about/">Future Standard Co., Ltd.</a>, January - April, 2016</li>
-        <li>Third Prize (Senior Division), <a href="http://www.lsse.kyutech.ac.jp/~sociorobo/ja/tomato-robot2015">Tomato Robot Challenge</a>, 18 - 20, December, 2015</li>
-        <li>Final Round of CODE RUNNER 2015, 12, December, 2015</li>
-        <li>Final Round of Code Festival 2015, 14 - 15, November, 2015</li>
-        <li>Internship at <a href="https://www.hioki.com/en/">HIOKI E.E. CORPORATION</a>, 17 - 28, August, 2015</li>
-        <li>Technical Award, <a href="http://www.official-robocon.com/gakusei/about/history/twenty-fourth/">NHK Student Robot Contest 2015</a>, ROBOMINTON:BADMINTON ROBO GAME (Pit Member), 7, June, 2015</li>
-        <li>Dowango Award (11/372), <a href="https://icpc.iisf.or.jp/2015-tsukuba/domestic/?lang=en">ICPC Domestic Preliminary Contest</a>, 26, Jun, 2015</li>
-        <li>Final Round of <a href="http://www.ipsj.or.jp/event/samuraicoding/2014-15/index.html">SamurAI Coding 2014-2015</a>, 18, March, 2015</li>
-        <li>Final Round of CODE RUNNER 2014, 30, November, 2014</li>
-        <li>Technical Award, <a href="http://f3rcontest.web.fc2.com/index.html">Freshman's Robot Contest 2013 (F^3RC)</a>, 29, September, 2013</li>
-      </ol>
+        <div class="text-white bg-primary border-primary mt-3 ps-3">
+          <h2> Awards (Publication) </h2>
+        </div>
+          <!-- award_replace_by_python -->
 
-      <div class="title"> Grants-in-Aid and Scholarship </div>
-      <ul>
-        <li> <b>Grant-in-Aid for Challenging Research (Exploratory)</b>, Japan Society for the Promotion of Science (JSPS), April (2023) - March (2026) </li>
-        <li> <b>ACT-X Acceleration Phase</b>, Japan Science and Technology Agency (JST), April (2023) - March (2024) </li>
-        <li> <b>Grant-in-Aid for Scientific Research B</b>, Japan Society for the Promotion of Science (JSPS), April (2023) - March (2027) </li>
-        <li> <b>Grant-in-Aid for Research Activity Start-up</b>, Japan Society for the Promotion of Science (JSPS), April (2022) - March (2024) </li>
-        <li> <b>ACT-X</b>, Japan Science and Technology Agency (JST), December (2020) - March (2023) </li>
-        <li> <b>Research Fellowship for Young Scientists DC1</b>, Japan Society for the Promotion of Science (JSPS), April (2019) – March (2022) </li>
-        <li> <b>Toyota-Dowango Scholarship</b> for Training of Excellent Human Resources in Artificial Intelligence, April (2021) - March (2022) </li>
-        <li> <b>Toyota-Dowango Scholarship</b> for Training of Excellent Human Resources in Artificial Intelligence, April (2020) - March (2021) </li>
-        <li> <b>Overseas Challenge Program for Young Scientists</b>, Japan Society for the Promotion of Science (JSPS), April (2020) – August (2020), Declined due to Covid-19 </li>
-        <li> <b>Toyota-Dowango Scholarship</b> for Training of Excellent Human Resources in Artificial Intelligence, April (2018) - March (2019) </li>
-        <li> <b>Toyota-Dowango Scholarship</b> for Training of Excellent Human Resources in Artificial Intelligence, April (2017) - March (2018) </li>
-      </ul>
+        <div class="text-white bg-primary border-primary mt-3 ps-3">
+          <h2> Awards and Experiences (Others) </h2>
+        </div>
+        <ol>
+          <li>First Place (GPSR task in DSPL), RoboCup@Home JapanOpen2022, 6-9, March, 2023</li>
+          <li>First Prize (state-based category), <a href="https://uzh-rpg.github.io/icra2022-dodgedrone/">ICRA 2022 DodgeDrone Challenge</a>, 26, May, 2022</li>
+          <li>Part-time Enginner at <a href="https://www.preferred-networks.jp/en/">Preferred Networks</a>, October (2018) - March (2020)</li>
+          <li>Internship at <a href="https://www.preferred-networks.jp/en/">Preferred Networks</a>, August - September, 2018</li>
+          <li>Oral Presentation Award (Second Prize), <a href="http://deeplearning.jp/deeplearningday2018/">Deep Learning Day 2018</a>, 20, January, 2018</li>
+          <li>Code Thanks Festival 2017, 2, December, 2017</li>
+          <li>Jaxa Award (Second Prize), <a href="http://moonhack.jp.klab.com/">Moon Hack Hackathon 2017</a>, 11 - 12, November, 2017</li>
+          <li>Final Round of Code Festival 2016, 26 - 27, November, 2016</li>
+          <li>2nd RUNNER-UP and ABU ROBOCON AWARD, <a href="http://aburobocon.net/">ABU Robot Contest 2016</a>, Clean Energy Recharging the World, 21, August, 2016</li>
+          <li>First Prize <a href="http://www.official-robocon.com/gakusei/about/history/twentyfive/">NHK Student Robot Contest 2016</a>, Clean Energy Recharging the World, 10, July, 2016</li>
+          <li>Outstanding Performance Award, Internship at <a href="http://www.worksap.com/">Works Applications Co., Ltd.</a> 4 - 31, March, 2016</li>
+          <li>Internship at <a href="http://www.futurestandard.co.jp/about/">Future Standard Co., Ltd.</a>, January - April, 2016</li>
+          <li>Third Prize (Senior Division), <a href="http://www.lsse.kyutech.ac.jp/~sociorobo/ja/tomato-robot2015">Tomato Robot Challenge</a>, 18 - 20, December, 2015</li>
+          <li>Final Round of CODE RUNNER 2015, 12, December, 2015</li>
+          <li>Final Round of Code Festival 2015, 14 - 15, November, 2015</li>
+          <li>Internship at <a href="https://www.hioki.com/en/">HIOKI E.E. CORPORATION</a>, 17 - 28, August, 2015</li>
+          <li>Technical Award, <a href="http://www.official-robocon.com/gakusei/about/history/twenty-fourth/">NHK Student Robot Contest 2015</a>, ROBOMINTON:BADMINTON ROBO GAME (Pit Member), 7, June, 2015</li>
+          <li>Dowango Award (11/372), <a href="https://icpc.iisf.or.jp/2015-tsukuba/domestic/?lang=en">ICPC Domestic Preliminary Contest</a>, 26, Jun, 2015</li>
+          <li>Final Round of <a href="http://www.ipsj.or.jp/event/samuraicoding/2014-15/index.html">SamurAI Coding 2014-2015</a>, 18, March, 2015</li>
+          <li>Final Round of CODE RUNNER 2014, 30, November, 2014</li>
+          <li>Technical Award, <a href="http://f3rcontest.web.fc2.com/index.html">Freshman's Robot Contest 2013 (F^3RC)</a>, 29, September, 2013</li>
+        </ol>
 
-      <div class="title"> CV </div>
-      <a href="static/kawaharazuka-cv.pdf">Download</a>
+        <div class="text-white bg-primary border-primary mt-3 ps-3">
+          <h2> Grants-in-Aid and Scholarship </h2>
+        </div>
+        <ul>
+          <li> <b>Grant-in-Aid for Challenging Research (Exploratory)</b>, Japan Society for the Promotion of Science (JSPS), April (2023) - March (2026) </li>
+          <li> <b>ACT-X Acceleration Phase</b>, Japan Science and Technology Agency (JST), April (2023) - March (2024) </li>
+          <li> <b>Grant-in-Aid for Scientific Research B</b>, Japan Society for the Promotion of Science (JSPS), April (2023) - March (2027) </li>
+          <li> <b>Grant-in-Aid for Research Activity Start-up</b>, Japan Society for the Promotion of Science (JSPS), April (2022) - March (2024) </li>
+          <li> <b>ACT-X</b>, Japan Science and Technology Agency (JST), December (2020) - March (2023) </li>
+          <li> <b>Research Fellowship for Young Scientists DC1</b>, Japan Society for the Promotion of Science (JSPS), April (2019) – March (2022) </li>
+          <li> <b>Toyota-Dowango Scholarship</b> for Training of Excellent Human Resources in Artificial Intelligence, April (2021) - March (2022) </li>
+          <li> <b>Toyota-Dowango Scholarship</b> for Training of Excellent Human Resources in Artificial Intelligence, April (2020) - March (2021) </li>
+          <li> <b>Overseas Challenge Program for Young Scientists</b>, Japan Society for the Promotion of Science (JSPS), April (2020) – August (2020), Declined due to Covid-19 </li>
+          <li> <b>Toyota-Dowango Scholarship</b> for Training of Excellent Human Resources in Artificial Intelligence, April (2018) - March (2019) </li>
+          <li> <b>Toyota-Dowango Scholarship</b> for Training of Excellent Human Resources in Artificial Intelligence, April (2017) - March (2018) </li>
+        </ul>
+
+        <div class="text-white bg-primary border-primary mt-3 ps-3">
+          <h2> CV </h2>
+        </div>
+        <a href="static/kawaharazuka-cv.pdf">Download</a>
+      </main>
     </div>
   </body>
 </html>
