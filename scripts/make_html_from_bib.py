@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import re
 import argparse
 
 
@@ -22,6 +23,26 @@ class MakeHTML:
                        "reviewed_dconference": [],
                        "non_dconference": [],
                        "invited": []}
+
+        self.project_template = """
+          <div class='col-md-4 mb-4'>
+            <a href='{website_url}' target='blank_' class='text-decoration-none'>
+              <div class='card pt-3 pb-3 ps-3 pe-3 ' id='{card_name}'>
+                <img class='card-img-top' alt='{card_title}'>
+                <div class='card-body'>
+                  <h5 class='card-title'>{card_title}</h5>
+                  <p class='card-text'>{card_text}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <script>
+            $(document).ready(function() {{
+              setCardImage('#{card_name}', '{website_url}');
+            }});
+          </script>
+        """
 
     def parse_bib(self):
         for line in self.bib:
@@ -45,6 +66,7 @@ class MakeHTML:
                 self.current = {}
             else:
                 if "@" in line[0]:
+                    self.current["key"] = line.split('{')[1].split(',')[0]
                     continue
                 name = line.split("=")[0]
                 content = line.split("=")[1].replace("{", "").replace("}", "").replace("\n", "")
@@ -106,6 +128,9 @@ class MakeHTML:
                 if "howpublished" in name:
                     self.current["howpublished"] = content
                     continue
+                if "robots" in name:
+                    self.current["robots"] = content.split("+")
+                    continue
 
     def make_pub(self):
         self.html_pub = ""
@@ -113,6 +138,18 @@ class MakeHTML:
         self.html_award_list = []
         self.html_award = ""
         self.html_award += ('<ol>')
+
+        self.projects_pub = ""
+        robots_set = set()
+        self.robots_pub = {}
+        for papers in self.papers.values():
+            for paper in papers:
+                if "robots" in paper:
+                    for robot in paper["robots"]:
+                        robots_set.add(robot)
+        print(robots_set)
+        for robot in robots_set:
+            self.robots_pub[robot] = ""
 
         self.tex_journal = ""
 
@@ -144,10 +181,18 @@ class MakeHTML:
                 line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
             if "website" in paper:
                 line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+                self.projects_pub += self.project_template.format(
+                        card_name=paper["key"],
+                        card_title=paper["title"],
+                        card_text=author_joined+"<br>"+"Under Review",
+                        website_url=paper["website"])
             if "slide" in paper:
                 line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
             if "video" in paper:
                 line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
+            if "robots" in paper:
+                for robot in paper["robots"]:
+                    self.robots_pub[robot] += "<li>"+line+"</li>\n"
 
             self.html_pub += ("<li>"+line+"</li>")
 
@@ -211,10 +256,18 @@ class MakeHTML:
                 line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
             if "website" in paper:
                 line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+                self.projects_pub += self.project_template.format(
+                        card_name=paper["key"],
+                        card_title=paper["title"],
+                        card_text=author_joined+"<br>"+paper["booktitle"],
+                        website_url=paper["website"])
             if "slide" in paper:
                 line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
             if "video" in paper:
                 line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
+            if "robots" in paper:
+                for robot in paper["robots"]:
+                    self.robots_pub[robot] += "<li>"+line+"</li>\n"
 
             self.html_pub += ("<li>"+line+"</li>")
             self.tex_journal += ("\\item "+line2+"\n")
@@ -349,10 +402,18 @@ class MakeHTML:
                 line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
             if "website" in paper:
                 line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+                self.projects_pub += self.project_template.format(
+                        card_name=paper["key"],
+                        card_title=paper["title"],
+                        card_text=author_joined+"<br>"+paper["booktitle"],
+                        website_url=paper["website"])
             if "slide" in paper:
                 line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
             if "video" in paper:
                 line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
+            if "robots" in paper:
+                for robot in paper["robots"]:
+                    self.robots_pub[robot] += "<li>"+line+"</li>\n"
 
             self.html_pub += ("<li>"+line+"</li>")
             self.tex_proceedings += ("\\item "+line2+"\n")
@@ -613,6 +674,30 @@ class MakeHTML:
             lines.append(line)
         out.writelines(lines)
 
+    def integrate_projects_html(self, base_filename, out_filename):
+        base = open(base_filename, "r")
+        out = open(out_filename, "w")
+        lines = []
+        lines.append("<!-- This file is automatically generated. Do not modify -->\n")
+        for line in base:
+            if "projects_replace_by_python" in line:
+                lines.append(self.projects_pub)
+            lines.append(line)
+        out.writelines(lines)
+
+    def integrate_robots_html(self, base_filename, out_filename):
+        base = open(base_filename, "r")
+        out = open(out_filename, "w")
+        lines = []
+        lines.append("<!-- This file is automatically generated. Do not modify -->\n")
+        for line in base:
+            matches = re.findall(r'\s*<!--\s*([^>]+)_replace_by_python\s*-->\s*', line)
+            if len(matches) > 0:
+                robot = matches[0]
+                lines.append(self.robots_pub[robot])
+            lines.append(line)
+        out.writelines(lines)
+
     def integrate_tex(self, base_filename, out_filename):
         base = open(base_filename, "r")
         out = open(out_filename, "w")
@@ -641,10 +726,18 @@ def main():
                         help='bibtex file')
     parser.add_argument('--base', '-b', type=str, default="base.html",
                         help='base html file')
+    parser.add_argument('--projects_base', type=str, default="projects_base.html",
+                        help='projects base html file')
+    parser.add_argument('--robots_base', type=str, default="robots_base.html",
+                        help='robots base html file')
     parser.add_argument('--cvbase', '-cb', type=str, default="cv/base.tex",
                         help='base cv tex file')
     parser.add_argument('--out', '-o', type=str, default="index.html",
                         help='output html file')
+    parser.add_argument('--projects_out', type=str, default="projects.html",
+                        help='projects output html file')
+    parser.add_argument('--robots_out', type=str, default="robots.html",
+                        help='robots output html file')
     parser.add_argument('--cvout', '-co', type=str, default="cv/main.tex",
                         help='output cv tex file')
     parser.add_argument('--csvout', '-csvo', type=str, default="main.csv",
@@ -654,6 +747,8 @@ def main():
     makeHTML.parse_bib()
     makeHTML.make_pub()
     makeHTML.integrate_html(args.base, args.out)
+    makeHTML.integrate_projects_html(args.projects_base, args.projects_out)
+    makeHTML.integrate_robots_html(args.robots_base, args.robots_out)
     makeHTML.integrate_tex(args.cvbase, args.cvout)
     makeHTML.integrate_csv(args.csvout)
 
