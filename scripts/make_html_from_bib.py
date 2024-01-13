@@ -132,6 +132,9 @@ class MakeHTML:
                 if "website" in name:
                     self.current["website"] = content
                     continue
+                if "code" in name:
+                    self.current["code"] = content
+                    continue
                 if "slide" in name:
                     self.current["slide"] = content
                     continue
@@ -189,7 +192,7 @@ class MakeHTML:
                 line += ", " + paper["year"]
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
-            if ("arxiv" in paper) or ("website" in paper) or ("slide" in paper) or ("video" in paper):
+            if ("arxiv" in paper) or ("website" in paper) or ("code" in paper) or ("slide" in paper) or ("video" in paper):
                 line += "<br>"
             if "arxiv" in paper:
                 line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
@@ -200,6 +203,8 @@ class MakeHTML:
                         card_title=paper["title"],
                         card_text=author_joined+"<br>"+"Under Review",
                         website_url=paper["website"])
+            if "code" in paper:
+                line += " <a href=" + paper["code"] + " target='_blank'>[Source Code]</a>"
             if "slide" in paper:
                 line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
             if "video" in paper:
@@ -266,7 +271,7 @@ class MakeHTML:
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
                 line2 += ", (\\textbf{" + paper["note"] + "})"
-            if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("slide" in paper) or ("video" in paper):
+            if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("code" in paper) or ("slide" in paper) or ("video" in paper):
                 line += "<br>"
             if "doi" in paper:
                 line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank'>[Paper Link]</a>"
@@ -279,6 +284,8 @@ class MakeHTML:
                         card_title=paper["title"],
                         card_text=author_joined+"<br>"+paper["booktitle"],
                         website_url=paper["website"])
+            if "code" in paper:
+                line += " <a href=" + paper["code"] + " target='_blank'>[Source Code]</a>"
             if "slide" in paper:
                 line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
             if "video" in paper:
@@ -343,7 +350,7 @@ class MakeHTML:
                         self.html_award_list.append((paper["year"], html_award_tmp))
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
-            if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("slide" in paper) or ("video" in paper):
+            if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("code" in paper) or ("slide" in paper) or ("video" in paper):
                 line += "<br>"
             if "doi" in paper:
                 line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank'>[Paper Link]</a>"
@@ -351,6 +358,8 @@ class MakeHTML:
                 line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
             if "website" in paper:
                 line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+            if "code" in paper:
+                line += " <a href=" + paper["code"] + " target='_blank'>[Source Code]</a>"
             if "slide" in paper:
                 line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
             if "video" in paper:
@@ -416,7 +425,7 @@ class MakeHTML:
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
                 line2 += ", (\\textbf{" + paper["note"] + "})"
-            if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("slide" in paper) or ("video" in paper):
+            if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("code"in paper) or ("slide" in paper) or ("video" in paper):
                 line += "<br>"
             if "doi" in paper:
                 line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank'>[Paper Link]</a>"
@@ -429,6 +438,8 @@ class MakeHTML:
                         card_title=paper["title"],
                         card_text=author_joined+"<br>"+paper["booktitle"],
                         website_url=paper["website"])
+            if "code" in paper:
+                line += " <a href=" + paper["code"] + " target='_blank'>[Source Code]</a>"
             if "slide" in paper:
                 line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
             if "video" in paper:
@@ -491,7 +502,7 @@ class MakeHTML:
                         self.html_award_list.append((paper["year"], html_award_tmp))
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
-            if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("slide" in paper) or ("video" in paper):
+            if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("code" in paper) or ("slide" in paper) or ("video" in paper):
                 line += "<br>"
             if "doi" in paper:
                 line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank'>[Paper Link]</a>"
@@ -499,6 +510,8 @@ class MakeHTML:
                 line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
             if "website" in paper:
                 line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+            if "code" in paper:
+                line += " <a href=" + paper["code"] + " target='_blank'>[Source Code]</a>"
             if "slide" in paper:
                 line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
             if "video" in paper:
@@ -550,7 +563,7 @@ class MakeHTML:
                         self.html_award_list.append((paper["year"], html_award_tmp))
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
-            if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("slide" in paper) or ("video" in paper):
+            if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("code" in paper) or ("slide" in paper) or ("video" in paper):
                 line += "<br>"
             if "doi" in paper:
                 line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank'>[Paper Link]</a>"
@@ -558,6 +571,8 @@ class MakeHTML:
                 line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
             if "website" in paper:
                 line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+            if "code" in paper:
+                line += " <a href=" + paper["code"] + " target='_blank'>[Source Code]</a>"
             if "slide" in paper:
                 line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
             if "video" in paper:
@@ -607,7 +622,7 @@ class MakeHTML:
                         self.html_award_list.append((paper["year"], html_award_tmp))
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
-            if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("slide" in paper) or ("video" in paper):
+            if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("code" in paper) or ("slide" in paper) or ("video" in paper):
                 line += "<br>"
             if "doi" in paper:
                 line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank'>[Paper Link]</a>"
@@ -615,6 +630,8 @@ class MakeHTML:
                 line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
             if "website" in paper:
                 line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+            if "code" in paper:
+                line += " <a href=" + paper["code"] + " target='_blank'>[Source Code]</a>"
             if "slide" in paper:
                 line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
             if "video" in paper:
