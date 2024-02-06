@@ -62,6 +62,7 @@
 @string{ROBOSYM18J = "第23回ロボティクスシンポジア予稿集"}
 @string{ROBOSYM18E = "Proceedings of the 23rd Robotics Symposia"}
 
+@string{IROS2024 = "Proceedings of the 2024 IEEE/RSJ International Conference on Intelligent Robots and Systems"}
 @string{IROS2023 = "Proceedings of the 2023 IEEE/RSJ International Conference on Intelligent Robots and Systems"}
 @string{IROS2022 = "Proceedings of the 2022 IEEE/RSJ International Conference on Intelligent Robots and Systems"}
 @string{IROS2021 = "Proceedings of the 2021 IEEE/RSJ International Conference on Intelligent Robots and Systems"}
@@ -88,6 +89,7 @@
 @string{IROS2000 = "Proceedings of the 2000 IEEE/RSJ International Conference on Intelligent Robots and Systems"}
 @string{IROS1996 = "Proceedings of the 1996 IEEE/RSJ International Conference on Intelligent Robots and Systems"}
 
+@string{ICRA2024 = "Proceedings of the 2024 IEEE International Conference on Robotics and Automation"}
 @string{ICRA2023 = "Proceedings of the 2023 IEEE International Conference on Robotics and Automation"}
 @string{ICRA2022 = "Proceedings of the 2022 IEEE International Conference on Robotics and Automation"}
 @string{ICRA2021 = "Proceedings of the 2021 IEEE International Conference on Robotics and Automation"}
@@ -105,6 +107,7 @@
 @string{ICRA2001 = "Proceedings of the 2001 IEEE International Conference on Robotics and Automation"}
 @string{ICRA1998 = "Proceedings of the 1998 IEEE International Conference on Robotics and Automation"}
 
+@string{HUMANOIDS2024 = "Proceedings of the 2024 IEEE-RAS International Conference on Humanoid Robots"}
 @string{HUMANOIDS2023 = "Proceedings of the 2023 IEEE-RAS International Conference on Humanoid Robots"}
 @string{HUMANOIDS2022 = "Proceedings of the 2022 IEEE-RAS International Conference on Humanoid Robots"}
 @string{HUMANOIDS2020 = "Proceedings of the 2020 IEEE-RAS International Conference on Humanoid Robots"}
@@ -127,6 +130,7 @@
 
 @string{ROMAN2023 = "Proceedings of the 32nd IEEE International Conference on Robot and Human Interactive Communication"}
 
+@string{ROBOSOFT2024 = "Proceedings of the 2024 IEEE International Conference on Soft Robotics"}
 @string{ROBOSOFT2021 = "Proceedings of the 2021 IEEE International Conference on Soft Robotics"}
 
 @string{ROBIO2011 = "Proceedings of the 2011 IEEE International Conference on Robotics and Biomimetics"}
@@ -159,30 +163,6 @@
 
 
 % under_review
-@misc{shirai2023vilain,
-  author={K. Shirai and C. C. Beltran-Hernandez and M. Hamaya and A. Hashimoto and S. Tanaka and K. Kawaharazuka and K. Tanaka and Y. Ushiku and S. Mori},
-  title={{Vision-Language Interpreter for Robot Task Planning}},
-  howpublished={arXiv preprint arXiv:2311.00967},
-  year=2023,
-  arxiv={https://arxiv.org/abs/2311.00967},
-  code={https://github.com/omron-sinicx/vilain},
-}
-@misc{xembodiment2023rtx,
-  author={Open X-Embodiment Collaboration},
-  title={{Open X-Embodiment: Robotic Learning Datasets and RT-X Models}},
-  year=2023,
-  arxiv={https://robotics-transformer-x.github.io/paper.pdf},
-  website={https://robotics-transformer-x.github.io/},
-}
-@misc{tang2023humanmimic,
-  author={A. Tang and T. Hiraoka and N. Hiraoka and F. Shi and K. Kawaharazuka and K. Kojima and K. Okada and M. Inaba},
-  title={{HumanMimic: Learning Natural Locomotion and Transitions for Humanoid Robot via Wasserstein Adversarial Imitation}},
-  howpublished={arXiv preprint arXiv:2309.14225},
-  year=2023,
-  arxiv={https://arxiv.org/abs/2309.14225},
-  video={https://www.youtube.com/watch?v=sdM11yHpzi8},
-  robots={jaxon},
-}
 @misc{obinata2023gpsr,
   author={Y. Obinata and N. Kanazawa and K. Kawaharazuka and I. Yanokura and S. Kim and K. Okada and M. Inaba},
   title={{Foundation Model based Open Vocabulary Task Planning and Executive System for General Purpose Service Robots}},
@@ -471,6 +451,57 @@
 }
 
 % reviewed_iconference
+@inproceedings{kawaharazuka2024fls,
+  author={K. Kawaharazuka and K. Okada and M. Inaba},
+  title={{Robotic Constrained Imitation Learning for the Peg Transfer Task in Fundamentals of Laparoscopic Surgery (in press)}},
+  booktitle=ICRA2024,
+  year=2024,
+  robots={panda},
+}
+@inproceedings{kawaharazuka2024kxr,
+  author={K. Kawaharazuka and K. Okada and M. Inaba},
+  title={{Adaptive Whole-body Robotic Tool-use Learning on Low-rigidity Plastic-made Humanoids Using Vision and Tactile Sensors (in press)}},
+  booktitle=ICRA2024,
+  year=2024,
+  robots={kxr},
+}
+@inproceedings{tang2024humanmimic,
+  author={A. Tang and T. Hiraoka and N. Hiraoka and F. Shi and K. Kawaharazuka and K. Kojima and K. Okada and M. Inaba},
+  title={{HumanMimic: Learning Natural Locomotion and Transitions for Humanoid Robot via Wasserstein Adversarial Imitation (in press)}},
+  booktitle=ICRA2024,
+  year=2024,
+  arxiv={https://arxiv.org/abs/2309.14225},
+  video={https://www.youtube.com/watch?v=sdM11yHpzi8},
+  robots={jaxon},
+}
+@inproceedings{shirai2024vilain,
+  author={K. Shirai and C. C. Beltran-Hernandez and M. Hamaya and A. Hashimoto and S. Tanaka and K. Kawaharazuka and K. Tanaka and Y. Ushiku and S. Mori},
+  title={{Vision-Language Interpreter for Robot Task Planning (in press)}},
+  booktitle=ICRA2024,
+  year=2024,
+  arxiv={https://arxiv.org/abs/2311.00967},
+  code={https://github.com/omron-sinicx/vilain},
+}
+@inproceedings{xembodiment2024rtx,
+  author={Open X-Embodiment Collaboration},
+  title={{Open X-Embodiment: Robotic Learning Datasets and RT-X Models (in press)}},
+  booktitle=ICRA2024,
+  year=2024,
+  arxiv={https://robotics-transformer-x.github.io/paper.pdf},
+  website={https://robotics-transformer-x.github.io/},
+}
+@inproceedings{inoue2024chair,
+  author={S. Inoue and K. Kawaharazuka and K. Okada and M. Inaba},
+  title={{Body Design and Gait Generation of Chair-Type Asymmetrical Tripedal Low-rigidity Robot}},
+  booktitle=ROBOSOFT2024,
+  year=2024,
+}
+@inproceedings{miki2024cartilage,
+  author={A. Miki and Y. Sahara and K. Miyama and Y. Ribayashi and K. Kawaharazuka and S. Hasegawa and K. Okada and M. Inaba},
+  title={{Designing Fluid-Exuding Cartilage for Biomimetic Robots Mimicking Human Joint Lubrication Function (in press)}},
+  booktitle=ROBOSOFT2024,
+  year=2024,
+}
 @inproceedings{kawaharazuka2023ptvlm,
   author={K. Kawaharazuka and Y. Obinata and N. Kanazawa and K. Okada and M. Inaba},
   title={{Robotic Applications of Pre-Trained Vision-Language Models to Various Recognition Behaviors}},
