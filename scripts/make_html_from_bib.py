@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import re
+import time
 import argparse
 
 
@@ -265,9 +266,9 @@ class MakeHTML:
                         html_award_tmp += (", " + paper["date"])
                     html_award_tmp += '</li>'
                     if "date" in paper:
-                        self.html_award_list.append((paper["date"], html_award_tmp))
+                        self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
                     else:
-                        self.html_award_list.append((paper["year"], html_award_tmp))
+                        self.html_award_list.append((time.strptime(paper["date"], "%Y"), html_award_tmp))
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
                 line2 += ", (\\textbf{" + paper["note"] + "})"
@@ -345,9 +346,9 @@ class MakeHTML:
                         html_award_tmp += (", " + paper["date"])
                     html_award_tmp += '</li>'
                     if "date" in paper:
-                        self.html_award_list.append((paper["date"], html_award_tmp))
+                        self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
                     else:
-                        self.html_award_list.append((paper["year"], html_award_tmp))
+                        self.html_award_list.append((time.strptime(paper["date"], "%Y"), html_award_tmp))
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
             if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("code" in paper) or ("slide" in paper) or ("video" in paper):
@@ -419,9 +420,9 @@ class MakeHTML:
                         html_award_tmp += (", " + paper["date"])
                     html_award_tmp += '</li>'
                     if "date" in paper:
-                        self.html_award_list.append((paper["date"], html_award_tmp))
+                        self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
                     else:
-                        self.html_award_list.append((paper["year"], html_award_tmp))
+                        self.html_award_list.append((time.strptime(paper["date"], "%Y"), html_award_tmp))
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
                 line2 += ", (\\textbf{" + paper["note"] + "})"
@@ -497,9 +498,9 @@ class MakeHTML:
                         html_award_tmp += (", " + paper["date"])
                     html_award_tmp += '</li>'
                     if "date" in paper:
-                        self.html_award_list.append((paper["date"], html_award_tmp))
+                        self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
                     else:
-                        self.html_award_list.append((paper["year"], html_award_tmp))
+                        self.html_award_list.append((time.strptime(paper["date"], "%Y"), html_award_tmp))
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
             if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("code" in paper) or ("slide" in paper) or ("video" in paper):
@@ -558,9 +559,9 @@ class MakeHTML:
                         html_award_tmp += (", " + paper["date"])
                     html_award_tmp += '</li>'
                     if "date" in paper:
-                        self.html_award_list.append((paper["date"], html_award_tmp))
+                        self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
                     else:
-                        self.html_award_list.append((paper["year"], html_award_tmp))
+                        self.html_award_list.append((time.strptime(paper["date"], "%Y"), html_award_tmp))
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
             if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("code" in paper) or ("slide" in paper) or ("video" in paper):
@@ -617,9 +618,9 @@ class MakeHTML:
                         html_award_tmp += (", " + paper["date"])
                     html_award_tmp += '</li>'
                     if "date" in paper:
-                        self.html_award_list.append((paper["date"], html_award_tmp))
+                        self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
                     else:
-                        self.html_award_list.append((paper["year"], html_award_tmp))
+                        self.html_award_list.append((time.strptime(paper["date"], "%Y"), html_award_tmp))
             if "note" in paper:
                 line += ", (<b>" + paper["note"] + "</b>)"
             if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("code" in paper) or ("slide" in paper) or ("video" in paper):
@@ -673,7 +674,6 @@ class MakeHTML:
                     if "date" in paper:
                         html_award_tmp += (", " + paper["date"])
                     html_award_tmp += '</li>'
-                    self.html_award_list.append((paper["year"], html_award_tmp))
             if "date" in paper:
                 line += ", " + paper["date"]
             if ("website" in paper) or ("slide" in paper) or ("video" in paper):
