@@ -7,6 +7,8 @@
 @string{SI09J = "第10回SICEシステムインテグレーション部門講演会講演概要集"}
 @string{SI09E = "Proceedings of the 10th SICE System Integration Division Annual Conference"}
 
+@string{NLP24J = "言語処理学会第30回年次大会"}
+
 @string{RSJ23J = "第41回日本ロボット学会学術講演会講演論文集"}
 @string{RSJ22J = "第40回日本ロボット学会学術講演会講演論文集"}
 @string{RSJ21J = "第39回日本ロボット学会学術講演会講演論文集"}
@@ -181,6 +183,14 @@
   robots={hsr},
 }
 % ijournal_papers
+@article{temma2024saqiel,
+  author={T. Suzuki and M. Bando and K. Kawaharazuka and K. Okada and M. Inaba},
+  title={{SAQIEL: Ultra-Light and Safe Manipulator with Passive 3D Wire Alignment Mechanism (in press)}},
+  journal=RAL,
+  year=2024,
+  doi={10.1109/LRA.2024.3371219},
+  note={presented at IROS2024},
+}
 @article{kawaharazuka2024arrangeopt,
   author={K. Kawaharazuka and S. Yoshimura and T. Suzuki and K. Okada and M. Inaba},
   title={{Design Optimization of Wire Arrangement With Variable Relay Points in Numerical Simulation for Tendon-Driven Robots}},
@@ -190,6 +200,7 @@
   pages={1388--1395},
   year=2024,
   doi={10.1109/LRA.2023.3342667},
+  note={presented at IROS2024},
   arxiv={http://arxiv.org/abs/2401.02730},
   website={https://haraduka.github.io/muscle-arrange-optimization/},
   video={https://www.youtube.com/watch?v=Uq9Ympi7KMw},
@@ -1175,6 +1186,13 @@
 }
 
 % non_dconference
+@inproceedings{kanazawa2024planning-ja,
+  author={金沢 直晃 and 河原塚 健人 and 大日方 慶樹 and 岡田 慧 and 稲葉 雅幸},
+  title={{基盤モデルと古典プランニングを用いたレシピ記述からの実世界調理計画認識実行ロボットシステム}},
+  booktitle=NLP24J,
+  pages={E1-3},
+  year=2024,
+}
 @inproceedings{kanazawa2023realworld-ja,
   author={金沢 直晃 and 河原塚 健人 and 大日方 慶樹 and 岡田 慧 and 稲葉 雅幸},
   title={{対象物状態中心の調理行動記述に基づくレシピからの卵料理の実世界調理実行ロボットシステム}},
@@ -1955,6 +1973,24 @@
 }
 
 % invited
+@inproceedings{invited2024robosoft-ja,
+  author={Kento Kawaharazuka},
+  title={{Musculoskeletal Humanoids and Beyond (TBD)}},
+  note={Workshop on "From Layers to Limbs! Exploring the Interface of 3D Printing and Bio-Inspired Musculoskeletal Robotics"}
+  booktitle={2024 IEEE International Conference on Soft Robotics (RoboSoft)},
+  date={2024.4.14},
+  year=2024,
+  website={https://printed-musculoskeletal-robots.ethz.ch/},
+}
+@inproceedings{invited2024nlp-ja,
+  author={河原塚 健人},
+  title={{ロボット研究におけるLLMの実世界応用 (TBD)}},
+  note={招待講演}
+  booktitle={NLP2024併設ワークショップ「大規模言語モデルの実世界応用」},
+  date={2024.3.15},
+  year=2024,
+  website={https://sites.google.com/grp.riken.jp/langrobonlp2024},
+}
 @inproceedings{invited2023ecsra-ja,
   author={河原塚 健人},
   title={{筋骨格ヒューマノイドと身体図式学習}},
@@ -1976,7 +2012,7 @@
 @inproceedings{invited2023manipulation,
   author={K. Kawaharazuka},
   title={{Learning-based manipulation and grasping with flexible arms and hands}},
-  note={Learning Meets Model-based Methods for Manipulation and Grasping Workshop},
+  note={Workshop on "Learning Meets Model-based Methods for Manipulation and Grasping"},
   booktitle={2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
   date={2023.10.5},
   year=2023,
