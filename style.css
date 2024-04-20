@@ -1,6 +1,7 @@
 body{
   line-height: 120%;
   font-size: 0.9em;
+  padding-top: 80px; /* ナビゲーションバーの高さに合わせて適切な値を設定 */
 }
 
 li {
@@ -11,3 +12,16 @@ a:link { color: #1693f3; }
 a:visited { color: #1693f3; }
 a:hover { color: #1693f3; }
 a:active { color: #1693f3; }
+
+/* ナビゲーションバーを非表示にするクラス */
+.navbar-hide {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* スクロール時に表示されるナビゲーションバーの位置 */
+.navbar-show {
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+}
+
