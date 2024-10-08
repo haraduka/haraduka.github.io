@@ -154,7 +154,7 @@ class MakeHTML:
 
         self.html_award_list = []
         self.html_award = ""
-        self.html_award += ('<ol>')
+        self.html_award += ('\n<ol>\n')
 
         self.projects_pub = ""
         self.videos_pub = ""
@@ -178,7 +178,7 @@ class MakeHTML:
         # International Journal Papers
         papers = self.papers["ijournal_papers"]
         self.html_pub += ('<h3> International Journal Papers </h3>')
-        self.html_pub += ('<ol>')
+        self.html_pub += ('\n<ol>\n')
         self.tex_journal += '\\begin{enumerate}\n'
         for paper in papers:
             author = paper["author"].split(", ")
@@ -218,7 +218,7 @@ class MakeHTML:
                     html_award_tmp = ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
                     if "date" in paper:
                         html_award_tmp += (", " + paper["date"])
-                    html_award_tmp += '</li>'
+                    html_award_tmp += '</li>\n'
                     if "date" in paper:
                         self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
                     else:
@@ -253,7 +253,7 @@ class MakeHTML:
                 for robot in paper["robots"]:
                     self.robots_pub[robot] += "<li>"+line+"</li>\n"
 
-            self.html_pub += ("<li>"+line+"</li>")
+            self.html_pub += ("<li>"+line+"</li>\n")
             self.tex_journal += ("\\item "+line2+"\n")
 
             csv_one_data = [
@@ -268,13 +268,13 @@ class MakeHTML:
             ]
             csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
             self.csv_text += ",".join(csv_one_data) + "\n"
-        self.html_pub += ('</ol>')
+        self.html_pub += ('</ol>\n')
         self.tex_journal += '\\end{enumerate}\n'
 
         # International Conference Proceedings (Peer Reviewed)
         papers = self.papers["reviewed_iconference"]
         self.html_pub += ('<h3> International Conference Proceedings (Peer Reviewed) </h3>')
-        self.html_pub += ('<ol>')
+        self.html_pub += ('\n<ol>\n')
         self.tex_proceedings += '\\begin{enumerate}\n'
         for paper in papers:
             author = paper["author"].split(", ")
@@ -308,7 +308,7 @@ class MakeHTML:
                     html_award_tmp = ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
                     if "date" in paper:
                         html_award_tmp += (", " + paper["date"])
-                    html_award_tmp += '</li>'
+                    html_award_tmp += '</li>\n'
                     if "date" in paper:
                         self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
                     else:
@@ -343,7 +343,7 @@ class MakeHTML:
                 for robot in paper["robots"]:
                     self.robots_pub[robot] += "<li>"+line+"</li>\n"
 
-            self.html_pub += ("<li>"+line+"</li>")
+            self.html_pub += ("<li>"+line+"</li>\n")
             self.tex_proceedings += ("\\item "+line2+"\n")
 
             csv_one_data = [
@@ -356,13 +356,13 @@ class MakeHTML:
             ]
             csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
             self.csv_text += ",".join(csv_one_data) + "\n"
-        self.html_pub += ('</ol>')
+        self.html_pub += ('</ol>\n')
         self.tex_proceedings += '\\end{enumerate}\n'
 
         # International Workshop, Extended Abstract, etc.
         papers = self.papers["workshop_abstract"]
         self.html_pub += ('<h3> International Workshop, Extended Abstract, etc. </h3>')
-        self.html_pub += ('<ol>')
+        self.html_pub += ('\n<ol>\n')
         for paper in papers:
             author = paper["author"].split(", ")
             for i, a in enumerate(author):
@@ -387,7 +387,7 @@ class MakeHTML:
                     html_award_tmp = ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
                     if "date" in paper:
                         html_award_tmp += (", " + paper["date"])
-                    html_award_tmp += '</li>'
+                    html_award_tmp += '</li>\n'
                     if "date" in paper:
                         self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
                     else:
@@ -409,7 +409,7 @@ class MakeHTML:
             if "video" in paper:
                 line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
 
-            self.html_pub += ("<li>"+line+"</li>")
+            self.html_pub += ("<li>"+line+"</li>\n")
 
             csv_one_data = [
                     paper["doi"] if "doi" in paper else "-",
@@ -423,11 +423,11 @@ class MakeHTML:
             ]
             csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
             self.csv_text += ",".join(csv_one_data) + "\n"
-        self.html_pub += ('</ol>')
+        self.html_pub += ('</ol>\n')
 
         papers = self.papers["arxiv_papers"]
         self.html_pub += ('<h3> arXiv </h3>')
-        self.html_pub += ('<ol>')
+        self.html_pub += ('\n<ol>\n')
         for paper in papers:
             author = paper["author"].split(", ")
             for i, a in enumerate(author):
@@ -468,14 +468,14 @@ class MakeHTML:
                 for robot in paper["robots"]:
                     self.robots_pub[robot] += "<li>"+line+"</li>\n"
 
-            self.html_pub += ("<li>"+line+"</li>")
+            self.html_pub += ("<li>"+line+"</li>\n")
 
-        self.html_pub += ('</ol>')
+        self.html_pub += ('</ol>\n')
 
         # Domestic Journal Papers
         papers = self.papers["djournal_papers"]
         self.html_pub += ('<h3> Domestic Journal Papers </h3>')
-        self.html_pub += ('<ol>')
+        self.html_pub += ('\n<ol>\n')
         for paper in papers:
             author = paper["author"].split(", ")
             for i, a in enumerate(author):
@@ -500,7 +500,7 @@ class MakeHTML:
                     html_award_tmp = ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
                     if "date" in paper:
                         html_award_tmp += (", " + paper["date"])
-                    html_award_tmp += '</li>'
+                    html_award_tmp += '</li>\n'
                     if "date" in paper:
                         self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
                     else:
@@ -522,7 +522,7 @@ class MakeHTML:
             if "video" in paper:
                 line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
 
-            self.html_pub += ("<li>"+line+"</li>")
+            self.html_pub += ("<li>"+line+"</li>\n")
 
             csv_one_data = [
                     paper["doi"] if "doi" in paper else "-",
@@ -536,12 +536,12 @@ class MakeHTML:
             ]
             csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
             self.csv_text += ",".join(csv_one_data) + "\n"
-        self.html_pub += ('</ol>')
+        self.html_pub += ('</ol>\n')
 
         # Domestic Conference Proceedings
         papers = self.papers["reviewed_dconference"]
         self.html_pub += ('<h3> Domestic Conference Proceedings (Peer Reviewed) </h3>')
-        self.html_pub += ('<ol>')
+        self.html_pub += ('\n<ol>\n')
         for paper in papers:
             author = paper["author"].split(", ")
             for i, a in enumerate(author):
@@ -562,7 +562,7 @@ class MakeHTML:
                     html_award_tmp = ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
                     if "date" in paper:
                         html_award_tmp += (", " + paper["date"])
-                    html_award_tmp += '</li>'
+                    html_award_tmp += '</li>\n'
                     if "date" in paper:
                         self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
                     else:
@@ -584,7 +584,7 @@ class MakeHTML:
             if "video" in paper:
                 line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
 
-            self.html_pub += ("<li>"+line+"</li>")
+            self.html_pub += ("<li>"+line+"</li>\n")
 
             csv_one_data = [
                     paper["author"],
@@ -596,12 +596,12 @@ class MakeHTML:
             ]
             csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
             self.csv_text += ",".join(csv_one_data) + "\n"
-        self.html_pub += ('</ol>')
+        self.html_pub += ('</ol>\n')
 
         # Domestic Conference Proceedings (No Reviewed)
         papers = self.papers["non_dconference"]
         self.html_pub += ('<h3> Domestic Conference Proceedings (No Reviewed) </h3>')
-        self.html_pub += ('<ol>')
+        self.html_pub += ('\n<ol>\n')
         for paper in papers:
             author = paper["author"].split(", ")
             for i, a in enumerate(author):
@@ -622,7 +622,7 @@ class MakeHTML:
                     html_award_tmp = ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
                     if "date" in paper:
                         html_award_tmp += (", " + paper["date"])
-                    html_award_tmp += '</li>'
+                    html_award_tmp += '</li>\n'
                     if "date" in paper:
                         self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
                     else:
@@ -644,7 +644,7 @@ class MakeHTML:
             if "video" in paper:
                 line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
 
-            self.html_pub += ("<li>"+line+"</li>")
+            self.html_pub += ("<li>"+line+"</li>\n")
 
             csv_one_data = [
                     paper["author"],
@@ -656,12 +656,12 @@ class MakeHTML:
             ]
             csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
             self.csv_text += ",".join(csv_one_data) + "\n"
-        self.html_pub += ('</ol>')
+        self.html_pub += ('</ol>\n')
 
         # Invited Talks, etc.
         papers = self.papers["invited"]
         self.html_pub += ('<h3> Invited Talks, etc.</h3>')
-        self.html_pub += ('<ol>')
+        self.html_pub += ('\n<ol>\n')
         for paper in papers:
             author = paper["author"].split(", ")
             for i, a in enumerate(author):
@@ -692,7 +692,7 @@ class MakeHTML:
             if "video" in paper:
                 line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
 
-            self.html_pub += ("<li>"+line+"</li>")
+            self.html_pub += ("<li>"+line+"</li>\n")
 
             csv_one_data = [
                     paper["author"],
@@ -704,12 +704,12 @@ class MakeHTML:
             ]
             csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
             self.csv_text += ",".join(csv_one_data) + "\n"
-        self.html_pub += ('</ol>')
+        self.html_pub += ('</ol>\n')
 
         self.html_award_list.sort(reverse=True)
         for html_award_tmp in self.html_award_list:
             self.html_award += html_award_tmp[1]
-        self.html_award += ('</ol>')
+        self.html_award += ('</ol>\n')
 
     def integrate_html(self, base_filename, out_filename):
         base = open(base_filename, "r")
