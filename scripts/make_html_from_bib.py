@@ -113,6 +113,11 @@ class MakeHTML:
                 if "year" in name:
                     self.current["year"] = content
                     continue
+                if "award_personal" in name:
+                    if "award_personal" not in self.current:
+                        self.current["award_personal"] = []
+                    self.current["award_personal"].append(content)
+                    continue
                 if "award" in name:
                     if "award" not in self.current:
                         self.current["award"] = []
@@ -211,6 +216,19 @@ class MakeHTML:
             if "year" in paper:
                 line += ", " + paper["year"]
                 line2 += ", " + paper["year"]
+            if "award_personal" in paper:
+                for award in paper["award_personal"]:
+                    line += ", <b><font color='red'>"+award+"</font></b>"
+                    line2 += ", \\textbf{\\textcolor{red}{"+award+"}}"
+                    if self.en_name in paper["author"].split(", ")[0]:
+                        html_award_tmp = ("<li>" + author_joined.split(", ")[0] + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                        if "date" in paper:
+                            html_award_tmp += (", " + paper["date"])
+                        html_award_tmp += '</li>\n'
+                        if "date" in paper:
+                            self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
+                        else:
+                            self.html_award_list.append((time.strptime(paper["date"], "%Y"), html_award_tmp))
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
@@ -301,6 +319,19 @@ class MakeHTML:
             if "year" in paper:
                 line += ", " + paper["year"]
                 line2 += ", " + paper["year"]
+            if "award_personal" in paper:
+                for award in paper["award_personal"]:
+                    line += ", <b><font color='red'>"+award+"</font></b>"
+                    line2 += ", \\textbf{\\textcolor{red}{"+award+"}}"
+                    if self.en_name in paper["author"].split(", ")[0]:
+                        html_award_tmp = ("<li>" + author_joined.split(", ")[0] + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                        if "date" in paper:
+                            html_award_tmp += (", " + paper["date"])
+                        html_award_tmp += '</li>\n'
+                        if "date" in paper:
+                            self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
+                        else:
+                            self.html_award_list.append((time.strptime(paper["date"], "%Y"), html_award_tmp))
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
@@ -381,10 +412,26 @@ class MakeHTML:
                 line += ", pp. " + paper["pages"]
             if "year" in paper:
                 line += ", " + paper["year"]
+            if "award_personal" in paper:
+                for award in paper["award_personal"]:
+                    line += ", <b><font color='red'>"+award+"</font></b>"
+                    if self.en_name in paper["author"].split(", ")[0]:
+                        html_award_tmp = ("<li>" + author_joined.split(", ")[0] + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                        if "note" in paper:
+                            html_award_tmp += ", (<b>" + paper["note"] + "</b>)"
+                        if "date" in paper:
+                            html_award_tmp += (", " + paper["date"])
+                        html_award_tmp += '</li>\n'
+                        if "date" in paper:
+                            self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
+                        else:
+                            self.html_award_list.append((time.strptime(paper["date"], "%Y"), html_award_tmp))
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
                     html_award_tmp = ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                    if "note" in paper:
+                        html_award_tmp += ", (<b>" + paper["note"] + "</b>)"
                     if "date" in paper:
                         html_award_tmp += (", " + paper["date"])
                     html_award_tmp += '</li>\n'
@@ -494,6 +541,18 @@ class MakeHTML:
                 line += ", pp. " + paper["pages"]
             if "year" in paper:
                 line += ", " + paper["year"]
+            if "award_personal" in paper:
+                for award in paper["award_personal"]:
+                    line += ", <b><font color='red'>"+award+"</font></b>"
+                    if (self.ja_name in paper["author"].split(", ")[0]) or (self.en_name in paper["author"].split(", ")[0]):
+                        html_award_tmp = ("<li>" + author_joined.split(", ")[0] + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                        if "date" in paper:
+                            html_award_tmp += (", " + paper["date"])
+                        html_award_tmp += '</li>\n'
+                        if "date" in paper:
+                            self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
+                        else:
+                            self.html_award_list.append((time.strptime(paper["date"], "%Y"), html_award_tmp))
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
@@ -556,6 +615,18 @@ class MakeHTML:
                 line += ", pp. " + paper["pages"]
             if "year" in paper:
                 line += ", " + paper["year"]
+            if "award_personal" in paper:
+                for award in paper["award_personal"]:
+                    line += ", <b><font color='red'>"+award+"</font></b>"
+                    if (self.ja_name in paper["author"].split(", ")[0]) or (self.en_name in paper["author"].split(", ")[0]):
+                        html_award_tmp = ("<li>" + author_joined.split(", ")[0] + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                        if "date" in paper:
+                            html_award_tmp += (", " + paper["date"])
+                        html_award_tmp += '</li>\n'
+                        if "date" in paper:
+                            self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
+                        else:
+                            self.html_award_list.append((time.strptime(paper["date"], "%Y"), html_award_tmp))
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
@@ -616,6 +687,18 @@ class MakeHTML:
                 line += ", " + paper["pages"]
             if "year" in paper:
                 line += ", " + paper["year"]
+            if "award_personal" in paper:
+                for award in paper["award_personal"]:
+                    line += ", <b><font color='red'>"+award+"</font></b>"
+                    if (self.ja_name in paper["author"].split(", ")[0]) or (self.en_name in paper["author"].split(", ")[0]):
+                        html_award_tmp = ("<li>" + author_joined.split(", ")[0] + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                        if "date" in paper:
+                            html_award_tmp += (", " + paper["date"])
+                        html_award_tmp += '</li>\n'
+                        if "date" in paper:
+                            self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
+                        else:
+                            self.html_award_list.append((time.strptime(paper["date"], "%Y"), html_award_tmp))
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
@@ -674,13 +757,29 @@ class MakeHTML:
             if "note" in paper:
                 line += ', ' + paper["note"]
             line += ', in <i>' + paper["booktitle"] + '</i>'
+            if "award_personal" in paper:
+                for award in paper["award_personal"]:
+                    line += ", <b><font color='red'>"+award+"</font></b>"
+                    if (self.ja_name in paper["author"].split(", ")[0]) or (self.en_name in paper["author"].split(", ")[0]):
+                        html_award_tmp = ("<li>" + author_joined.split(", ")[0] + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
+                        if "date" in paper:
+                            html_award_tmp += (", " + paper["date"])
+                        html_award_tmp += '</li>\n'
+                        if "date" in paper:
+                            self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
+                        else:
+                            self.html_award_list.append((time.strptime(paper["date"], "%Y"), html_award_tmp))
             if "award" in paper:
                 for award in paper["award"]:
                     line += ", <b><font color='red'>"+award+"</font></b>"
                     html_award_tmp = ("<li>" + author_joined + "<br>" + award + ", <i>" + paper["booktitle"] + '</i>')
                     if "date" in paper:
                         html_award_tmp += (", " + paper["date"])
-                    html_award_tmp += '</li>'
+                    html_award_tmp += '</li>\n'
+                    if "date" in paper:
+                        self.html_award_list.append((time.strptime(paper["date"], "%Y.%m.%d"), html_award_tmp))
+                    else:
+                        self.html_award_list.append((time.strptime(paper["date"], "%Y"), html_award_tmp))
             if "date" in paper:
                 line += ", " + paper["date"]
             if ("website" in paper) or ("slide" in paper) or ("video" in paper):
