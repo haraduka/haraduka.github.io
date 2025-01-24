@@ -743,7 +743,7 @@ class MakeHTML:
 
         # Invited Talks, etc.
         papers = self.papers["invited"]
-        self.html_pub += ('<h3> Invited Talks, etc.</h3>')
+        self.html_pub += ('<h3> Invited Talks, Books, etc.</h3>')
         self.html_pub += ('\n<ol>\n')
         for paper in papers:
             author = paper["author"].split(", ")
