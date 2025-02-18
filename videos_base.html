@@ -78,6 +78,21 @@
         });
       </script>
 
+      <script>
+        function loadVideo(wrapper) {
+        const videoId = wrapper.closest('.video-card').dataset.videoId;
+        const cardBody = wrapper.closest('.video-card').querySelector('.card-body');
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+        iframe.allowFullscreen = true;
+        iframe.loading = "lazy";
+        iframe.classList.add('iframe-video');
+        wrapper.replaceWith(iframe);
+        cardBody.style.display = 'block';
+        }
+      </script>
+
+
       <main>
         <div class="container mt-5">
           <h2 class="mb-4">YouTube Videos</h2>

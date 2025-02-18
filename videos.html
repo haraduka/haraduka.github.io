@@ -79,6 +79,21 @@
         });
       </script>
 
+      <script>
+        function loadVideo(wrapper) {
+        const videoId = wrapper.closest('.video-card').dataset.videoId;
+        const cardBody = wrapper.closest('.video-card').querySelector('.card-body');
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+        iframe.allowFullscreen = true;
+        iframe.loading = "lazy";
+        iframe.classList.add('iframe-video');
+        wrapper.replaceWith(iframe);
+        cardBody.style.display = 'block';
+        }
+      </script>
+
+
       <main>
         <div class="container mt-5">
           <h2 class="mb-4">YouTube Videos</h2>
@@ -89,682 +104,1072 @@
 
 
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="3bQRTAKV0wM">
             <div class="card-body">
               <h5 class="card-title">Real-world cooking robot system from recipes based on food state recognition using foundation models and PDDL</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3bQRTAKV0wM" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/3bQRTAKV0wM/hqdefault.jpg" 
+                   alt="Real-world cooking robot system from recipes based on food state recognition using foundation models and PDDL">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="T2Uezkpu5u4">
             <div class="card-body">
               <h5 class="card-title">Reflex-Based Open-Vocabulary Navigation without Prior Knowledge Using Omnidirectional Camera and Multiple Vision-Language Models</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/T2Uezkpu5u4" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/T2Uezkpu5u4/hqdefault.jpg" 
+                   alt="Reflex-Based Open-Vocabulary Navigation without Prior Knowledge Using Omnidirectional Camera and Multiple Vision-Language Models">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="db4OcVsz3YY">
             <div class="card-body">
               <h5 class="card-title">Behavioral Learning of Dish Rinsing and Scrubbing based on Interruptive Direct Teaching Considering Assistance Rate</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/db4OcVsz3YY" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/db4OcVsz3YY/hqdefault.jpg" 
+                   alt="Behavioral Learning of Dish Rinsing and Scrubbing based on Interruptive Direct Teaching Considering Assistance Rate">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="aOoQcEdVb6M">
             <div class="card-body">
               <h5 class="card-title">Robotic Environmental State Recognition with Pre-Trained Vision-Language Models and Black-Box Optimization</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/aOoQcEdVb6M" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/aOoQcEdVb6M/hqdefault.jpg" 
+                   alt="Robotic Environmental State Recognition with Pre-Trained Vision-Language Models and Black-Box Optimization">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="480caUHXrE0">
             <div class="card-body">
               <h5 class="card-title">Continuous Object State Recognition for Cooking Robots Using Pre-Trained Vision-Language Models and Black-box Optimization</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/480caUHXrE0" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/480caUHXrE0/hqdefault.jpg" 
+                   alt="Continuous Object State Recognition for Cooking Robots Using Pre-Trained Vision-Language Models and Black-box Optimization">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="QEluGqmj-k8">
             <div class="card-body">
               <h5 class="card-title">SAQIEL: Ultra-Light and Safe Manipulator with Passive 3D Wire Alignment Mechanism</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/QEluGqmj-k8" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/QEluGqmj-k8/hqdefault.jpg" 
+                   alt="SAQIEL: Ultra-Light and Safe Manipulator with Passive 3D Wire Alignment Mechanism">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="Uq9Ympi7KMw">
             <div class="card-body">
               <h5 class="card-title">Design Optimization of Wire Arrangement With Variable Relay Points in Numerical Simulation for Tendon-Driven Robots</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Uq9Ympi7KMw" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/Uq9Ympi7KMw/hqdefault.jpg" 
+                   alt="Design Optimization of Wire Arrangement With Variable Relay Points in Numerical Simulation for Tendon-Driven Robots">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="ulWgQTVDGQA">
             <div class="card-body">
               <h5 class="card-title">Self-Supervised Learning of Visual Servoing for Low-Rigidity Robots Considering Temporal Body Changes</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ulWgQTVDGQA" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/ulWgQTVDGQA/hqdefault.jpg" 
+                   alt="Self-Supervised Learning of Visual Servoing for Low-Rigidity Robots Considering Temporal Body Changes">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="d8YB1UJfDCM">
             <div class="card-body">
               <h5 class="card-title">Human-mimetic binaural ear design and sound source direction estimation for task realization of musculoskeletal humanoids</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/d8YB1UJfDCM" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/d8YB1UJfDCM/hqdefault.jpg" 
+                   alt="Human-mimetic binaural ear design and sound source direction estimation for task realization of musculoskeletal humanoids">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="wDJmIL0ZkbE">
             <div class="card-body">
               <h5 class="card-title">Dynamic Cloth Manipulation Considering Variable Stiffness and Material Change Using Deep Predictive Model With Parametric Bias</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wDJmIL0ZkbE" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/wDJmIL0ZkbE/hqdefault.jpg" 
+                   alt="Dynamic Cloth Manipulation Considering Variable Stiffness and Material Change Using Deep Predictive Model With Parametric Bias">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="deRDl2zI_0c">
             <div class="card-body">
               <h5 class="card-title">Robust Continuous Motion Strategy Against Muscle Rupture using Online Learning of Redundant Intersensory Networks for Musculoskeletal Humanoids</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/deRDl2zI_0c" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/deRDl2zI_0c/hqdefault.jpg" 
+                   alt="Robust Continuous Motion Strategy Against Muscle Rupture using Online Learning of Redundant Intersensory Networks for Musculoskeletal Humanoids">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="cc0223BgKlA">
             <div class="card-body">
               <h5 class="card-title">Adaptive Body Schema Learning System Considering Additional Muscles for Musculoskeletal Humanoids</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cc0223BgKlA" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/cc0223BgKlA/hqdefault.jpg" 
+                   alt="Adaptive Body Schema Learning System Considering Additional Muscles for Musculoskeletal Humanoids">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="cpimgpBHgxY">
             <div class="card-body">
               <h5 class="card-title">Adaptive Robotic Tool-Tip Control Learning Considering Online Changes in Grasping State</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cpimgpBHgxY" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/cpimgpBHgxY/hqdefault.jpg" 
+                   alt="Adaptive Robotic Tool-Tip Control Learning Considering Online Changes in Grasping State">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="dunhjxYzvUA">
             <div class="card-body">
               <h5 class="card-title">Imitation Learning with Additional Constraints on Motion Style using Parametric Bias</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dunhjxYzvUA" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/dunhjxYzvUA/hqdefault.jpg" 
+                   alt="Imitation Learning with Additional Constraints on Motion Style using Parametric Bias">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="YS_shMahQSQ">
+            <div class="card-body">
+              <h5 class="card-title">Self-Body Image Acquisition and Posture Generation with Redundancy using Musculoskeletal Humanoid Shoulder Complex for Object Manipulation</h5>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/YS_shMahQSQ/hqdefault.jpg" 
+                   alt="Self-Body Image Acquisition and Posture Generation with Redundancy using Musculoskeletal Humanoid Shoulder Complex for Object Manipulation">
+              <div class="play-button">
+                <div class="play-icon"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <div class="card video-card" data-video-id="TWJqvRVSVFk">
             <div class="card-body">
               <h5 class="card-title">Automatic Grouping of Redundant Sensors and Actuators Using Functional and Spatial Connections: Application to Muscle Grouping for Musculoskeletal Humanoids</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/TWJqvRVSVFk" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/TWJqvRVSVFk/hqdefault.jpg" 
+                   alt="Automatic Grouping of Redundant Sensors and Actuators Using Functional and Spatial Connections: Application to Muscle Grouping for Musculoskeletal Humanoids">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="qQqv2pFMhmo">
             <div class="card-body">
               <h5 class="card-title">Toward Autonomous Driving by Musculoskeletal Humanoids: Study of Developed Hardware and Learning-Based Software</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qQqv2pFMhmo" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/qQqv2pFMhmo/hqdefault.jpg" 
+                   alt="Toward Autonomous Driving by Musculoskeletal Humanoids: Study of Developed Hardware and Learning-Based Software">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="c4mhS5BvkPw">
             <div class="card-body">
               <h5 class="card-title">Object Recognition, Dynamic Contact Simulation, Detection, and Control of the Flexible Musculoskeletal Hand Using a Recurrent Neural Network With Parametric Bias</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/c4mhS5BvkPw" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/c4mhS5BvkPw/hqdefault.jpg" 
+                   alt="Object Recognition, Dynamic Contact Simulation, Detection, and Control of the Flexible Musculoskeletal Hand Using a Recurrent Neural Network With Parametric Bias">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="E510TsXRTf8">
             <div class="card-body">
               <h5 class="card-title">Musculoskeletal AutoEncoder: A Unified Online Acquisition Method of Intersensory Networks for State Estimation, Control, and Simulation of Musculoskeletal Humanoids</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/E510TsXRTf8" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/E510TsXRTf8/hqdefault.jpg" 
+                   alt="Musculoskeletal AutoEncoder: A Unified Online Acquisition Method of Intersensory Networks for State Estimation, Control, and Simulation of Musculoskeletal Humanoids">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="h1sEw56zCwo">
             <div class="card-body">
               <h5 class="card-title">Human Mimetic Forearm and Hand Design with a Radioulnar Joint and Flexible Machined Spring Finger for Human Skillful Motions</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/h1sEw56zCwo" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/h1sEw56zCwo/hqdefault.jpg" 
+                   alt="Human Mimetic Forearm and Hand Design with a Radioulnar Joint and Flexible Machined Spring Finger for Human Skillful Motions">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="P5Z4XRYXYzA">
             <div class="card-body">
               <h5 class="card-title">Long-time Self-body Image Acquisition and its Application to the Control of Musculoskeletal Structures</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/P5Z4XRYXYzA" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/P5Z4XRYXYzA/hqdefault.jpg" 
+                   alt="Long-time Self-body Image Acquisition and its Application to the Control of Musculoskeletal Structures">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="8_A6--bzAeQ">
             <div class="card-body">
               <h5 class="card-title">Online Learning of Joint-Muscle Mapping using Vision in Tendon-driven Musculoskeletal Humanoids</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/8_A6--bzAeQ" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/8_A6--bzAeQ/hqdefault.jpg" 
+                   alt="Online Learning of Joint-Muscle Mapping using Vision in Tendon-driven Musculoskeletal Humanoids">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="nFMRb1SCs1Q">
             <div class="card-body">
               <h5 class="card-title">Antagonist Inhibition Control in Redundant Tendon-driven Structures Based on Human Reciprocal Innervation for Wide Range Limb Motion of Musculoskeletal Humanoids</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nFMRb1SCs1Q" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/nFMRb1SCs1Q/hqdefault.jpg" 
+                   alt="Antagonist Inhibition Control in Redundant Tendon-driven Structures Based on Human Reciprocal Innervation for Wide Range Limb Motion of Musculoskeletal Humanoids">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="AUBmOXsnqbg">
             <div class="card-body">
               <h5 class="card-title">Front Hair Styling Robot System Using Path Planning for Root-Centric Strand Adjustment</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/AUBmOXsnqbg" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/AUBmOXsnqbg/hqdefault.jpg" 
+                   alt="Front Hair Styling Robot System Using Path Planning for Root-Centric Strand Adjustment">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="XXJ4EK3Y4zQ">
             <div class="card-body">
               <h5 class="card-title">MEVIUS: A Quadruped Robot Easily Constructed through E-Commerce with Sheet Metal Welding and Machining</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/XXJ4EK3Y4zQ" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/XXJ4EK3Y4zQ/hqdefault.jpg" 
+                   alt="MEVIUS: A Quadruped Robot Easily Constructed through E-Commerce with Sheet Metal Welding and Machining">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="4LzAM_bGBAI">
             <div class="card-body">
               <h5 class="card-title">Robotic State Recognition with Image-to-Text Retrieval Task of Pre-Trained Vision-Language Model and Black-Box Optimization</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4LzAM_bGBAI" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/4LzAM_bGBAI/hqdefault.jpg" 
+                   alt="Robotic State Recognition with Image-to-Text Retrieval Task of Pre-Trained Vision-Language Model and Black-Box Optimization">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="IvzP98-r_mo">
             <div class="card-body">
               <h5 class="card-title">CubiXMusashi: Fusion of Wire-Driven CubiX and Musculoskeletal Humanoid Musashi toward Unlimited Performance</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/IvzP98-r_mo" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/IvzP98-r_mo/hqdefault.jpg" 
+                   alt="CubiXMusashi: Fusion of Wire-Driven CubiX and Musculoskeletal Humanoid Musashi toward Unlimited Performance">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="bM0w69k0LM8">
             <div class="card-body">
               <h5 class="card-title">Remote Life Support Robot Interface System for Global Task Planning and Local Action Expansion Using Foundation Models</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/bM0w69k0LM8" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/bM0w69k0LM8/hqdefault.jpg" 
+                   alt="Remote Life Support Robot Interface System for Global Task Planning and Local Action Expansion Using Foundation Models">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="JIRoCHnsVrw">
             <div class="card-body">
               <h5 class="card-title">Vlimb: A Wire-Driven Wearable Robot for Bodily Extension, Balancing Powerfulness and Reachability</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/JIRoCHnsVrw" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/JIRoCHnsVrw/hqdefault.jpg" 
+                   alt="Vlimb: A Wire-Driven Wearable Robot for Bodily Extension, Balancing Powerfulness and Reachability">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="EDeAqg7aAb4">
             <div class="card-body">
               <h5 class="card-title">Fundamental Three-Dimensional Configuration of Wire-Wound Muscle-Tendon Complex Drive</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/EDeAqg7aAb4" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/EDeAqg7aAb4/hqdefault.jpg" 
+                   alt="Fundamental Three-Dimensional Configuration of Wire-Wound Muscle-Tendon Complex Drive">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="XTihjUsbkNw">
             <div class="card-body">
               <h5 class="card-title">Robot Design Optimization with Rotational and Prismatic Joints Using Black-Box Multi-Objective Optimization</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/XTihjUsbkNw" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/XTihjUsbkNw/hqdefault.jpg" 
+                   alt="Robot Design Optimization with Rotational and Prismatic Joints Using Black-Box Multi-Objective Optimization">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="R5ZrzMPEFZs">
             <div class="card-body">
               <h5 class="card-title">CubiX: Portable Wire-Driven Parallel Robot Connecting to and Utilizing the Environment</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/R5ZrzMPEFZs" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/R5ZrzMPEFZs/hqdefault.jpg" 
+                   alt="CubiX: Portable Wire-Driven Parallel Robot Connecting to and Utilizing the Environment">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="cg7bFTj_hPo">
             <div class="card-body">
               <h5 class="card-title">Robotic Constrained Imitation Learning for the Peg Transfer Task in Fundamentals of Laparoscopic Surgery</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cg7bFTj_hPo" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/cg7bFTj_hPo/hqdefault.jpg" 
+                   alt="Robotic Constrained Imitation Learning for the Peg Transfer Task in Fundamentals of Laparoscopic Surgery">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="auCYNiMiXXE">
             <div class="card-body">
               <h5 class="card-title">Adaptive Whole-body Robotic Tool-use Learning on Low-rigidity Plastic-made Humanoids Using Vision and Tactile Sensors</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/auCYNiMiXXE" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/auCYNiMiXXE/hqdefault.jpg" 
+                   alt="Adaptive Whole-body Robotic Tool-use Learning on Low-rigidity Plastic-made Humanoids Using Vision and Tactile Sensors">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="sdM11yHpzi8">
             <div class="card-body">
               <h5 class="card-title">HumanMimic: Learning Natural Locomotion and Transitions for Humanoid Robot via Wasserstein Adversarial Imitation</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/sdM11yHpzi8" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/sdM11yHpzi8/hqdefault.jpg" 
+                   alt="HumanMimic: Learning Natural Locomotion and Transitions for Humanoid Robot via Wasserstein Adversarial Imitation">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="-f8LDlhmdBg">
             <div class="card-body">
               <h5 class="card-title">Body Design and Gait Generation of Chair-Type Asymmetrical Tripedal Low-rigidity Robot</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-f8LDlhmdBg" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/-f8LDlhmdBg/hqdefault.jpg" 
+                   alt="Body Design and Gait Generation of Chair-Type Asymmetrical Tripedal Low-rigidity Robot">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="WIJLf-KmvM0">
+            <div class="card-body">
+              <h5 class="card-title">Daily Assistive View Control Learning of Low-Cost Low-Rigidity Robot via Large-Scale Vision-Language Model</h5>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/WIJLf-KmvM0/hqdefault.jpg" 
+                   alt="Daily Assistive View Control Learning of Low-Cost Low-Rigidity Robot via Large-Scale Vision-Language Model">
+              <div class="play-button">
+                <div class="play-icon"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <div class="card video-card" data-video-id="ztcq0P92mJI">
             <div class="card-body">
               <h5 class="card-title">Daily Assistive Modular Robot Design Based on Multi-Objective Black-Box Optimization</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ztcq0P92mJI" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/ztcq0P92mJI/hqdefault.jpg" 
+                   alt="Daily Assistive Modular Robot Design Based on Multi-Objective Black-Box Optimization">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="RsoI0W8SPPA">
             <div class="card-body">
               <h5 class="card-title">Development of a Whole-Body Work Imitation Learning System by a Biped and Bi-Armed Humanoid</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RsoI0W8SPPA" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/RsoI0W8SPPA/hqdefault.jpg" 
+                   alt="Development of a Whole-Body Work Imitation Learning System by a Biped and Bi-Armed Humanoid">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="VhBfpYB-QxI">
             <div class="card-body">
               <h5 class="card-title">Hardware Design and Learning-Based Software Architecture of Musculoskeletal Wheeled Robot Musashi-W for Real-World Applications</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/VhBfpYB-QxI" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/VhBfpYB-QxI/hqdefault.jpg" 
+                   alt="Hardware Design and Learning-Based Software Architecture of Musculoskeletal Wheeled Robot Musashi-W for Real-World Applications">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="y8YqJt3HZvY">
             <div class="card-body">
               <h5 class="card-title">Continuous Jumping of a Parallel Wire-Driven Monopedal Robot RAMIEL Using Reinforcement Learning</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/y8YqJt3HZvY" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/y8YqJt3HZvY/hqdefault.jpg" 
+                   alt="Continuous Jumping of a Parallel Wire-Driven Monopedal Robot RAMIEL Using Reinforcement Learning">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="N47IXZ6Q0io">
             <div class="card-body">
               <h5 class="card-title">Learning-Based Wiping Behavior of Low-Rigidity Robots Considering Various Surface Materials and Task Definitions</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/N47IXZ6Q0io" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/N47IXZ6Q0io/hqdefault.jpg" 
+                   alt="Learning-Based Wiping Behavior of Low-Rigidity Robots Considering Various Surface Materials and Task Definitions">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="r1vhMWBkiHU">
             <div class="card-body">
               <h5 class="card-title">Realization of Seated Walk by a Musculoskeletal Humanoid with Buttock-Contact Sensors From Human Constrained Teaching</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/r1vhMWBkiHU" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/r1vhMWBkiHU/hqdefault.jpg" 
+                   alt="Realization of Seated Walk by a Musculoskeletal Humanoid with Buttock-Contact Sensors From Human Constrained Teaching">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="8exSF0LB4t8">
             <div class="card-body">
               <h5 class="card-title">Online Learning Feedback Control Considering Hysteresis for Musculoskeletal Structures</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/8exSF0LB4t8" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/8exSF0LB4t8/hqdefault.jpg" 
+                   alt="Online Learning Feedback Control Considering Hysteresis for Musculoskeletal Structures">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="OZh__9a4OTQ">
             <div class="card-body">
               <h5 class="card-title">Learning of Balance Controller Considering Changes in Body State for Musculoskeletal Humanoids</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OZh__9a4OTQ" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/OZh__9a4OTQ/hqdefault.jpg" 
+                   alt="Learning of Balance Controller Considering Changes in Body State for Musculoskeletal Humanoids">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="7wFUZGFtjLE">
             <div class="card-body">
               <h5 class="card-title">DIJE: Dense Image Jacobian Estimation for Robust Robotic Self-Recognition and Visual Servoing</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7wFUZGFtjLE" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/7wFUZGFtjLE/hqdefault.jpg" 
+                   alt="DIJE: Dense Image Jacobian Estimation for Robust Robotic Self-Recognition and Visual Servoing">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="dPmIMdITTwM">
             <div class="card-body">
               <h5 class="card-title">RAMIEL: A Parallel-Wire Driven Monopedal Robot for High and Continuous Jumping</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dPmIMdITTwM" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/dPmIMdITTwM/hqdefault.jpg" 
+                   alt="RAMIEL: A Parallel-Wire Driven Monopedal Robot for High and Continuous Jumping">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="4LzAM_bGBAI">
+            <div class="card-body">
+              <h5 class="card-title">Environmentally Adaptive Control Including Variance Minimization Using Stochastic Predictive Network with Parametric Bias: Application to Mobile Robots</h5>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/4LzAM_bGBAI/hqdefault.jpg" 
+                   alt="Environmentally Adaptive Control Including Variance Minimization Using Stochastic Predictive Network with Parametric Bias: Application to Mobile Robots">
+              <div class="play-button">
+                <div class="play-icon"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <div class="card video-card" data-video-id="e3EBWVx7z90">
+            <div class="card-body">
+              <h5 class="card-title">Motion Modification Method of Musculoskeletal Humanoids by Human Teaching Using Muscle-Based Compensation Control</h5>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/e3EBWVx7z90/hqdefault.jpg" 
+                   alt="Motion Modification Method of Musculoskeletal Humanoids by Human Teaching Using Muscle-Based Compensation Control">
+              <div class="play-button">
+                <div class="play-icon"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <div class="card video-card" data-video-id="zF0YdU5bTbg">
             <div class="card-body">
               <h5 class="card-title">Development of Musculoskeletal Legs with Planar Interskeletal Structures to Realize Human Comparable Moving Function</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zF0YdU5bTbg" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/zF0YdU5bTbg/hqdefault.jpg" 
+                   alt="Development of Musculoskeletal Legs with Planar Interskeletal Structures to Realize Human Comparable Moving Function">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="vthQNaqoXuM">
             <div class="card-body">
               <h5 class="card-title">Biomimetic Operational Space Control for Musculoskeletal Humanoid Optimizing across Muscle Activation and Joint Nullspace</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vthQNaqoXuM" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/vthQNaqoXuM/hqdefault.jpg" 
+                   alt="Biomimetic Operational Space Control for Musculoskeletal Humanoid Optimizing across Muscle Activation and Joint Nullspace">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="UjmdjYiUttA">
             <div class="card-body">
               <h5 class="card-title">Tool Shape Optimization through Backpropagation of Neural Network</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/UjmdjYiUttA" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/UjmdjYiUttA/hqdefault.jpg" 
+                   alt="Tool Shape Optimization through Backpropagation of Neural Network">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="fbEi3qmh8pw">
             <div class="card-body">
               <h5 class="card-title">Biomimetic Control Scheme for Musculoskeletal Humanoids Based on Motor Directional Tuning in the Brain</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fbEi3qmh8pw" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/fbEi3qmh8pw/hqdefault.jpg" 
+                   alt="Biomimetic Control Scheme for Musculoskeletal Humanoids Based on Motor Directional Tuning in the Brain">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="JSK6ljJSIpQ">
             <div class="card-body">
               <h5 class="card-title">Stable Tool-Use with Flexible Musculoskeletal Hands by Learning the Predictive Model of Sensor State Transition</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/JSK6ljJSIpQ" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/JSK6ljJSIpQ/hqdefault.jpg" 
+                   alt="Stable Tool-Use with Flexible Musculoskeletal Hands by Learning the Predictive Model of Sensor State Transition">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="t2JZraUT3lY">
             <div class="card-body">
               <h5 class="card-title">Component Modularized Design of Musculoskeletal Humanoid Platform Musashi to Investigate Learning Control Systems</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/t2JZraUT3lY" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/t2JZraUT3lY/hqdefault.jpg" 
+                   alt="Component Modularized Design of Musculoskeletal Humanoid Platform Musashi to Investigate Learning Control Systems">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="FPwRuyzzdEc">
             <div class="card-body">
               <h5 class="card-title">Task-specific Self-body Controller Acquisition by Musculoskeletal Humanoids: Application to Pedal Control in Autonomous Driving</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/FPwRuyzzdEc" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/FPwRuyzzdEc/hqdefault.jpg" 
+                   alt="Task-specific Self-body Controller Acquisition by Musculoskeletal Humanoids: Application to Pedal Control in Autonomous Driving">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="WwCNPGUFjho">
             <div class="card-body">
               <h5 class="card-title">Dynamic Task Control Method of a Flexible Manipulator Using a Deep Recurrent Neural Network</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WwCNPGUFjho" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/WwCNPGUFjho/hqdefault.jpg" 
+                   alt="Dynamic Task Control Method of a Flexible Manipulator Using a Deep Recurrent Neural Network">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="XDGOLhZcUHg">
+            <div class="card-body">
+              <h5 class="card-title">Modification of Muscle Antagonistic Relations and Hand Trajectory on the Dynamic Motion of Musculoskeletal Humanoid</h5>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/XDGOLhZcUHg/hqdefault.jpg" 
+                   alt="Modification of Muscle Antagonistic Relations and Hand Trajectory on the Dynamic Motion of Musculoskeletal Humanoid">
+              <div class="play-button">
+                <div class="play-icon"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <div class="card video-card" data-video-id="EuB-TWygkNA">
             <div class="card-body">
               <h5 class="card-title">Dynamic Manipulation of Flexible Objects with Torque Sequence Using a Deep Neural Network</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/EuB-TWygkNA" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/EuB-TWygkNA/hqdefault.jpg" 
+                   alt="Dynamic Manipulation of Flexible Objects with Torque Sequence Using a Deep Neural Network">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="6Y4FpXx6axQ">
             <div class="card-body">
               <h5 class="card-title">TWIMP: Two-Wheel Inverted Musculoskeletal Pendulum as a Learning Control Platform in the Real World with Environmental Physical Contact</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/6Y4FpXx6axQ" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/6Y4FpXx6axQ/hqdefault.jpg" 
+                   alt="TWIMP: Two-Wheel Inverted Musculoskeletal Pendulum as a Learning Control Platform in the Real World with Environmental Physical Contact">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="J0q9q7tWJDU">
             <div class="card-body">
               <h5 class="card-title">A Method of Joint Angle Estimation Using Only Relative Changes in Muscle Lengths for Tendon-driven Humanoids with Complex Musculoskeletal Structures</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/J0q9q7tWJDU" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/J0q9q7tWJDU/hqdefault.jpg" 
+                   alt="A Method of Joint Angle Estimation Using Only Relative Changes in Muscle Lengths for Tendon-driven Humanoids with Complex Musculoskeletal Structures">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="jdYbMOj84TA">
             <div class="card-body">
               <h5 class="card-title">Online Self-body Image Acquisition Considering Changes in Muscle Routes Caused by Softness of Body Tissue for Tendon-driven Musculoskeletal Humanoids</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jdYbMOj84TA" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/jdYbMOj84TA/hqdefault.jpg" 
+                   alt="Online Self-body Image Acquisition Considering Changes in Muscle Routes Caused by Softness of Body Tissue for Tendon-driven Musculoskeletal Humanoids">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="HRwTFfnlCAs">
             <div class="card-body">
               <h5 class="card-title">Five-Fingered Hand with Wide Range of Thumb Using Combination of Machined Springs and Variable Stiffness Joints</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HRwTFfnlCAs" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/HRwTFfnlCAs/hqdefault.jpg" 
+                   alt="Five-Fingered Hand with Wide Range of Thumb Using Combination of Machined Springs and Variable Stiffness Joints">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="h1sEw56zCwo">
             <div class="card-body">
               <h5 class="card-title">Human Mimetic Forearm Design with Radioulnar Joint using Miniature Bone-muscle Modules and its Applications</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/h1sEw56zCwo" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/h1sEw56zCwo/hqdefault.jpg" 
+                   alt="Human Mimetic Forearm Design with Radioulnar Joint using Miniature Bone-muscle Modules and its Applications">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="wDDwQoYPRbA">
             <div class="card-body">
               <h5 class="card-title">High-power, flexible, robust hand: Development of musculoskeletal hand using machined springs and realization of self-weight supporting motion with humanoid</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wDDwQoYPRbA" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/wDDwQoYPRbA/hqdefault.jpg" 
+                   alt="High-power, flexible, robust hand: Development of musculoskeletal hand using machined springs and realization of self-weight supporting motion with humanoid">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="RA4u_9FLzso">
             <div class="card-body">
               <h5 class="card-title">Human Mimetic Musculoskeletal Humanoid Kengoro toward Real World Physically Interactive Actions</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RA4u_9FLzso" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/RA4u_9FLzso/hqdefault.jpg" 
+                   alt="Human Mimetic Musculoskeletal Humanoid Kengoro toward Real World Physically Interactive Actions">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card video-card" data-video-id="fiN4Zibk6Sg">
             <div class="card-body">
               <h5 class="card-title">Foundation Model based Open Vocabulary Task Planning and Executive System for General Purpose Service Robots</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fiN4Zibk6Sg" allowfullscreen style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+            </div>
+            <div class="video-wrapper" onclick="loadVideo(this)">
+              <img loading="lazy" class="video-thumbnail"
+                   src="https://img.youtube.com/vi/fiN4Zibk6Sg/hqdefault.jpg" 
+                   alt="Foundation Model based Open Vocabulary Task Planning and Executive System for General Purpose Service Robots">
+              <div class="play-button">
+                <div class="play-icon"></div>
               </div>
             </div>
           </div>

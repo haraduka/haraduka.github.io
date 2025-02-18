@@ -25,3 +25,84 @@ a:active { color: #1693f3; }
   transition: transform 0.3s ease-in-out;
 }
 
+/* ===== カードスタイル ===== */
+.video-card {
+  transition: transform 0.3s ease-in-out;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+}
+.video-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== サムネイル表示エリア (16:9固定でcover) ===== */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  background-color: #000;
+  overflow: hidden;
+  cursor: pointer;
+}
+.video-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔥 黒枠解消 */
+  background-color: #000;
+  transition: transform 0.3s;
+}
+.video-wrapper:hover .video-thumbnail {
+  transform: scale(1.05);
+}
+
+/* ===== 再生ボタン ===== */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+.video-wrapper:hover .play-button {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.play-icon {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 0 15px 25px;
+  border-color: transparent transparent transparent white;
+}
+
+/* ===== iframe (動画再生時) ===== */
+.iframe-video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+
+/* ===== カードのテキストエリア ===== */
+.card-body {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ffffff;
+  transition: opacity 0.3s;
+}
+.card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+</style>
