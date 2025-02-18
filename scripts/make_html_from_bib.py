@@ -29,7 +29,7 @@ class MakeHTML:
           <div class='col-md-4 mb-4'>
             <a href='{website_url}' target='blank_' class='text-decoration-none'>
               <div class='card pt-3 pb-3 ps-3 pe-3 ' id='{card_name}'>
-                <img class='card-img-top' alt='{card_title}'>
+                <img class='card-img-top' alt='{card_title}' loading='lazy'>
                 <div class='card-body'>
                   <h5 class='card-title'>{card_title}</h5>
                   <p class='card-text'>{card_text}</p>
@@ -46,19 +46,6 @@ class MakeHTML:
         """
 
         self.video_template = """
-        <div class="col-md-6 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">{video_title}</h5>
-              <div class="embed-responsive embed-responsive-16by9" style="width: 100%; padding-bottom: 56.25%; position: relative;">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{video_id}" allowfullscreen loading="lazy" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-        """
-
-        self.new_video_template = """
         <div class="col-md-6 mb-4">
           <div class="card video-card" data-video-id="{video_id}">
             <div class="card-body">
@@ -281,7 +268,7 @@ class MakeHTML:
                 line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
             if "video" in paper:
                 line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
-                self.videos_pub += self.new_video_template.format(
+                self.videos_pub += self.video_template.format(
                         video_title=paper["title"],
                         video_id=paper["video"].split("=")[1],
                         )
@@ -384,7 +371,7 @@ class MakeHTML:
                 line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
             if "video" in paper:
                 line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
-                self.videos_pub += self.new_video_template.format(
+                self.videos_pub += self.video_template.format(
                         video_title=paper["title"],
                         video_id=paper["video"].split("=")[1],
                         )
@@ -525,7 +512,7 @@ class MakeHTML:
                 line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
             if "video" in paper:
                 line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
-                self.videos_pub += self.new_video_template.format(
+                self.videos_pub += self.video_template.format(
                         video_title=paper["title"],
                         video_id=paper["video"].split("=")[1],
                         )
