@@ -40,6 +40,7 @@
 @string{RSJ08E = "26th Annual Conference on Robotics Society of Japan"}
 @string{RSJ07E = "25th Annual Conference on Robotics Society of Japan"}
 
+@string{ROBOMECH25J = "日本機械学会ロボティクス・メカトロニクス講演会'25"}
 @string{ROBOMECH24J = "日本機械学会ロボティクス・メカトロニクス講演会'24"}
 @string{ROBOMECH23J = "日本機械学会ロボティクス・メカトロニクス講演会'23"}
 @string{ROBOMECH22J = "日本機械学会ロボティクス・メカトロニクス講演会'22"}
@@ -176,17 +177,28 @@
 
 
 % ijournal_papers
+@article{kawaharazuka2025pimbs,
+  author={K. Kawaharazuka and T. Hattori and K. Yoneda and K. Okada},
+  title={{PIMBS: Efficient Body Schema Learning for Musculoskeletal Humanoids with Physics-Informed Neural Networks}},
+  journal=RAL,
+  year=2025,
+  note={presented at ICRA2026},
+  doi={10.1109/LRA.2025.3577525},
+  robots={musashi},
+}
 @article{nakashima2025sloshing,
   author={S. Nakashima and K. Kawaharazuka and Y. Nagamatsu and K. Shinjo and A. Miki and Y. Asano and Y. Kakiuchi and K. Okada and M. Inaba},
   title={{Liquid Metal Sloshing for High-load Active Self-healing System: An Application to Tendon-driven Legged Robot}},
   journal=AISY,
   year=2025,
+  doi={10.1002/aisy.202500040},
 }
 @article{kozuka2025aerialnav,
   author={H. Kozuka and M. Zhao and A. Tang and T. Nishio and I. Yanokura and K. Kawaharazuka and J. Sugihara and K. Sugihara and K. Okada and M. Inaba},
   title={{GenAerialNav: Obstacle Avoidance in Real Flight for Generalized Multirotors by Reinforcement Learning with Variable Acc-Properties in Dynamics}},
   journal=AR,
   year=2025,
+  doi={10.1080/01691864.2025.2506091},
   robots={drone},
 }
 @article{sinoue2025cubixgo1,
@@ -688,7 +700,7 @@
   robots={mycobot},
 }
 @inproceedings{kawaharazuka2024mevius,
-  author={K. Kawaharazuka and S. Inoue and T. Suzuki and S. Yuzai and S. Sawaguchi and K. Okada and M. Inaba},
+  author={K. Kawaharazuka and S. Inoue and T. Suzuki and S. Yuzaki and S. Sawaguchi and K. Okada and M. Inaba},
   title={{MEVIUS: A Quadruped Robot Easily Constructed through E-Commerce with Sheet Metal Welding and Machining}},
   booktitle=HUMANOIDS2024,
   pages={631--636},
@@ -1681,6 +1693,69 @@
 }
 
 % non_dconference
+@inproceedings{kawaharazuka2025slideopt-ja,
+  author={河原塚 健人 and 岡田 慧 and 稲葉 雅幸},
+  title={{回転関節と直動関節を含むロボット設計の多目的ブラックボックス最適化}},
+  booktitle=ROBOMECH25J,
+  pages={1A1-Q01},
+  year=2025,
+}
+@inproceedings{kawaharazuka2025mevius-ja,
+  author={河原塚 健人 and 井上 信多郎 and 鈴木 天馬 and 勇崎 颯太 and 澤口 昇吾 and 岡田 慧 and 稲葉 雅幸},
+  title={{MEVIUS: 金属切削と板金溶接によりE-Commerceで容易に構築可能な4脚ロボット}},
+  booktitle=ROBOMECH25J,
+  pages={2A2-A07},
+  year=2025,
+}
+@inproceedings{yoneda2025kleiyn-ja,
+  author={米田 慶太 and 河原塚 健人 and 鈴木 天馬 and 服部 高拓 and 岡田 慧},
+  title={{腰関節を有する四脚ロボットKLEIYNの強化学習に基づく歩行と壁登り動作の実現}},
+  booktitle=ROBOMECH25J,
+  pages={2A2-A08},
+  year=2025,
+}
+@inproceedings{hattori2025remote-ja,
+  author={服部 高拓 and 河原塚 健人 and 鈴木 天馬 and 勇崎 颯太 and 米田 慶太 and 岡田 慧},
+  title={{ワイヤ遠隔駆動機構と可変剛性伸縮機構を有する細径移動作業ロボットの設計開発}},
+  booktitle=ROBOMECH25J,
+  pages={1P1-E02},
+  year=2025,
+}
+@inproceedings{temma2025ramiel2-ja,
+  author={鈴木 天馬 and 河原塚 健人 and 岡田 慧},
+  title={{強化学習におけるsim2realに向けたパラレルワイヤ駆動一本脚跳躍ロボットRAMIEL2の設計}},
+  booktitle=ROBOMECH25J,
+  pages={1P1-E03},
+  year=2025,
+}
+@inproceedings{hattori2025remote-ja,
+  author={井上 信多郎 and 河原塚 健人 and 米田 慶太 and 勇崎 颯太 and 佐原 侑太 and 鈴木 天馬 and 岡田 慧},
+  title={{環境接続ワイヤ駆動ロボットにおけるRGB-Dカメラを用いたマルチ小型飛行アンカー制御}},
+  booktitle=ROBOMECH25J,
+  pages={2A2-J03},
+  year=2025,
+}
+@inproceedings{yoshimura2025reflex-ja,
+  author={吉村 駿之介 and 鈴木 天馬 and 河原塚 健人 and 岡田 慧},
+  title={{導電性触覚構造を有する柔軟ラティス構造筋で構成された人体模倣脚の触覚反応動作}},
+  booktitle=ROBOMECH25J,
+  pages={2A2-L05},
+  year=2025,
+}
+@inproceedings{yuzaki2025calvados-ja,
+  author={勇崎 颯太 and 井上 信多郎 and 鈴木 天馬 and 河原塚 健人 and 岡田 慧},
+  title={{ワイヤ駆動空中移動ロボットCALVADOSの軌道計画とジャンプ動作の実現}},
+  booktitle=ROBOMECH25J,
+  pages={1A2-Q01},
+  year=2025,
+}
+@inproceedings{dong2025exosuits-ja,
+  author={Xu Dong and Shun Hasegawa and Liqi Wu and Kento Kawaharazuka and Kunio Kojima and Kei Okada},
+  title={{A Dual-Track Pulley Actuation System for the Development of Lightweight and Compact Cable-driven Upper Limb Exosuits}},
+  booktitle=ROBOMECH25J,
+  pages={2P2-K12},
+  year=2025,
+}
 @inproceedings{kawaharazuka2024clipseq-ja,
   author={河原塚 健人 and 大日方 慶樹 and 金沢 直晃 and 塚本 直人 and 岡田 慧},
   title={{全天球カメラと事前学習済み視覚-言語モデルによる事前知識を必要としない反射型Open Vocabulary Navigation}},
@@ -1790,6 +1865,7 @@
   booktitle=ROBOMECH24J,
   pages={1P1-O09},
   year=2024,
+  award_personal={日本機械学会若手優秀講演フェロー賞},
 }
 @inproceedings{yuzaki2024calvados-ja,
   author={澤口 昇吾 and 鈴木 天馬 and 三木 章寛 and 河原塚 健人 and 勇崎 颯太 and 吉村 駿之介 and 岡田 慧 and 稲葉 雅幸},
@@ -2257,7 +2333,7 @@
   booktitle=ROBOMECH22J,
   pages={2A1-O05},
   year=2022,
-  award_personal={ベストデモンストレーション賞},
+  award_personal={日本機械学会ベストデモンストレーション賞},
   date={2023.6.29},
 }
 @inproceedings{toshimitsu2022jacobian-ja,
@@ -2315,7 +2391,7 @@
   booktitle=ROBOMECH22J,
   pages={2P1-L10},
   year=2022,
-  award_personal={ベストデモンストレーション賞},
+  award_personal={日本機械学会ベストデモンストレーション賞},
   date={2023.6.29},
 }
 @inproceedings{kawaharazuka2021tooluse-ja,
@@ -2461,7 +2537,7 @@
   booktitle=RSJ19J,
   pages={3B3-06},
   year=2019,
-  award_personal={第35回研究奨励賞},
+  award_personal={日本ロボット学会第35回研究奨励賞},
   date={2020.10.9},
 }
 @inproceedings{kawaharazuka2019dynamic-ja,
@@ -2470,7 +2546,7 @@
   booktitle=RSJ19J,
   pages={1A2-06},
   year=2019,
-  award_personal={第35回研究奨励賞},
+  award_personal={日本ロボット学会第35回研究奨励賞},
   date={2020.10.9},
 }
 @inproceedings{nakashima2019healing-ja,
@@ -2633,7 +2709,7 @@
   booktitle=ROBOMECH17J,
   pages={2P1-B08},
   year=2017,
-  award_personal={若手優秀講演フェロー賞},
+  award_personal={日本機械学会若手優秀講演フェロー賞},
   date={2017.5.13},
 }
 
@@ -2673,6 +2749,15 @@
   date={2025.5.28},
   year=2025,
   website={https://www.jst.go.jp/crds/sympo/JSAI2025_physicalai/index.html},
+}
+@inproceedings{seminar2025ieice-ja,
+  author={河原塚 健人},
+  title={{生成AIのロボティクス応用}},
+  note={セミナー講師},
+  booktitle={IEICE先端セミナー},
+  date={2025.5.1},
+  year=2025,
+  website={https://www.ieice.org/jpn_r/activities/advanced_seminar.html},
 }
 @inproceedings{panelist2025eiconf,
   author={Kento Kawaharazuka},
