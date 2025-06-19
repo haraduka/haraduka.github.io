@@ -79,6 +79,33 @@
         });
       </script>
 
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(function (heading) {
+            // 既に id があれば使い、なければ生成
+            if (!heading.id) {
+              let baseId = heading.textContent.trim().toLowerCase()
+                .replace(/[^\w\s\-]/g, '') // 記号削除
+                .replace(/\s+/g, '-');     // 空白をハイフンに
+              let uniqueId = baseId;
+              let counter = 1;
+              while (document.getElementById(uniqueId)) {
+                uniqueId = baseId + '-' + counter++;
+              }
+              heading.id = uniqueId;
+            }
+
+            // アイコン生成
+            const anchor = document.createElement("a");
+            anchor.href = "#" + heading.id;
+            anchor.className = "anchor-link";
+            anchor.textContent = "🔗";
+            heading.appendChild(anchor);
+          });
+        });
+      </script>
+
+
       <main>
         <div class="row py-3">
           <div class="col-md-4 text-center">

@@ -105,4 +105,17 @@ a:active { color: #1693f3; }
   font-weight: bold;
   color: #333;
 }
-</style>
+
+h1:hover .anchor-link,
+h2:hover .anchor-link {
+  opacity: 1;
+}
+
+.anchor-link {
+  margin-left: 0.5em;
+  text-decoration: none;
+  font-size: 0.8em;
+  opacity: 0;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
