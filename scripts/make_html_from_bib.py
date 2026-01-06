@@ -27,9 +27,9 @@ class MakeHTML:
 
         self.project_template = """
           <div class='col-md-4 mb-4'>
-            <a href='{website_url}' target='blank_' class='text-decoration-none'>
+            <a href='{website_url}' target='_blank' rel='noopener noreferrer' class='text-decoration-none'>
               <div class='card pt-3 pb-3 ps-3 pe-3 ' id='{card_name}'>
-                <img class='card-img-top' alt='{card_title}' loading='lazy'>
+                <img class='card-img-top' alt='{card_title}' loading='lazy' decoding='async'>
                 <div class='card-body'>
                   <h5 class='card-title'>{card_title}</h5>
                   <p class='card-text'>{card_text}</p>
@@ -52,7 +52,7 @@ class MakeHTML:
               <h5 class="card-title">{video_title}</h5>
             </div>
             <div class="video-wrapper" onclick="loadVideo(this)">
-              <img loading="lazy" class="video-thumbnail"
+              <img loading="lazy" decoding="async" class="video-thumbnail"
                    src="https://img.youtube.com/vi/{video_id}/hqdefault.jpg" 
                    alt="{video_title}">
               <div class="play-button">
@@ -252,22 +252,22 @@ class MakeHTML:
             if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("code" in paper) or ("slide" in paper) or ("video" in paper):
                 line += "<br>"
             if "doi" in paper:
-                line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank'>[Paper Link]</a>"
+                line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank' rel='noopener noreferrer'>[Paper Link]</a>"
             if "arxiv" in paper:
-                line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
+                line += " <a href=" + paper["arxiv"] + " target='_blank' rel='noopener noreferrer'>[Arxiv Link]</a>"
             if "website" in paper:
-                line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+                line += " <a href=" + paper["website"] + " target='_blank' rel='noopener noreferrer'>[Project Page]</a>"
                 self.projects_pub += self.project_template.format(
                         card_name=paper["key"],
                         card_title=paper["title"],
                         card_text=author_joined+"<br>"+paper["booktitle"],
                         website_url=paper["website"])
             if "code" in paper:
-                line += " <a href=" + paper["code"] + " target='_blank'>[Source Code]</a>"
+                line += " <a href=" + paper["code"] + " target='_blank' rel='noopener noreferrer'>[Source Code]</a>"
             if "slide" in paper:
-                line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
+                line += " <a href=" + paper["slide"] + " target='_blank' rel='noopener noreferrer'>[Slide]</a>"
             if "video" in paper:
-                line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
+                line += " <a href=" + paper["video"] + " target='_blank' rel='noopener noreferrer'>[Video]</a>"
                 self.videos_pub += self.video_template.format(
                         video_title=paper["title"],
                         video_id=paper["video"].split("=")[1],
@@ -355,22 +355,22 @@ class MakeHTML:
             if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("code"in paper) or ("slide" in paper) or ("video" in paper):
                 line += "<br>"
             if "doi" in paper:
-                line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank'>[Paper Link]</a>"
+                line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank' rel='noopener noreferrer'>[Paper Link]</a>"
             if "arxiv" in paper:
-                line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
+                line += " <a href=" + paper["arxiv"] + " target='_blank' rel='noopener noreferrer'>[Arxiv Link]</a>"
             if "website" in paper:
-                line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+                line += " <a href=" + paper["website"] + " target='_blank' rel='noopener noreferrer'>[Project Page]</a>"
                 self.projects_pub += self.project_template.format(
                         card_name=paper["key"],
                         card_title=paper["title"],
                         card_text=author_joined+"<br>"+paper["booktitle"],
                         website_url=paper["website"])
             if "code" in paper:
-                line += " <a href=" + paper["code"] + " target='_blank'>[Source Code]</a>"
+                line += " <a href=" + paper["code"] + " target='_blank' rel='noopener noreferrer'>[Source Code]</a>"
             if "slide" in paper:
-                line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
+                line += " <a href=" + paper["slide"] + " target='_blank' rel='noopener noreferrer'>[Slide]</a>"
             if "video" in paper:
-                line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
+                line += " <a href=" + paper["video"] + " target='_blank' rel='noopener noreferrer'>[Video]</a>"
                 self.videos_pub += self.video_template.format(
                         video_title=paper["title"],
                         video_id=paper["video"].split("=")[1],
@@ -449,17 +449,17 @@ class MakeHTML:
             if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("code" in paper) or ("slide" in paper) or ("video" in paper):
                 line += "<br>"
             if "doi" in paper:
-                line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank'>[Paper Link]</a>"
+                line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank' rel='noopener noreferrer'>[Paper Link]</a>"
             if "arxiv" in paper:
-                line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
+                line += " <a href=" + paper["arxiv"] + " target='_blank' rel='noopener noreferrer'>[Arxiv Link]</a>"
             if "website" in paper:
-                line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+                line += " <a href=" + paper["website"] + " target='_blank' rel='noopener noreferrer'>[Project Page]</a>"
             if "code" in paper:
-                line += " <a href=" + paper["code"] + " target='_blank'>[Source Code]</a>"
+                line += " <a href=" + paper["code"] + " target='_blank' rel='noopener noreferrer'>[Source Code]</a>"
             if "slide" in paper:
-                line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
+                line += " <a href=" + paper["slide"] + " target='_blank' rel='noopener noreferrer'>[Slide]</a>"
             if "video" in paper:
-                line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
+                line += " <a href=" + paper["video"] + " target='_blank' rel='noopener noreferrer'>[Video]</a>"
 
             self.html_pub += ("<li>"+line+"</li>\n")
 
@@ -498,20 +498,20 @@ class MakeHTML:
             if ("arxiv" in paper) or ("website" in paper) or ("code" in paper) or ("slide" in paper) or ("video" in paper):
                 line += "<br>"
             if "arxiv" in paper:
-                line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
+                line += " <a href=" + paper["arxiv"] + " target='_blank' rel='noopener noreferrer'>[Arxiv Link]</a>"
             if "website" in paper:
-                line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+                line += " <a href=" + paper["website"] + " target='_blank' rel='noopener noreferrer'>[Project Page]</a>"
                 self.projects_pub += self.project_template.format(
                         card_name=paper["key"],
                         card_title=paper["title"],
                         card_text=author_joined+"<br>"+"arXiv",
                         website_url=paper["website"])
             if "code" in paper:
-                line += " <a href=" + paper["code"] + " target='_blank'>[Source Code]</a>"
+                line += " <a href=" + paper["code"] + " target='_blank' rel='noopener noreferrer'>[Source Code]</a>"
             if "slide" in paper:
-                line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
+                line += " <a href=" + paper["slide"] + " target='_blank' rel='noopener noreferrer'>[Slide]</a>"
             if "video" in paper:
-                line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
+                line += " <a href=" + paper["video"] + " target='_blank' rel='noopener noreferrer'>[Video]</a>"
                 self.videos_pub += self.video_template.format(
                         video_title=paper["title"],
                         video_id=paper["video"].split("=")[1],
@@ -574,17 +574,17 @@ class MakeHTML:
             if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("code" in paper) or ("slide" in paper) or ("video" in paper):
                 line += "<br>"
             if "doi" in paper:
-                line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank'>[Paper Link]</a>"
+                line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank' rel='noopener noreferrer'>[Paper Link]</a>"
             if "arxiv" in paper:
-                line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
+                line += " <a href=" + paper["arxiv"] + " target='_blank' rel='noopener noreferrer'>[Arxiv Link]</a>"
             if "website" in paper:
-                line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+                line += " <a href=" + paper["website"] + " target='_blank' rel='noopener noreferrer'>[Project Page]</a>"
             if "code" in paper:
-                line += " <a href=" + paper["code"] + " target='_blank'>[Source Code]</a>"
+                line += " <a href=" + paper["code"] + " target='_blank' rel='noopener noreferrer'>[Source Code]</a>"
             if "slide" in paper:
-                line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
+                line += " <a href=" + paper["slide"] + " target='_blank' rel='noopener noreferrer'>[Slide]</a>"
             if "video" in paper:
-                line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
+                line += " <a href=" + paper["video"] + " target='_blank' rel='noopener noreferrer'>[Video]</a>"
 
             self.html_pub += ("<li>"+line+"</li>\n")
 
@@ -648,17 +648,17 @@ class MakeHTML:
             if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("code" in paper) or ("slide" in paper) or ("video" in paper):
                 line += "<br>"
             if "doi" in paper:
-                line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank'>[Paper Link]</a>"
+                line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank' rel='noopener noreferrer'>[Paper Link]</a>"
             if "arxiv" in paper:
-                line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
+                line += " <a href=" + paper["arxiv"] + " target='_blank' rel='noopener noreferrer'>[Arxiv Link]</a>"
             if "website" in paper:
-                line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+                line += " <a href=" + paper["website"] + " target='_blank' rel='noopener noreferrer'>[Project Page]</a>"
             if "code" in paper:
-                line += " <a href=" + paper["code"] + " target='_blank'>[Source Code]</a>"
+                line += " <a href=" + paper["code"] + " target='_blank' rel='noopener noreferrer'>[Source Code]</a>"
             if "slide" in paper:
-                line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
+                line += " <a href=" + paper["slide"] + " target='_blank' rel='noopener noreferrer'>[Slide]</a>"
             if "video" in paper:
-                line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
+                line += " <a href=" + paper["video"] + " target='_blank' rel='noopener noreferrer'>[Video]</a>"
 
             self.html_pub += ("<li>"+line+"</li>\n")
 
@@ -720,17 +720,17 @@ class MakeHTML:
             if ("doi" in paper) or ("arxiv" in paper) or ("website" in paper) or ("code" in paper) or ("slide" in paper) or ("video" in paper):
                 line += "<br>"
             if "doi" in paper:
-                line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank'>[Paper Link]</a>"
+                line += " <a href=https://doi.org/" + paper["doi"] + " target='_blank' rel='noopener noreferrer'>[Paper Link]</a>"
             if "arxiv" in paper:
-                line += " <a href=" + paper["arxiv"] + " target='_blank'>[Arxiv Link]</a>"
+                line += " <a href=" + paper["arxiv"] + " target='_blank' rel='noopener noreferrer'>[Arxiv Link]</a>"
             if "website" in paper:
-                line += " <a href=" + paper["website"] + " target='_blank'>[Project Page]</a>"
+                line += " <a href=" + paper["website"] + " target='_blank' rel='noopener noreferrer'>[Project Page]</a>"
             if "code" in paper:
-                line += " <a href=" + paper["code"] + " target='_blank'>[Source Code]</a>"
+                line += " <a href=" + paper["code"] + " target='_blank' rel='noopener noreferrer'>[Source Code]</a>"
             if "slide" in paper:
-                line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
+                line += " <a href=" + paper["slide"] + " target='_blank' rel='noopener noreferrer'>[Slide]</a>"
             if "video" in paper:
-                line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
+                line += " <a href=" + paper["video"] + " target='_blank' rel='noopener noreferrer'>[Video]</a>"
 
             self.html_pub += ("<li>"+line+"</li>\n")
 
@@ -790,11 +790,11 @@ class MakeHTML:
             if ("website" in paper) or ("slide" in paper) or ("video" in paper):
                 line += "<br>"
             if "website" in paper:
-                line += " <a href=" + paper["website"] + " target='_blank'>[Website]</a>"
+                line += " <a href=" + paper["website"] + " target='_blank' rel='noopener noreferrer'>[Website]</a>"
             if "slide" in paper:
-                line += " <a href=" + paper["slide"] + " target='_blank'>[Slide]</a>"
+                line += " <a href=" + paper["slide"] + " target='_blank' rel='noopener noreferrer'>[Slide]</a>"
             if "video" in paper:
-                line += " <a href=" + paper["video"] + " target='_blank'>[Video]</a>"
+                line += " <a href=" + paper["video"] + " target='_blank' rel='noopener noreferrer'>[Video]</a>"
 
             self.html_pub += ("<li>"+line+"</li>\n")
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="Kento Kawaharazuka, lecturer at the University of Tokyo, researches humanoid robotics, tendon-driven robots, and machine learning.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> Kento Kawaharazuka </title>
     <link rel="shortcut icon" href="static/favicon.ico">
@@ -20,9 +20,11 @@
 
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:title" content="Kento Kawaharazuka" />
+    <meta property="twitter:description" content="Humanoid robotics, tendon-driven robots, and machine learning research at the University of Tokyo." />
     <meta property="twitter:image" content="https://haraduka.github.io/static/kawaharazuka.png" />
 
     <meta property="og:title" content="Kento Kawaharazuka" />
+    <meta property="og:description" content="Humanoid robotics, tendon-driven robots, and machine learning research at the University of Tokyo." />
     <meta property="og:url" content="https://haraduka.github.io" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://haraduka.github.io/static/kawaharazuka.png" />
@@ -94,10 +96,13 @@
               heading.id = uniqueId;
             }
 
+            const headingText = heading.textContent.trim();
             // アイコン生成
             const anchor = document.createElement("a");
             anchor.href = "#" + heading.id;
             anchor.className = "anchor-link";
+            anchor.setAttribute("aria-label", "Link to section: " + headingText);
+            anchor.setAttribute("title", "Link to section: " + headingText);
             anchor.textContent = "🔗";
             heading.appendChild(anchor);
           });
@@ -109,47 +114,45 @@
         <div class="row py-3">
           <div class="col-md-4 text-center">
             <div style="max-width: 400px">
-              <img src="static/kawaharazuka.png" class="img-fluid mx-auto d-block" alt="Image" style="max-width: 100%; height: auto;">
+              <img src="static/kawaharazuka.png" class="img-fluid mx-auto d-block" alt="Portrait of Kento Kawaharazuka" style="max-width: 100%; height: auto;" loading="eager" decoding="async">
             </div>
           </div>
 
           <div class="col-md-8 py-3">
-            <h2> Kento Kawaharazuka </h2>
-            <h3> Lecturer (Junior Associate Professor) </h3>
+            <h1> Kento Kawaharazuka </h1>
+            <h2> Lecturer (Junior Associate Professor) </h2>
             Next Generation Artificial Intelligence Research Center (AI Center), <br>
             + Department of Mechano-Informatics, <br>
             Graduate School of Information Science and Technology, <br>
             The University of Tokyo, Japan <br>
             <div class="d-inline-flex mt-4 ms-md-auto">
-              <a href="https://scholar.google.co.jp/citations?user=E75YHyUAAAAJ&hl=en" target='_blank' class="me-3">
+              <a href="https://scholar.google.co.jp/citations?user=E75YHyUAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="me-3">
                 <svg xmlns="http://www.w3.org/2000/svg" height="36" width="36"fill="currentColor" viewBox="0 0 512 512">
                   <path d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/>
                 </svg>
               </a>
-              <a href="https://twitter.com/KKawaharazuka" target='_blank' class="me-3">
+              <a href="https://twitter.com/KKawaharazuka" target="_blank" rel="noopener noreferrer" class="me-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
                   <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
                 </svg>
               </a>
-              <a href="https://www.youtube.com/channel/UC3iq44Y7vsriPyFiU02Bcyw" target='_blank' class='me-3'>
+              <a href="https://www.youtube.com/channel/UC3iq44Y7vsriPyFiU02Bcyw" target="_blank" rel="noopener noreferrer" class='me-3'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
                   <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408z"/>
                 </svg>
               </a>
-              <a href="https://github.com/haraduka" target='_blank' class="me-3">
+              <a href="https://github.com/haraduka" target="_blank" rel="noopener noreferrer" class="me-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
                   <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
                 </svg>
               </a>
-              <a href="mailto:kawaharazuka@jsk.imi.i.u-tokyo.ac.jp" target='_blank' class="me-3">
+              <a href="mailto:kawaharazuka@jsk.imi.i.u-tokyo.ac.jp" target="_blank" rel="noopener noreferrer" class="me-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24">
                   <path fill="currentColor" d="M20 18h-2V9.25L12 13L6 9.25V18H4V6h1.2l6.8 4.25L18.8 6H20m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"/></svg>
-                </svg>
               </a>
-              <a href="https://www.linkedin.com/in/kento-kawaharazuka-099372285/" target='_blank' class="me-3">
+              <a href="https://www.linkedin.com/in/kento-kawaharazuka-099372285/" target="_blank" rel="noopener noreferrer" class="me-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
                   <path fill="currentColor" d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></svg>
-                </svg>
               </a>
             </div>
           </div>
@@ -173,7 +176,7 @@
 
         <div class="row py-3">
           <div class="col-lg-8 offset-lg-2 text-center">
-            <img src="static/robots.jpeg" class="img-fluid mx-auto d-block" alt="Image" style="max-width: 100%; height: auto;">
+            <img src="static/robots.jpeg" class="img-fluid mx-auto d-block" alt="Robots in the lab" style="max-width: 100%; height: auto;" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -181,20 +184,20 @@
           <h2> News </h2>
         </div>
         <ul>
-          <li><b> 2025.11.25 - Kento Kawaharazuka was selected as one of the <a href="https://www.technologyreview.jp/s/372749/the-winners-of-innovators-under-35-japan-2025-have-been-announced/" target='_blank'>Innovators Under 35 Japan 2025 by MIT Technology Review</a>!</b></li>
+          <li><b> 2025.11.25 - Kento Kawaharazuka was selected as one of the <a href="https://www.technologyreview.jp/s/372749/the-winners-of-innovators-under-35-japan-2025-have-been-announced/" target="_blank" rel="noopener noreferrer">Innovators Under 35 Japan 2025 by MIT Technology Review</a>!</b></li>
           <li><b> 2025.10.24 - "Chimney Climbing by KLEIYN" was selected as Best Early Career Talk Award at IROS2025 workshop on climbing robotics!</b></li>
           <li><b> 2025.10.01 - Kento Kawaharazuka has been appointed as a visiting researcher at RIKEN AIP!</b></li>
           <li><b> 2025.10.01 - "Remotely Wire-Driven Walking Robot" was selected as Best Interactive Paper Award Finalist at Humanoids2025!</b></li>
           <li><b> 2025.09.27 - "RL-base Giant Swing" was selected as Best Open-Source Hardware Award at CoRL2025 Workshop!</b></li>
           <li><b> 2025.09.17 - Our survey paper on Vision-Language-Action (VLA) models for robotics has been accepted to IEEE Access!</a></b></li>
           <li><b> 2025.09.04 - Our survey paper "Real-World Robot Applications of Foundation Models: A Review" won the Advanced Robotics Best Survey Paper Award!</a></b></li>
-          <li><b> 2025.08.13 - Our new survey paper on <a href="https://vla-survey.github.io" target='_blank'>Vision-Language-Action (VLA) models for robotics</a> is out!</a></b></li>
-          <li><b> 2025.08.12 - We are organizing a Humanoids2025 workshop on <a href="https://dexterous-humanoid-manipulation.github.io/" target='_blank'>dexterous humanoid manipulation</a>!</b></li>
-          <li><b> 2025.07.31 - We are organizing a IROS2025 workshop on <a href="https://sites.google.com/g.ecc.u-tokyo.ac.jp/iros2025-ws-roboticdesign/" target='_blank'>foundation models for robotic design</a>!</b></li>
+          <li><b> 2025.08.13 - Our new survey paper on <a href="https://vla-survey.github.io" target="_blank" rel="noopener noreferrer">Vision-Language-Action (VLA) models for robotics</a> is out!</a></b></li>
+          <li><b> 2025.08.12 - We are organizing a Humanoids2025 workshop on <a href="https://dexterous-humanoid-manipulation.github.io/" target="_blank" rel="noopener noreferrer">dexterous humanoid manipulation</a>!</b></li>
+          <li><b> 2025.07.31 - We are organizing a IROS2025 workshop on <a href="https://sites.google.com/g.ecc.u-tokyo.ac.jp/iros2025-ws-roboticdesign/" target="_blank" rel="noopener noreferrer">foundation models for robotic design</a>!</b></li>
           <li><b> 2025.07.29 - MIRU2025にて「ロボット基盤モデルの最前線」というチュートリアル講演を行いました.</b></li>
           <li><b> 2025.07.23 - Three papers including one first-authored paper were accepted to Humanoids2025!</b></li>
-          <li><b> 2025.07.22 - We are organizing a CoRL2025 workshop on <a href="https://open-hardware-robots.github.io/CoRL2025/" target='_blank'>open-source hardware</a>!</b></li>
-          <li><b> 2025.07.16 - 講談社様より書籍「基盤モデルとロボットの融合」が出版されます！ぜひ<a href="https://www.amazon.co.jp/dp/4065395852" target='_blank'>予約</a>してください！</b></li>
+          <li><b> 2025.07.22 - We are organizing a CoRL2025 workshop on <a href="https://open-hardware-robots.github.io/CoRL2025/" target="_blank" rel="noopener noreferrer">open-source hardware</a>!</b></li>
+          <li><b> 2025.07.16 - 講談社様より書籍「基盤モデルとロボットの融合」が出版されます！ぜひ<a href="https://www.amazon.co.jp/dp/4065395852" target="_blank" rel="noopener noreferrer">予約</a>してください！</b></li>
           <li><b> 2025.06.16 - Four papers including one first-authored paper were accepted to IROS2025!</b></li>
           <li><b> 2025.06.10 - Our paper on PIMBS (physics-informed musculoskeletal body schema) was accepted to IEEE RA-L!</b></li>
           <li><b> 2025.06.04 - ロボティクス・メカトロニクス講演会2025にて主著2件を含む9件の発表があります.</b></li>
@@ -240,15 +243,15 @@
           <li><b> 2024.06.03 - I will be conducting research as a visiting researcher at ETH for two and a half months.</b></li>
           <li><b> 2024.05.30 - ロボティクス・メカトロニクス講演会2024にて主著1件を含む10件の発表があります.</b></li>
           <li><b> 2024.05.28 - 人工知能学会2024にて1件の発表があります.</b></li>
-          <li><b> 2024.05.17 - I gave an organizer talk at ICRA2024 workshop on <a href="https://sites.google.com/view/icra2024cookingrobotics/home" target='_blank'>Cooking Robotics: Perception and Motion Planning</a>.</b></li>
+          <li><b> 2024.05.17 - I gave an organizer talk at ICRA2024 workshop on <a href="https://sites.google.com/view/icra2024cookingrobotics/home" target="_blank" rel="noopener noreferrer">Cooking Robotics: Perception and Motion Planning</a>.</b></li>
           <li><b> 2024.05.16 - RT-X project won the Best Conference Paper Award at ICRA2024!</b></li>
-          <li><b> 2024.04.15 - I gave an invited talk at RoboSoft2024 workshop on <a href="https://printed-musculoskeletal-robots.ethz.ch/" target='_blank'>From Layers to Limbs! Exploring the Interface of 3D Printing and Bio-Inspired Musculoskeletal Robotics</a>.</b></li>
+          <li><b> 2024.04.15 - I gave an invited talk at RoboSoft2024 workshop on <a href="https://printed-musculoskeletal-robots.ethz.ch/" target="_blank" rel="noopener noreferrer">From Layers to Limbs! Exploring the Interface of 3D Printing and Bio-Inspired Musculoskeletal Robotics</a>.</b></li>
           <li><b> 2024.03.05 - Our paper "Continuous Object State Recognition for Cooking Robots" was accepted to RA-L!</b></li>
           <li><b> 2024.03.05 - Our paper "SAQIEL: Ultra-Light and Safe Manipulator" was accepted to RA-L!</b></li>
           <li><b> 2024.02.09 - Our new survey paper "Real-World Robot Applications of Foundation Models: A Review" is now on arXiv!</b></li>
           <li><b> 2024.02.09 - "卵料理の実世界調理実行"と"液体滲出軟骨機構の構成法"に関する研究が計測自動制御学会2023にて優秀講演賞に選ばれました.</b></li>
           <li><b> 2024.02.04 - I have been staying at Robotic Systems Lab at ETH in Switzerland for the past two weeks. I appreciate the insightful discussions!</b></li>
-          <li><b> 2024.02.02 - We organize <a href="https://sites.google.com/view/icra2024cookingrobotics/home" target='_blank'>Cooking Robotics Workshop</a> at ICRA2024!</b></li>
+          <li><b> 2024.02.02 - We organize <a href="https://sites.google.com/view/icra2024cookingrobotics/home" target="_blank" rel="noopener noreferrer">Cooking Robotics Workshop</a> at ICRA2024!</b></li>
           <li><b> 2024.01.30 - We have extended the deadline of Advanced Robotics Special Issue on Real-World Robot Applications of Foundation Models to 29th February.</b></li>
           <li><b> 2024.01.29 - Five papers including two first-authored papers were accepted to ICRA2024.</b></li>
           <li><b> 2024.01.19 - Two papers  were accepted to RoboSoft2024.</b></li>
@@ -258,7 +261,7 @@
           <li><b> 2023.10.24 - 日本ロボット学会誌Vol.41, No.8に"情報化身体の学習理論に基づく成長ロボットの革新と創成"に関する解説記事が掲載されました.</b></li>
           <li><b> 2023.10.18 - 第5回LLM勉強会(LLM-jp)にて招待講演を行います.</b></li>
           <li><b> 2023.10.06 - We visited Stanford University.</b></li>
-          <li><b> 2023.10.05 - I gave an invited talk at IROS2023 workshop on <a href="https://sites.google.com/view/learning-meets-models-iros2023/speakers?authuser=0" target='_blank'>Learning Meets Model-based Methods for Manipulation and Grasping</a>.</b></li>
+          <li><b> 2023.10.05 - I gave an invited talk at IROS2023 workshop on <a href="https://sites.google.com/view/learning-meets-models-iros2023/speakers?authuser=0" target="_blank" rel="noopener noreferrer">Learning Meets Model-based Methods for Manipulation and Grasping</a>.</b></li>
           <li><b> 2023.09.30 - Five papers including two first-authored papers were accepted to Humanoids2023.</b></li>
           <li><b> 2023.09.12 - 日本ロボット学会2023にて主著1件を含む12件の発表があります.</b></li>
           <li><b> 2023.08.31 - NLP若手の会(YANS2023)の招待セッションで発表します.</b></li>
@@ -347,31 +350,31 @@
           <h2> Awards and Experiences (Others) </h2>
         </div>
         <ol>
-          <li>電通総研賞<a href="https://www.dentsusoken.com/news/topics/2025/1224.html" target='_blank'>MIT Technology Review</a>, 2025.11.25</li>
-          <li>叡啓大学賞<a href="https://eikei.ac.jp/news/10634/" target='_blank'>MIT Technology Review</a>, 2025.11.25</li>
-          <li>Innovators Under 35 Japan 2025, <a href="https://www.technologyreview.jp/s/372749/the-winners-of-innovators-under-35-japan-2025-have-been-announced/" target='_blank'>MIT Technology Review</a>, 2025.11.25</li>
-          <li>特別賞, <a href="https://group.gmo/security/ai-robotics/conference/2025/" target='_blank'>GMO AI & Robotics Awards 2025</a>, 2025.9.25</li>
+          <li>電通総研賞<a href="https://www.dentsusoken.com/news/topics/2025/1224.html" target="_blank" rel="noopener noreferrer">MIT Technology Review</a>, 2025.11.25</li>
+          <li>叡啓大学賞<a href="https://eikei.ac.jp/news/10634/" target="_blank" rel="noopener noreferrer">MIT Technology Review</a>, 2025.11.25</li>
+          <li>Innovators Under 35 Japan 2025, <a href="https://www.technologyreview.jp/s/372749/the-winners-of-innovators-under-35-japan-2025-have-been-announced/" target="_blank" rel="noopener noreferrer">MIT Technology Review</a>, 2025.11.25</li>
+          <li>特別賞, <a href="https://group.gmo/security/ai-robotics/conference/2025/" target="_blank" rel="noopener noreferrer">GMO AI & Robotics Awards 2025</a>, 2025.9.25</li>
           <li>First Place (GPSR task in DSPL), RoboCup@Home JapanOpen2022, 2023.3.6 - 2023.3.9</li>
-          <li>First Prize (state-based category), <a href="https://uzh-rpg.github.io/icra2022-dodgedrone/" target='_blank'>ICRA 2022 DodgeDrone Challenge</a>, 2022.5.26</li>
-          <li>Part-time Enginner at <a href="https://www.preferred-networks.jp/en/" target='_blank'>Preferred Networks</a>, 2018.10 - 2020.3</li>
-          <li>Internship at <a href="https://www.preferred-networks.jp/en/" target='_blank'>Preferred Networks</a>, 2018.8 - 2018.9</li>
-          <li>Oral Presentation Award (Second Prize), <a href="http://deeplearning.jp/deeplearningday2018/" target='_blank'>Deep Learning Day 2018</a>, 2018.1.20</li>
+          <li>First Prize (state-based category), <a href="https://uzh-rpg.github.io/icra2022-dodgedrone/" target="_blank" rel="noopener noreferrer">ICRA 2022 DodgeDrone Challenge</a>, 2022.5.26</li>
+          <li>Part-time Enginner at <a href="https://www.preferred-networks.jp/en/" target="_blank" rel="noopener noreferrer">Preferred Networks</a>, 2018.10 - 2020.3</li>
+          <li>Internship at <a href="https://www.preferred-networks.jp/en/" target="_blank" rel="noopener noreferrer">Preferred Networks</a>, 2018.8 - 2018.9</li>
+          <li>Oral Presentation Award (Second Prize), <a href="http://deeplearning.jp/deeplearningday2018/" target="_blank" rel="noopener noreferrer">Deep Learning Day 2018</a>, 2018.1.20</li>
           <li>Code Thanks Festival 2017, 2017.12.2</li>
-          <li>Jaxa Award (Second Prize), <a href="http://moonhack.jp.klab.com/" target='_blank'>Moon Hack Hackathon 2017</a>, 2017.11.11 - 2017.11.12</li>
+          <li>Jaxa Award (Second Prize), <a href="http://moonhack.jp.klab.com/" target="_blank" rel="noopener noreferrer">Moon Hack Hackathon 2017</a>, 2017.11.11 - 2017.11.12</li>
           <li>Final Round of Code Festival 2016, 2016.11.26 - 2016.11.27</li>
-          <li>2nd RUNNER-UP and ABU ROBOCON AWARD, <a href="http://aburobocon.net/" target='_blank'>ABU Robot Contest 2016</a>, Clean Energy Recharging the World, 2016.8.21</li>
-          <li>First Prize <a href="https://official-robocon.com/history/gakusei/about/history/twentyfive/" target='_blank'>NHK Student Robot Contest 2016</a>, Clean Energy Recharging the World, 2016.7.10</li>
-          <li>Outstanding Performance Award, Internship at <a href="http://www.worksap.com/" target='_blank'>Works Applications Co., Ltd.</a>, 2016.3.4 - 2016.3.31</li>
-          <li>Internship at <a href="http://www.futurestandard.co.jp/about/" target='_blank'>Future Standard Co., Ltd.</a>, 2016.1 - 2016.4</li>
-          <li>Third Prize (Senior Division), <a href="http://www.lsse.kyutech.ac.jp/~sociorobo/ja/tomato-robot2015" target='_blank'>Tomato Robot Challenge</a>, 2015.12.18 - 2015.12.20</li>
+          <li>2nd RUNNER-UP and ABU ROBOCON AWARD, <a href="http://aburobocon.net/" target="_blank" rel="noopener noreferrer">ABU Robot Contest 2016</a>, Clean Energy Recharging the World, 2016.8.21</li>
+          <li>First Prize <a href="https://official-robocon.com/history/gakusei/about/history/twentyfive/" target="_blank" rel="noopener noreferrer">NHK Student Robot Contest 2016</a>, Clean Energy Recharging the World, 2016.7.10</li>
+          <li>Outstanding Performance Award, Internship at <a href="http://www.worksap.com/" target="_blank" rel="noopener noreferrer">Works Applications Co., Ltd.</a>, 2016.3.4 - 2016.3.31</li>
+          <li>Internship at <a href="http://www.futurestandard.co.jp/about/" target="_blank" rel="noopener noreferrer">Future Standard Co., Ltd.</a>, 2016.1 - 2016.4</li>
+          <li>Third Prize (Senior Division), <a href="http://www.lsse.kyutech.ac.jp/~sociorobo/ja/tomato-robot2015" target="_blank" rel="noopener noreferrer">Tomato Robot Challenge</a>, 2015.12.18 - 2015.12.20</li>
           <li>Final Round of CODE RUNNER 2015, 2015.12.12</li>
           <li>Final Round of Code Festival 2015, 2015.11.14 - 2015.11.15</li>
-          <li>Internship at <a href="https://www.hioki.com/en/" target='_blank'>HIOKI E.E. CORPORATION</a>, 2015.8.17 - 2015.8.28</li>
-          <li>Technical Award, <a href="https://official-robocon.com/history/gakusei/about/history/twenty-fourth/" target='_blank'>NHK Student Robot Contest 2015</a>, ROBOMINTON:BADMINTON ROBO GAME (Pit Member), 2015.6.7</li>
-          <li>Dowango Award (11/372), <a href="https://icpc.iisf.or.jp/2015-tsukuba/domestic/?lang=en" target='_blank'>ICPC Domestic Preliminary Contest</a>, 2015.6.26</li>
-          <li>Final Round of <a href="http://www.ipsj.or.jp/event/samuraicoding/2014-15/index.html" target='_blank'>SamurAI Coding 2014-2015</a>, 2015.3.18</li>
+          <li>Internship at <a href="https://www.hioki.com/en/" target="_blank" rel="noopener noreferrer">HIOKI E.E. CORPORATION</a>, 2015.8.17 - 2015.8.28</li>
+          <li>Technical Award, <a href="https://official-robocon.com/history/gakusei/about/history/twenty-fourth/" target="_blank" rel="noopener noreferrer">NHK Student Robot Contest 2015</a>, ROBOMINTON:BADMINTON ROBO GAME (Pit Member), 2015.6.7</li>
+          <li>Dowango Award (11/372), <a href="https://icpc.iisf.or.jp/2015-tsukuba/domestic/?lang=en" target="_blank" rel="noopener noreferrer">ICPC Domestic Preliminary Contest</a>, 2015.6.26</li>
+          <li>Final Round of <a href="http://www.ipsj.or.jp/event/samuraicoding/2014-15/index.html" target="_blank" rel="noopener noreferrer">SamurAI Coding 2014-2015</a>, 2015.3.18</li>
           <li>Final Round of CODE RUNNER 2014, 30, November, 2014</li>
-          <li>Technical Award, <a href="http://f3rcontest.web.fc2.com/index.html" target='_blank'>Freshman's Robot Contest 2013 (F^3RC)</a>, 2013.9.29</li>
+          <li>Technical Award, <a href="http://f3rcontest.web.fc2.com/index.html" target="_blank" rel="noopener noreferrer">Freshman's Robot Contest 2013 (F^3RC)</a>, 2013.9.29</li>
         </ol>
 
         <div class="text-white bg-primary border-primary mt-3 ps-3">
@@ -397,88 +400,88 @@
           <h2> Media </h2>
         </div>
         <ol>
-          <li><a href="https://spectrum.ieee.org/happy-holidays-robot" target='_blank'>Happy Robot Holidays: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2025.12.19</li>
-          <li><a href="https://www.nikkan.co.jp/articles/view/00769411" target='_blank'>東京大学、ワイヤで遠隔操作できるヘビ型ロボ　電気不要　防爆処理しやすく</a>, 日刊工業新聞, 2025.12.22</li>
-          <li><a href="https://25to26.ledge.ai/articles/interview_Kawaharazuka" target='_blank'>基盤モデルとの融合はロボットに何をもたらすのか——現在地と未来への展望</a>, Ledge.ai 年末年始特集, 2025.12.1</li>
-          <li><a href="https://gendai.media/articles/-/158733" target='_blank'>生成AIの「次の主役」はロボット、 その“最前線”にいるプロフェッショナルが明かす「基盤モデル」×「ロボット」の融合で起きる"大変革"</a>, 現代ビジネス, 2025.10.17</li>
-          <li><a href="https://www.nikkei.com/article/DGXZQOSG233G80T20C25A9000000/" target='_blank'>「人型」に負けない犬型ロボットが急速進化　先行の米中を日本勢追う</a>, 日本経済新聞, 2025.10.04</li>
-          <li><a href="https://newswitch.jp/p/46973" target='_blank'>ECサイト購入部品で作れる二足歩行ロボット、東大が設計図などを公開する理由</a>, 日刊工業新聞, 2025.09.17</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-billion-humanoid-robots" target='_blank'>A Billion Dollars for Humanoid Robots: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2025.09.19</li>
-          <li><a href="https://newsdig.tbs.co.jp/articles/withbloomberg/2161730" target='_blank'>【米中が圧倒的でも日本の開発者は諦めるな】東大研究者・河原塚健人／ロボット×AI基盤モデル＝人間の知能を実現／でも日本の存在感は「めっちゃ低い」／ヒューマノイドの身体能力はもう差がつかない【1on1】</a>, TBC CROSS DIG, 2025.09.10</li>
-          <li><a href="https://newswitch.jp/p/46891" target='_blank'>人型ロボットの投資が世界で加熱している…中国で運動会、価格破壊も</a>, 日刊工業新聞, 2025.09.09</li>
-          <li><a href="https://www.cubemars.com/quadruped-robot-dog-kleiyn-climbs-walls.html" target='_blank'>Robot Dog Climbs Walls with Robotic Actuators，50 Times Fater!</a>, CubeMars, 2025.09.02</li>
-          <li><a href="https://interestingengineering.com/innovation/robot-built-using-sheet-metal-welding" target='_blank'>Unique robot built from off-the-shelf parts walks on two legs</a>, Interesting Engineering, 2025.09.01</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-synchronized-dancing-robots" target='_blank'>Spot's Got Talent: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2025.08.29</li>
-          <li><a href="https://karapaia.com/archives/525837.html" target='_blank'>こいつ、速いぞ！東京大学が開発した壁登りロボットが世界最速記録を更新！</a>, カラパイア, 2025.07.18</li>
-          <li><a href="https://newatlas.com/robotics/jsk-kleiyn-quadruped-waist-climb/" target='_blank'>Robodog chimneys better than you, ready to send a V5</a>, New Atlas, 2025.07.17</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-reachy-mini" target='_blank'>Reachy Mini Brings the Cute: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2025.07.11</li>
-          <li><a href="https://interestingengineering.com/innovation/kleiyn-chimney-climbing-robot-dog" target='_blank'>Watch world’s fastest chimney-climbing robot dog scale 50 times faster than rivals</a>, Interesting Engineering, 2025.07.14</li>
-          <li><a href="https://newswitch.jp/p/46244" target='_blank'>東大が開発、ミスミ通販で部品調達できる「4脚ロボット」の利点</a>, 日刊工業新聞, 2025.07.06</li>
-          <li><a href="https://www.youtube.com/watch?v=aCW75gMBn18" target='_blank'>【オープンソース】四足歩行ロボット MEVIUSの開発者に突撃取材してみた</a>, YouTube, 2025.05.31</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-hopping-robot-insect" target='_blank'>Tiny Robot Bug Hops and Jumps: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2025.04.11</li>
-          <li><a href="https://jp.meviy.misumi-ec.com/info/ja/news/48510/" target='_blank'>第10回　設計・製造ソリューション展（DMS名古屋）2025</a>, meviy, 2025.03.25</li>
-          <li><a href="https://xtech.nikkei.com/atcl/nxt/column/18/03118/00005/" target='_blank'>脚式ロボの歩行騒音問題、ソニーが独自強化学習でaibo静かに</a>, 日経クロステック, 2025.03.21</li>
-          <li><a href="https://techxplore.com/news/2025-03-sony-aibo-dog-quietly-elaborate.html" target='_blank'>Sony's aibo dog could soon walk quietly and perform elaborate dance routines</a>, Tech Xplore, 2025.03.04</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-good-over-all-terrains" target='_blank'>Good Over All Terrains: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2025.02.28</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-aibo-foster-parents" target='_blank'>Aibo Foster Parents: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2025.01.31</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-agile-upgrade" target='_blank'>Agile Upgrade: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2025.01.17</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-hottest-on-the-ice" target='_blank'>Hottest on the Ice: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2025.01.24</li>
-          <li><a href="https://prtimes.jp/main/html/rd/p/000000060.000069918.html" target='_blank'>アールティが挑む、国産4足歩行ロボットの未来</a>, PR TIMES, 2024.12.17</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-multiple-magicbots" target='_blank'>Multiple MagicBots: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.12.06</li>
-          <li><a href="https://www.yomiuri.co.jp/science/20241120-OYT1T50012/" target='_blank'>「頭脳」手に入れ「常識」備えたかに見えるロボット…私たちのパートナーか、倫理観なき危険な存在か</a>, 読売新聞, 2024.11.20</li>
-          <li><a href="https://newswitch.jp/p/43682" target='_blank'>ロボットに指示・意図どう伝える？…インターフェース最適化へ新手法探る</a>, 日刊工業新聞, 2024.11.24</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-quadruped-ladder-climbing" target='_blank'>Quadruped Ladder Climbing: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.10.04</li>
-          <li><a href="https://interestingengineering.com/innovation/mini-muscle-power-new-robotic-forearm" target='_blank'>Game-changing mini-muscle motors power new robotic forearm like humans</a>, Interesting Engineering, 2024.09.02</li>
-          <li><a href="https://www.dw.com/en/a-robot-at-the-wheel/video-69903705" target='_blank'>A robot at the wheel</a>, Deutsche Welle, 2024.08.31</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-robots-table-tennis" target='_blank'>Robots Solving Table Tennis: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.08.30</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-disney-robot-dance" target='_blank'>Disney Robot Dance: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.08.23</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-robot-dog-jump" target='_blank'>Silly Robot Dog Jump: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.08.16</li>
-          <li><a href="https://newswitch.jp/p/42280" target='_blank'>「常識」「データ」使い切れ…基盤モデル・LLM、ロボットに応用</a>, 日刊工業新聞, 2024.07.19</li>
-          <li><a href="https://www.gizmodo.jp/2024/06/musashi-humanoid-driving.html" target='_blank'>人型ロボは運転もこなす。クルマまかせの自動運転よりも安心感アップ</a>, GIZMODO JAPAN, 2024.06.18</li>
-          <li><a href="https://www.newscientist.com/article/2435826-watch-a-humanoid-robot-driving-a-car-extremely-slowly/" target='_blank'>Watch a humanoid robot driving a car extremely slowly</a>, New Scientist, 2024.06.17</li>
-          <li><a href="https://newatlas.com/robotics/musashi-humanoid-autonomous-driving/" target='_blank'>Video: Humanoid chauffeur put in the driving seat for robotaxi future</a>, New Atlas, 2024.06.13</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-robots-with-knives" target='_blank'>Robots With Knives: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.05.17</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-racer-heavy" target='_blank'>RACER Heavy: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.04.26</li>
-          <li><a href="https://abema.tv/video/episode/89-106_s1_p2428" target='_blank'>『すずめの戸締り』椅子をロボットに</a>, ABEMA【週刊BUZZ動画】SNSで話題の動画をピックアップ!, 2024.04.20</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-spacehopper" target='_blank'>SpaceHopper: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.04.19</li>
-          <li><a href="https://www.itmedia.co.jp/aiplus/articles/2404/17/news048.html" target='_blank'>「すずめの戸締まり」に登場の“3本脚の椅子”を再現したロボット　東大が開発　歩行し倒れても起き上がる</a>, ITmedia AI+, 2024.04.17</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-robot-dog-can-t-fall" target='_blank'>Robot Dog Can't Fall: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.04.12</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-co-expression" target='_blank'>Co-Expression: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.03.29</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-many-quadrupeds" target='_blank'>Many Quadrupeds: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.03.15</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-human-to-humanoid" target='_blank'>Human to Humanoid: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.03.08</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-tap-finger-move-mountain" target='_blank'>Tap Finger, Move Mountain: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2023.12.01</li>
-          <li><a href="https://newswitch.jp/p/39450" target='_blank'>AI・ロボも迷う…“我が家の冷蔵庫問題”が解けたら値千金な理由</a>, 日刊工業新聞, 2023.12.01</li>
-          <li><a href="https://newswitch.jp/p/39285" target='_blank'>生活支援ロボット、ＡＩで変革した現在地と展望</a>, 日刊工業新聞, 2023.11.30</li>
-          <li><a href="https://spectrum.ieee.org/video-friday-punch-out" target='_blank'>Punch-Out: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2023.11.24</li>
-          <li><a href="https://newswitch.jp/p/38378" target='_blank'>腹腔鏡手術の訓練手技をロボットに、東大が制約付き模倣学習開発</a>, 日刊工業新聞, 2023.09.06</li>
-          <li><a href="https://www.asahi.com/articles/ASLCJ3412LCJOBJB002.html" target='_blank'>人型ロボット「ムサシ」、車も運転できるよ　東大が披露</a>, 朝日新聞, 2018.11.16</li>
-          <li><a href="https://newswitch.jp/p/13673" target='_blank'>東大のヒューマノイド「腱悟郎」、車の運転に成功</a>, 日刊工業新聞, 2018.07.13</li>
-          <li><a href="https://www.nikkei.com/article/DGXMZO25019580U7A221C1TJM000/" target='_blank'>東大、日本人の筋骨格再現したロボット開発</a>, 日本経済新聞, 2017.12.24</li>
-          <li><a href="https://www.todaishimbun.org/seisakuten20161118/" target='_blank'>初日から300人来場！いま話題の「東京大学制作展『FAKE FUTURE』」ではどんな体験ができるのか？</a>, 東大新聞オンライン, 2016.11.18</li>
+          <li><a href="https://spectrum.ieee.org/happy-holidays-robot" target="_blank" rel="noopener noreferrer">Happy Robot Holidays: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2025.12.19</li>
+          <li><a href="https://www.nikkan.co.jp/articles/view/00769411" target="_blank" rel="noopener noreferrer">東京大学、ワイヤで遠隔操作できるヘビ型ロボ　電気不要　防爆処理しやすく</a>, 日刊工業新聞, 2025.12.22</li>
+          <li><a href="https://25to26.ledge.ai/articles/interview_Kawaharazuka" target="_blank" rel="noopener noreferrer">基盤モデルとの融合はロボットに何をもたらすのか——現在地と未来への展望</a>, Ledge.ai 年末年始特集, 2025.12.1</li>
+          <li><a href="https://gendai.media/articles/-/158733" target="_blank" rel="noopener noreferrer">生成AIの「次の主役」はロボット、 その“最前線”にいるプロフェッショナルが明かす「基盤モデル」×「ロボット」の融合で起きる"大変革"</a>, 現代ビジネス, 2025.10.17</li>
+          <li><a href="https://www.nikkei.com/article/DGXZQOSG233G80T20C25A9000000/" target="_blank" rel="noopener noreferrer">「人型」に負けない犬型ロボットが急速進化　先行の米中を日本勢追う</a>, 日本経済新聞, 2025.10.04</li>
+          <li><a href="https://newswitch.jp/p/46973" target="_blank" rel="noopener noreferrer">ECサイト購入部品で作れる二足歩行ロボット、東大が設計図などを公開する理由</a>, 日刊工業新聞, 2025.09.17</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-billion-humanoid-robots" target="_blank" rel="noopener noreferrer">A Billion Dollars for Humanoid Robots: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2025.09.19</li>
+          <li><a href="https://newsdig.tbs.co.jp/articles/withbloomberg/2161730" target="_blank" rel="noopener noreferrer">【米中が圧倒的でも日本の開発者は諦めるな】東大研究者・河原塚健人／ロボット×AI基盤モデル＝人間の知能を実現／でも日本の存在感は「めっちゃ低い」／ヒューマノイドの身体能力はもう差がつかない【1on1】</a>, TBC CROSS DIG, 2025.09.10</li>
+          <li><a href="https://newswitch.jp/p/46891" target="_blank" rel="noopener noreferrer">人型ロボットの投資が世界で加熱している…中国で運動会、価格破壊も</a>, 日刊工業新聞, 2025.09.09</li>
+          <li><a href="https://www.cubemars.com/quadruped-robot-dog-kleiyn-climbs-walls.html" target="_blank" rel="noopener noreferrer">Robot Dog Climbs Walls with Robotic Actuators，50 Times Fater!</a>, CubeMars, 2025.09.02</li>
+          <li><a href="https://interestingengineering.com/innovation/robot-built-using-sheet-metal-welding" target="_blank" rel="noopener noreferrer">Unique robot built from off-the-shelf parts walks on two legs</a>, Interesting Engineering, 2025.09.01</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-synchronized-dancing-robots" target="_blank" rel="noopener noreferrer">Spot's Got Talent: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2025.08.29</li>
+          <li><a href="https://karapaia.com/archives/525837.html" target="_blank" rel="noopener noreferrer">こいつ、速いぞ！東京大学が開発した壁登りロボットが世界最速記録を更新！</a>, カラパイア, 2025.07.18</li>
+          <li><a href="https://newatlas.com/robotics/jsk-kleiyn-quadruped-waist-climb/" target="_blank" rel="noopener noreferrer">Robodog chimneys better than you, ready to send a V5</a>, New Atlas, 2025.07.17</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-reachy-mini" target="_blank" rel="noopener noreferrer">Reachy Mini Brings the Cute: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2025.07.11</li>
+          <li><a href="https://interestingengineering.com/innovation/kleiyn-chimney-climbing-robot-dog" target="_blank" rel="noopener noreferrer">Watch world’s fastest chimney-climbing robot dog scale 50 times faster than rivals</a>, Interesting Engineering, 2025.07.14</li>
+          <li><a href="https://newswitch.jp/p/46244" target="_blank" rel="noopener noreferrer">東大が開発、ミスミ通販で部品調達できる「4脚ロボット」の利点</a>, 日刊工業新聞, 2025.07.06</li>
+          <li><a href="https://www.youtube.com/watch?v=aCW75gMBn18" target="_blank" rel="noopener noreferrer">【オープンソース】四足歩行ロボット MEVIUSの開発者に突撃取材してみた</a>, YouTube, 2025.05.31</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-hopping-robot-insect" target="_blank" rel="noopener noreferrer">Tiny Robot Bug Hops and Jumps: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2025.04.11</li>
+          <li><a href="https://jp.meviy.misumi-ec.com/info/ja/news/48510/" target="_blank" rel="noopener noreferrer">第10回　設計・製造ソリューション展（DMS名古屋）2025</a>, meviy, 2025.03.25</li>
+          <li><a href="https://xtech.nikkei.com/atcl/nxt/column/18/03118/00005/" target="_blank" rel="noopener noreferrer">脚式ロボの歩行騒音問題、ソニーが独自強化学習でaibo静かに</a>, 日経クロステック, 2025.03.21</li>
+          <li><a href="https://techxplore.com/news/2025-03-sony-aibo-dog-quietly-elaborate.html" target="_blank" rel="noopener noreferrer">Sony's aibo dog could soon walk quietly and perform elaborate dance routines</a>, Tech Xplore, 2025.03.04</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-good-over-all-terrains" target="_blank" rel="noopener noreferrer">Good Over All Terrains: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2025.02.28</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-aibo-foster-parents" target="_blank" rel="noopener noreferrer">Aibo Foster Parents: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2025.01.31</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-agile-upgrade" target="_blank" rel="noopener noreferrer">Agile Upgrade: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2025.01.17</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-hottest-on-the-ice" target="_blank" rel="noopener noreferrer">Hottest on the Ice: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2025.01.24</li>
+          <li><a href="https://prtimes.jp/main/html/rd/p/000000060.000069918.html" target="_blank" rel="noopener noreferrer">アールティが挑む、国産4足歩行ロボットの未来</a>, PR TIMES, 2024.12.17</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-multiple-magicbots" target="_blank" rel="noopener noreferrer">Multiple MagicBots: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.12.06</li>
+          <li><a href="https://www.yomiuri.co.jp/science/20241120-OYT1T50012/" target="_blank" rel="noopener noreferrer">「頭脳」手に入れ「常識」備えたかに見えるロボット…私たちのパートナーか、倫理観なき危険な存在か</a>, 読売新聞, 2024.11.20</li>
+          <li><a href="https://newswitch.jp/p/43682" target="_blank" rel="noopener noreferrer">ロボットに指示・意図どう伝える？…インターフェース最適化へ新手法探る</a>, 日刊工業新聞, 2024.11.24</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-quadruped-ladder-climbing" target="_blank" rel="noopener noreferrer">Quadruped Ladder Climbing: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.10.04</li>
+          <li><a href="https://interestingengineering.com/innovation/mini-muscle-power-new-robotic-forearm" target="_blank" rel="noopener noreferrer">Game-changing mini-muscle motors power new robotic forearm like humans</a>, Interesting Engineering, 2024.09.02</li>
+          <li><a href="https://www.dw.com/en/a-robot-at-the-wheel/video-69903705" target="_blank" rel="noopener noreferrer">A robot at the wheel</a>, Deutsche Welle, 2024.08.31</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-robots-table-tennis" target="_blank" rel="noopener noreferrer">Robots Solving Table Tennis: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.08.30</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-disney-robot-dance" target="_blank" rel="noopener noreferrer">Disney Robot Dance: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.08.23</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-robot-dog-jump" target="_blank" rel="noopener noreferrer">Silly Robot Dog Jump: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.08.16</li>
+          <li><a href="https://newswitch.jp/p/42280" target="_blank" rel="noopener noreferrer">「常識」「データ」使い切れ…基盤モデル・LLM、ロボットに応用</a>, 日刊工業新聞, 2024.07.19</li>
+          <li><a href="https://www.gizmodo.jp/2024/06/musashi-humanoid-driving.html" target="_blank" rel="noopener noreferrer">人型ロボは運転もこなす。クルマまかせの自動運転よりも安心感アップ</a>, GIZMODO JAPAN, 2024.06.18</li>
+          <li><a href="https://www.newscientist.com/article/2435826-watch-a-humanoid-robot-driving-a-car-extremely-slowly/" target="_blank" rel="noopener noreferrer">Watch a humanoid robot driving a car extremely slowly</a>, New Scientist, 2024.06.17</li>
+          <li><a href="https://newatlas.com/robotics/musashi-humanoid-autonomous-driving/" target="_blank" rel="noopener noreferrer">Video: Humanoid chauffeur put in the driving seat for robotaxi future</a>, New Atlas, 2024.06.13</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-robots-with-knives" target="_blank" rel="noopener noreferrer">Robots With Knives: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.05.17</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-racer-heavy" target="_blank" rel="noopener noreferrer">RACER Heavy: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.04.26</li>
+          <li><a href="https://abema.tv/video/episode/89-106_s1_p2428" target="_blank" rel="noopener noreferrer">『すずめの戸締り』椅子をロボットに</a>, ABEMA【週刊BUZZ動画】SNSで話題の動画をピックアップ!, 2024.04.20</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-spacehopper" target="_blank" rel="noopener noreferrer">SpaceHopper: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.04.19</li>
+          <li><a href="https://www.itmedia.co.jp/aiplus/articles/2404/17/news048.html" target="_blank" rel="noopener noreferrer">「すずめの戸締まり」に登場の“3本脚の椅子”を再現したロボット　東大が開発　歩行し倒れても起き上がる</a>, ITmedia AI+, 2024.04.17</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-robot-dog-can-t-fall" target="_blank" rel="noopener noreferrer">Robot Dog Can't Fall: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.04.12</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-co-expression" target="_blank" rel="noopener noreferrer">Co-Expression: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.03.29</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-many-quadrupeds" target="_blank" rel="noopener noreferrer">Many Quadrupeds: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.03.15</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-human-to-humanoid" target="_blank" rel="noopener noreferrer">Human to Humanoid: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2024.03.08</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-tap-finger-move-mountain" target="_blank" rel="noopener noreferrer">Tap Finger, Move Mountain: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2023.12.01</li>
+          <li><a href="https://newswitch.jp/p/39450" target="_blank" rel="noopener noreferrer">AI・ロボも迷う…“我が家の冷蔵庫問題”が解けたら値千金な理由</a>, 日刊工業新聞, 2023.12.01</li>
+          <li><a href="https://newswitch.jp/p/39285" target="_blank" rel="noopener noreferrer">生活支援ロボット、ＡＩで変革した現在地と展望</a>, 日刊工業新聞, 2023.11.30</li>
+          <li><a href="https://spectrum.ieee.org/video-friday-punch-out" target="_blank" rel="noopener noreferrer">Punch-Out: Your weekly selection of awesome robot videos</a>, IEEE Spectrum Video Friday, 2023.11.24</li>
+          <li><a href="https://newswitch.jp/p/38378" target="_blank" rel="noopener noreferrer">腹腔鏡手術の訓練手技をロボットに、東大が制約付き模倣学習開発</a>, 日刊工業新聞, 2023.09.06</li>
+          <li><a href="https://www.asahi.com/articles/ASLCJ3412LCJOBJB002.html" target="_blank" rel="noopener noreferrer">人型ロボット「ムサシ」、車も運転できるよ　東大が披露</a>, 朝日新聞, 2018.11.16</li>
+          <li><a href="https://newswitch.jp/p/13673" target="_blank" rel="noopener noreferrer">東大のヒューマノイド「腱悟郎」、車の運転に成功</a>, 日刊工業新聞, 2018.07.13</li>
+          <li><a href="https://www.nikkei.com/article/DGXMZO25019580U7A221C1TJM000/" target="_blank" rel="noopener noreferrer">東大、日本人の筋骨格再現したロボット開発</a>, 日本経済新聞, 2017.12.24</li>
+          <li><a href="https://www.todaishimbun.org/seisakuten20161118/" target="_blank" rel="noopener noreferrer">初日から300人来場！いま話題の「東京大学制作展『FAKE FUTURE』」ではどんな体験ができるのか？</a>, 東大新聞オンライン, 2016.11.18</li>
         </ol>
 
         <div class="text-white bg-primary border-primary mt-3 ps-3">
           <h2> Academic Activities </h2>
         </div>
         <ol>
-          <li>オーガナイザ, <a href="https://www.ai-gakkai.or.jp/jsai2026/os/#os-47" target='_blank'>基盤モデル時代におけるPhysical AI</a>, 2026年度人工知能学会全国大会(JSAI2026), 2026</li>
+          <li>オーガナイザ, <a href="https://www.ai-gakkai.or.jp/jsai2026/os/#os-47" target="_blank" rel="noopener noreferrer">基盤モデル時代におけるPhysical AI</a>, 2026年度人工知能学会全国大会(JSAI2026), 2026</li>
           <li>Special Track AI and Robotics Chairs, the 35th International Joint Conference on Artificial Intelligence (IJCAI-ECAI2026), 2026</li>
           <li>Associate Editor, 2026 IEEE International Conference on Robotics and Automation (ICRA2026), 2026</li>
-          <li>Organizer, <a href="https://sites.google.com/g.ecc.u-tokyo.ac.jp/iros2025-ws-roboticdesign/" target='_blank'>Workshop on Foundation Models for Robotic Design</a>, IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS2025), 2025</li>
-          <li>Organizer, <a href="https://dexterous-humanoid-manipulation.github.io/" target='_blank'>Dexterous Humanoid Manipulation Workshop</a>, IEEE-RAS International Conference on Humanoid Robots (Humanoids2025), 2025</li>
-          <li>Organizer, <a href="https://open-hardware-robots.github.io/CoRL2025/" target='_blank'>Workshop on Open Hardware in the Era of Robot Learning</a>, Conference on Robot Learning (CoRL2025), 2025</li>
+          <li>Organizer, <a href="https://sites.google.com/g.ecc.u-tokyo.ac.jp/iros2025-ws-roboticdesign/" target="_blank" rel="noopener noreferrer">Workshop on Foundation Models for Robotic Design</a>, IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS2025), 2025</li>
+          <li>Organizer, <a href="https://dexterous-humanoid-manipulation.github.io/" target="_blank" rel="noopener noreferrer">Dexterous Humanoid Manipulation Workshop</a>, IEEE-RAS International Conference on Humanoid Robots (Humanoids2025), 2025</li>
+          <li>Organizer, <a href="https://open-hardware-robots.github.io/CoRL2025/" target="_blank" rel="noopener noreferrer">Workshop on Open Hardware in the Era of Robot Learning</a>, Conference on Robot Learning (CoRL2025), 2025</li>
           <li>Associate Editor, 2025 IEEE-RAS International Conference on Humanoid Robots (Humanoids2025), 2025</li>
           <li>Associate Editor, 2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS2025), 2025</li>
           <li>Associate Editor, 2025 IEEE International Conference on Robotics and Automation (ICRA2025), 2025</li>
           <li>Associate Editor, 2024 IEEE-RAS International Conference on Humanoid Robots (Humanoids2024), 2024</li>
           <li>Organizer, Organized Session on Real-World Robot Applications of Foundation Models, The 42nd Annual Conference of the Robotics Society of Japan (RSJ2024), 2024</li>
-          <li>Organizer, <a href="https://sites.google.com/view/icra2024cookingrobotics/home" target='_blank'>Workshop on Cooking Robotics: Perception and motion planning</a>, IEEE International Conference on Robotics and Automation (ICRA2024), 2024</li>
+          <li>Organizer, <a href="https://sites.google.com/view/icra2024cookingrobotics/home" target="_blank" rel="noopener noreferrer">Workshop on Cooking Robotics: Perception and motion planning</a>, IEEE International Conference on Robotics and Automation (ICRA2024), 2024</li>
           <li>Associate Editor, 2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS2024), 2024</li>
           <li>Section Editor, Special Section on Cognitive Development and Symbol Emergence, Advanced Robotics, 2024</li>
-          <li>Guest Editor, <a href="https://www.rsj.or.jp/content/files/pub/ar/CFP/CFP_38_17.pdf" target='_blank'>Special Issue on Real-World Robot Applications of the Foundation Models</a>, Advanced Robotics, 2024</li>
-          <li>Organizer, <a href="https://sites.google.com/grp.riken.jp/langrobonlp2024" target='_blank'>Workshop on Real-World Applications of Large Language Models</a>, The 30th Annual Meeting of the Association of Natural Language Processing (NLP2024), 2024</li>
+          <li>Guest Editor, <a href="https://www.rsj.or.jp/content/files/pub/ar/CFP/CFP_38_17.pdf" target="_blank" rel="noopener noreferrer">Special Issue on Real-World Robot Applications of the Foundation Models</a>, Advanced Robotics, 2024</li>
+          <li>Organizer, <a href="https://sites.google.com/grp.riken.jp/langrobonlp2024" target="_blank" rel="noopener noreferrer">Workshop on Real-World Applications of Large Language Models</a>, The 30th Annual Meeting of the Association of Natural Language Processing (NLP2024), 2024</li>
           <li>Associate Editor, 2023 IEEE-RAS International Conference on Humanoid Robots (Humanoids2023), 2023</li>
-          <li>Organizer, <a href="https://sites.google.com/view/robotics-foundation-models/organized-session-on-rsj2023?authuser=0" target='_blank'>Organized Session on Real-World Robot Applications of Foundation Models</a>, The 41st Annual Conference of the Robotics Society of Japan (RSJ2023), 2023</li>
+          <li>Organizer, <a href="https://sites.google.com/view/robotics-foundation-models/organized-session-on-rsj2023?authuser=0" target="_blank" rel="noopener noreferrer">Organized Session on Real-World Robot Applications of Foundation Models</a>, The 41st Annual Conference of the Robotics Society of Japan (RSJ2023), 2023</li>
           <li>Associate Editor, 2022 IEEE-RAS International Conference on Humanoid Robots (Humanoids2022), 2022</li>
         </ol>
 
