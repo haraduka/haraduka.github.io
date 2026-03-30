@@ -1,121 +1,134 @@
-\documentclass[letterpaper]{article}
-
-\usepackage{hyperref}
-\usepackage{geometry}
+\documentclass[letterpaper,11pt]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[sc,osf]{mathpazo}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{fancyhdr}
 
 \def\name{Kento Kawaharazuka}
-
 \def\footerlink{https://haraduka.github.io}
+
+\definecolor{accent}{HTML}{1D4E89}
+\definecolor{textgray}{HTML}{444444}
+\definecolor{lightgray}{HTML}{E8EDF3}
+
+\geometry{
+  left=0.85in,
+  right=0.85in,
+  top=0.8in,
+  bottom=0.85in
+}
 
 \hypersetup{
   colorlinks = true,
-  urlcolor = blue,
+  urlcolor = accent,
+  linkcolor = accent,
   pdfauthor = {\name},
-  pdfkeywords = {humanoid, biomimetics, machine learning},
+  pdfkeywords = {humanoid robotics, tendon-driven robots, machine learning},
   pdftitle = {\name: Curriculum Vitae},
   pdfsubject = {Curriculum Vitae},
   pdfpagemode = UseNone
 }
 
-\geometry{
-  body={6.5in, 8.5in},
-  left=1.0in,
-  top=1.25in
-}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\footnotesize Last updated: \today \quad|\quad \href{\footerlink}{\texttt{\footerlink}}}
 
-\pagestyle{myheadings}
-\markright{\name}
-\thispagestyle{empty}
+\titleformat{\section}
+  {\Large\bfseries\color{accent}}
+  {}
+  {0em}
+  {}[\vspace{0.15em}\titlerule\vspace{0.35em}]
 
-\usepackage{sectsty}
-\sectionfont{\rmfamily\mdseries\Large}
-\subsectionfont{\rmfamily\mdseries\itshape\large}
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{accent}}
+  {}
+  {0em}
+  {}
 
-% Other possible font commands include:
-% \ttfamily for teletype,
-% \sffamily for sans serif,
-% \bfseries for bold,
-% \scshape for small caps,
-% \normalsize, \large, \Large, \LARGE sizes.
+\setlist[itemize]{leftmargin=1.4em,itemsep=0.2em,topsep=0.2em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
 
-% Don't indent paragraphs.
-\setlength\parindent{0em}
-
-% Make lists without bullets
-\renewenvironment{itemize}{
-  \begin{list}{}{
-    \setlength{\leftmargin}{1.5em}
-  }
-}{
-  \end{list}
+\newcommand{\cventry}[2]{%
+  \noindent\begin{tabularx}{\linewidth}{@{}p{0.2\linewidth}X@{}}%
+    \textcolor{textgray}{#1} & #2%
+  \end{tabularx}\vspace{0.2em}%
 }
 
 \begin{document}
 
-% Place name at left
-{\huge \name}
+{\Huge\bfseries \name}\\[-0.1em]
+{\large Lecturer (Junior Associate Professor)}\\
+{\normalsize Next Generation Artificial Intelligence Research Center (AI Center) \\ Department of Mechano-Informatics, Graduate School of Information Science and Technology, The University of Tokyo}
 
-\vspace{0.25in}
+\vspace{0.3em}
+\color{lightgray}\rule{\linewidth}{1.4pt}\color{black}
 
-\begin{minipage}{0.45\linewidth}
-  {The University of Tokyo} \\
-  Department of Mechano-Informatics \\
-  Engineering Building No. 2 \\
-  7-3-1, Hongo, Bunkyo-ku, Tokyo, Japan
-\end{minipage}
-\begin{minipage}{0.45\linewidth}
-  \begin{tabular}{ll}
-    Phone: & +81-3-5841-7416 \\
-    Fax: &  +81-3-5841-6285 \\
-    Email: & \href{mailto:kawaharazuka@jsk.imi.i.u-tokyo.ac.jp}{\tt kawaharazuka@jsk.imi.i.u-tokyo.ac.jp} \\
-    Homepage: & \href{https://haraduka.github.io}{\tt https://haraduka.github.io} \\
-  \end{tabular}
-\end{minipage}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{Email:} \href{mailto:kawaharazuka@jsk.imi.i.u-tokyo.ac.jp}{kawaharazuka@jsk.imi.i.u-tokyo.ac.jp} & \textbf{Website:} \href{https://haraduka.github.io}{https://haraduka.github.io} \\
+\textbf{Google Scholar:} \href{https://scholar.google.co.jp/citations?user=E75YHyUAAAAJ}{profile link} & \textbf{GitHub:} \href{https://github.com/haraduka}{github.com/haraduka}
+\end{tabularx}
 
-
-\section*{Personal}
-
-\begin{itemize}
-    \item Date of Birth: 18/07/1994
-    \item Research Interests: Humanoid, Biomimetics, Machine Learning
-\end{itemize}
-
+\section*{Employment}
+\cventry{2025.10--Present}{\textbf{Visiting Researcher}, Robot System Team, RIKEN Center for Advanced Intelligence Project (RIKEN AIP), Japan}
+\cventry{2025.02--Present}{\textbf{Lecturer (Junior Associate Professor)}, UTokyo AI Center and Department of Mechano-Informatics, Graduate School of Information Science and Technology, The University of Tokyo, Japan}
+\cventry{2024.06--2024.08}{\textbf{Visiting Researcher}, Robotics and Systems Laboratory, ETH Zurich, Switzerland}
+\cventry{2022.04--2025.01}{\textbf{Project Assistant Professor}, Department of Mechano-Informatics, Graduate School of Information Science and Technology, The University of Tokyo, Japan}
 
 \section*{Education}
+\cventry{2019.04--2022.03}{\textbf{Ph.D. in Mechano-Informatics}, Graduate School of Information Science and Technology, The University of Tokyo}
+\cventry{2017.04--2019.03}{\textbf{M.S. in Mechano-Informatics}, Graduate School of Information Science and Technology, The University of Tokyo}
+\cventry{2013.04--2017.03}{\textbf{B.S. in Mechano-Informatics}, Faculty of Engineering, The University of Tokyo}
 
+\section*{Selected Publications}
 \begin{itemize}
-  \item Project Assistant Professor in Dept. of Mechano-Informatics, The University of University, Japan, JSK Robotics Laboratory, 2022-
-  \item Ph.D. in Dept. of Mechano-Informatics, The University of University, Japan, with Prof. Masayuki Inaba (JSK Robotics Laboratory), 2019-2022
-  \item M.S. in Dept. of Mechano-Informatics, Graduate School of Information Science and Technology, The University of Tokyo, Japan, 2017-2019
-  \item B.S. in Dept. of Mechano-Informatics, Faculty of Engineering, The University of Tokyo, Japan, 2013-2017
+  \item K. Kawaharazuka et al., \textit{MEVIUS2: Practical Open-Source Quadruped Robot with Sheet Metal Welding and Multimodal Perception}, IEEE Robotics and Automation Practice (RAP), 2026.
+  \item K. Kawaharazuka, K. Okada, and M. Inaba, \textit{Characteristics, Management, and Utilization of Muscles in Musculoskeletal Humanoids: Empirical Study on Kengoro and Musashi}, Advanced Intelligent Systems (AISY), 2026.
+  \item K. Kawaharazuka et al., \textit{Vision-Language-Action Models for Robotics: A Review Towards Real-World Applications}, IEEE Access, 2025.
+  \item K. Kawaharazuka, K. Okada, and M. Inaba, \textit{GeMuCo: Generalized Multisensory Correlational Model for Body Schema Learning}, IEEE Robotics and Automation Magazine (RAM), 2024.
+  \item K. Kawaharazuka et al., \textit{Real-World Robot Applications of Foundation Models: A Review}, Advanced Robotics, 2024. (Advanced Robotics Best Survey Paper Award)
+  \item K. Kawaharazuka et al., \textit{Toward Autonomous Driving by Musculoskeletal Humanoids: Study of Developed Hardware and Learning-Based Software}, IEEE Robotics and Automation Magazine (RAM), 2020.
 \end{itemize}
 
+\section*{Selected Grants/Funding}
+\cventry{2024.10--2030.03}{\textbf{CRONOS} (Co-Investigator), Japan Science and Technology Agency (JST)}
+\cventry{2024.10--2032.03}{\textbf{FOREST Program / Souhatsu} (PI), Japan Science and Technology Agency (JST)}
+\cventry{2023.04--2027.03}{\textbf{JSPS KAKENHI Grant-in-Aid for Scientific Research (B)} (PI), Japan Society for the Promotion of Science (JSPS)}
+\cventry{2023.04--2026.03}{\textbf{JSPS KAKENHI Challenging Exploratory Research} (PI), Japan Society for the Promotion of Science (JSPS)}
+\cventry{2022.04--2024.03}{\textbf{JSPS KAKENHI Grant-in-Aid for Research Activity Start-up} (PI), Japan Society for the Promotion of Science (JSPS)}
+\cventry{2020.12--2024.03}{\textbf{JST ACT-X and ACT-X Acceleration Phase} (PI), Japan Science and Technology Agency (JST)}
+\cventry{2019.04--2022.03}{\textbf{JSPS Research Fellowship for Young Scientists (DC1)}, Japan Society for the Promotion of Science (JSPS)}
 
-\section*{Experience}
+\section*{Selected Awards/Honors}
+\cventry{2026.02}{\textbf{Funai Academic Award}, Funai Foundation for Information Technology}
+\cventry{2025.11}{\textbf{Innovators Under 35 Japan 2025}, MIT Technology Review}
+\cventry{2025.09}{\textbf{Advanced Robotics Best Survey Paper Award}, Advanced Robotics}
+\cventry{2024.11}{\textbf{Mike Stillman Award}, IEEE-RAS International Conference on Humanoid Robots}
+\cventry{2024.05}{\textbf{Best Conference Paper Award}, IEEE International Conference on Robotics and Automation (Open X-Embodiment Collaboration)}
 
+\section*{Selected Professional Activities}
+\cventry{2026}{Committee Member, \textbf{AI Robotics Strategy Council}, Ministry of Economy, Trade and Industry (METI), Japan}
+\cventry{2026}{Special Track AI and Robotics Chairs, \textbf{IJCAI-ECAI 2026}}
+\cventry{2025}{Organizer, \textbf{Workshop on Foundation Models for Robotic Design}, IEEE/RSJ IROS 2025}
+\cventry{2025}{Organizer, \textbf{Dexterous Humanoid Manipulation Workshop}, IEEE-RAS Humanoids 2025}
+\cventry{2025}{Organizer, \textbf{Workshop on Open Hardware in the Era of Robot Learning}, CoRL 2025}
+
+\section*{Selected Open Source Projects}
 \begin{itemize}
-  \item Internship at Preferred Networks, Robotics Engineer, Japan, 2018-2020
-  \item Internship at Works Applications Co. Ltd., Software Engineer, Japan, 2016
-  \item Internship at Future Standard, Software Engineer, Japan, 2016
-  \item Internship at HIOKI, E.E. CORPORATION, Software Engineer, Japan, 2015
-\end{itemize}
-
-\section*{Skills}
-
-\subsection*{Software Skills}
-\begin{itemize}
-  \item Advanced: C, C++, Python, Machine Learning, Algorithms
-  \item Intermediate: Ruby, Lisp, Statistics
-  \item Basic: Java, JavaScript, Android, Haskell
-\end{itemize}
-
-\subsection*{Hardware Skills}
-\begin{itemize}
-  \item Intermediate: 3D CAD, 3D Printer
-  \item Basic: Electorinics, Machining
+  \item \textbf{MEVIUS2} (2026): Open-source quadruped robot with sheet-metal construction and multimodal perception. \\
+  \href{https://haraduka.github.io/mevius2-hardware/}{https://haraduka.github.io/mevius2-hardware/}
+  \item \textbf{MEVITA} (2025): Open-source bipedal robot assembled from e-commerce components. \\
+  \href{https://haraduka.github.io/mevita-hardware/}{https://haraduka.github.io/mevita-hardware/}
+  \item \textbf{MEVIUS} (2025): Easily constructed open-source quadruped platform using sheet-metal welding and machining. \\
+  \href{https://haraduka.github.io/mevius-hardware/}{https://haraduka.github.io/mevius-hardware/}
 \end{itemize}
 
 \section*{Publications}
@@ -127,16 +140,5 @@
 \subsection*{International Conference Proceedings (Peer Reviewed)}
 
 % proceedings_replace_by_python
-
-
-\bigskip
-
-% Footer
-\begin{center}
-  \begin{footnotesize}
-    Last updated: \today \\
-    \href{\footerlink}{\texttt{\footerlink}}
-  \end{footnotesize}
-\end{center}
 
 \end{document}
