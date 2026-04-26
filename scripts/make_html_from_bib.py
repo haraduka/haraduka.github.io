@@ -183,7 +183,9 @@ class MakeHTML:
 
         self.tex_proceedings = ""
 
-        self.csv_text = ""
+        self.csv_jst_text = ""
+        self.csv_jsps_text = ""
+        self.jsps_paper_no = 0
 
         # International Journal Papers
         papers = self.papers["ijournal_papers"]
@@ -279,7 +281,7 @@ class MakeHTML:
             self.html_pub += ("<li>"+line+"</li>\n")
             self.tex_journal += ("\\item "+line2+"\n")
 
-            csv_one_data = [
+            self.append_jst_csv([
                     paper["doi"] if "doi" in paper else "-",
                     paper["author"],
                     paper["title"],
@@ -288,9 +290,13 @@ class MakeHTML:
                     paper["year"] if "year" in paper else "-",
                     paper["pages"] if "pages" in paper else "-",
                     "1", "0", "0"
-            ]
-            csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
-            self.csv_text += ",".join(csv_one_data) + "\n"
+            ])
+            self.append_jsps_csv(
+                    paper,
+                    peer_reviewed="1",
+                    include_doi=True,
+                    include_volume=True,
+                    include_pages=True)
         self.html_pub += ('</ol>\n')
         self.tex_journal += '\\end{enumerate}\n'
 
@@ -382,16 +388,20 @@ class MakeHTML:
             self.html_pub += ("<li>"+line+"</li>\n")
             self.tex_proceedings += ("\\item "+line2+"\n")
 
-            csv_one_data = [
+            self.append_jst_csv([
                     paper["author"],
                     paper["title"],
                     paper["booktitle3"],
                     paper["year"] if "year" in paper else "-",
                     paper["year"] if "year" in paper else "-",
                     "0", "1"
-            ]
-            csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
-            self.csv_text += ",".join(csv_one_data) + "\n"
+            ])
+            self.append_jsps_csv(
+                    paper,
+                    peer_reviewed="1",
+                    include_doi=False,
+                    include_volume=False,
+                    include_pages=True)
         self.html_pub += ('</ol>\n')
         self.tex_proceedings += '\\end{enumerate}\n'
 
@@ -463,7 +473,7 @@ class MakeHTML:
 
             self.html_pub += ("<li>"+line+"</li>\n")
 
-            csv_one_data = [
+            self.append_jst_csv([
                     paper["doi"] if "doi" in paper else "-",
                     paper["author"],
                     paper["title"],
@@ -472,9 +482,13 @@ class MakeHTML:
                     paper["year"] if "year" in paper else "-",
                     paper["pages"] if "pages" in paper else "-",
                     "1", "0", "0"
-            ]
-            csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
-            self.csv_text += ",".join(csv_one_data) + "\n"
+            ])
+            self.append_jsps_csv(
+                    paper,
+                    peer_reviewed="1",
+                    include_doi=True,
+                    include_volume=True,
+                    include_pages=True)
         self.html_pub += ('</ol>\n')
 
         papers = self.papers["arxiv_papers"]
@@ -588,7 +602,7 @@ class MakeHTML:
 
             self.html_pub += ("<li>"+line+"</li>\n")
 
-            csv_one_data = [
+            self.append_jst_csv([
                     paper["doi"] if "doi" in paper else "-",
                     paper["author"],
                     paper["title"],
@@ -597,9 +611,13 @@ class MakeHTML:
                     paper["year"] if "year" in paper else "-",
                     paper["pages"] if "pages" in paper else "-",
                     "1", "0", "0"
-            ]
-            csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
-            self.csv_text += ",".join(csv_one_data) + "\n"
+            ])
+            self.append_jsps_csv(
+                    paper,
+                    peer_reviewed="1",
+                    include_doi=True,
+                    include_volume=True,
+                    include_pages=True)
         self.html_pub += ('</ol>\n')
 
         # Domestic Conference Proceedings
@@ -662,16 +680,20 @@ class MakeHTML:
 
             self.html_pub += ("<li>"+line+"</li>\n")
 
-            csv_one_data = [
+            self.append_jst_csv([
                     paper["author"],
                     paper["title"],
                     paper["booktitle3"],
                     paper["year"] if "year" in paper else "-",
                     paper["year"] if "year" in paper else "-",
                     "0", "0"
-            ]
-            csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
-            self.csv_text += ",".join(csv_one_data) + "\n"
+            ])
+            self.append_jsps_csv(
+                    paper,
+                    peer_reviewed="1",
+                    include_doi=False,
+                    include_volume=False,
+                    include_pages=True)
         self.html_pub += ('</ol>\n')
 
         # Domestic Conference Proceedings (No Reviewed)
@@ -734,16 +756,20 @@ class MakeHTML:
 
             self.html_pub += ("<li>"+line+"</li>\n")
 
-            csv_one_data = [
+            self.append_jst_csv([
                     paper["author"],
                     paper["title"],
                     paper["booktitle3"],
                     paper["year"] if "year" in paper else "-",
                     paper["year"] if "year" in paper else "-",
                     "0", "0"
-            ]
-            csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
-            self.csv_text += ",".join(csv_one_data) + "\n"
+            ])
+            self.append_jsps_csv(
+                    paper,
+                    peer_reviewed="0",
+                    include_doi=False,
+                    include_volume=False,
+                    include_pages=True)
         self.html_pub += ('</ol>\n')
 
         # Invited Talks, etc.
@@ -798,16 +824,20 @@ class MakeHTML:
 
             self.html_pub += ("<li>"+line+"</li>\n")
 
-            csv_one_data = [
+            self.append_jst_csv([
                     paper["author"],
                     paper["title"],
                     paper["booktitle3"],
                     paper["year"] if "year" in paper else "-",
                     paper["year"] if "year" in paper else "-",
                     "1", "0"
-            ]
-            csv_one_data = ['\"'+ data + '\"' for data in csv_one_data]
-            self.csv_text += ",".join(csv_one_data) + "\n"
+            ])
+            self.append_jsps_csv(
+                    paper,
+                    peer_reviewed="0",
+                    include_doi=False,
+                    include_volume=False,
+                    include_pages=False)
         self.html_pub += ('</ol>\n')
 
         self.html_award_list.sort(reverse=True)
@@ -880,8 +910,43 @@ class MakeHTML:
         out = open(out_filename, "w", encoding="utf8")
         lines = []
         lines.append("%This file is automatically generated. Do not modify\n")
-        lines.append(self.csv_text)
+        lines.append(self.csv_jst_text)
         out.writelines(lines)
+
+    def integrate_jsps_csv(self, out_filename):
+        out = open(out_filename, "w", encoding="utf8")
+        lines = []
+        lines.append("%This file is automatically generated. Do not modify\n")
+        lines.append(self.csv_jsps_text)
+        out.writelines(lines)
+
+    def append_jst_csv(self, csv_one_data):
+        csv_one_data = ['\"' + self.escape_csv(data) + '\"' for data in csv_one_data]
+        self.csv_jst_text += ",".join(csv_one_data) + "\n"
+
+    def append_jsps_csv(self, paper, peer_reviewed, include_doi, include_volume, include_pages):
+        self.jsps_paper_no += 1
+        csv_one_data = [
+                "1",
+                str(self.jsps_paper_no),
+                "0",
+                paper["doi"] if include_doi and "doi" in paper else "",
+                paper["author"],
+                paper["title"],
+                paper["booktitle3"],
+                paper["volume"] if include_volume and "volume" in paper else "",
+                paper["year"] if "year" in paper else "",
+                paper["pages"] if include_pages and "pages" in paper else "",
+                peer_reviewed,
+                "0",
+                "0"
+        ]
+        csv_one_data.extend([""] * 13)
+        csv_one_data = ['\"' + self.escape_csv(data) + '\"' for data in csv_one_data]
+        self.csv_jsps_text += ",".join(csv_one_data) + "\n"
+
+    def escape_csv(self, data):
+        return str(data).replace('\"', '\"\"')
 
 
 def main():
@@ -909,8 +974,10 @@ def main():
                         help='videos output html file')
     parser.add_argument('--cvout', '-co', type=str, default="cv/main.tex",
                         help='output cv tex file')
-    parser.add_argument('--csvout', '-csvo', type=str, default="main.csv",
-                        help='output csv tex file')
+    parser.add_argument('--csvout', '-csvo', type=str, default="main_jst.csv",
+                        help='output JST csv file')
+    parser.add_argument('--jsps_csvout', type=str, default="main_jsps.csv",
+                        help='output JSPS csv file')
     args = parser.parse_args()
     makeHTML = MakeHTML(args.file)
     makeHTML.parse_bib()
@@ -921,6 +988,7 @@ def main():
     makeHTML.integrate_videos_html(args.videos_base, args.videos_out)
     makeHTML.integrate_tex(args.cvbase, args.cvout)
     makeHTML.integrate_csv(args.csvout)
+    makeHTML.integrate_jsps_csv(args.jsps_csvout)
 
 
 if __name__ == '__main__':
